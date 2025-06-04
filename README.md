@@ -54,14 +54,14 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👤 Author
 
-- **Author:** [Chehorynsky Yuri aka Yuri-Quill]
+- **Author:** [Chehorynsky Yuri aka Yuri Quill]
 - **GitHub:** [Yuri-Quill](https://github.com/Yuri-Quill)
 - **Website:** [Linkedin](https://www.linkedin.com/in/yuri-quill-ab125635a/)
 
 ---
 
 <div align="center">
-  Made with ❤️ by [Your Name]<br>
+  Made with ❤️ by [Yuri Quill]<br>
   Don't forget to ⭐ this repository if you found it helpful!
 </div>
 
