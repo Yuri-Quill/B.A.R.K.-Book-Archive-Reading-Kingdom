@@ -1,7 +1,7 @@
 # B.A.R.K — Book Archive Reading Kingdom
 
 <div align="center">
-  <img src="./bark.webp" alt="BARK Logo" width="500"/>
+  <img src="src/assets/logo/bark.webp" alt="BARK Logo" width="500"/>
 </div>
 
 ---
