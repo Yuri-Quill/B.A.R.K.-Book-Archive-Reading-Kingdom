@@ -56,7 +56,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - **Author:** [Chehorynsky Yuri aka Yuri Quill]
 - **GitHub:** [Yuri-Quill](https://github.com/Yuri-Quill)
-- **Website:** [Linkedin](https://www.linkedin.com/in/yuri-quill-ab125635a/)
+- **Website:** [Yuri Quill](https://www.linkedin.com/in/yuri-quill-ab125635a/)
 
 ---
 
