@@ -1,0 +1,30 @@
+// BARK Color Variables
+
+$color-primary: #D88C3F;       // Warm orange (logo fur)
+$color-secondary: #2A4666;     // Deep blue (book cover)
+$color-accent: #FDE6C4;        // Soft cream (fur background)
+$color-neutral: #E8DCCF;       // Light neutral (book pages)
+$color-dark: #2D1E12;          // Outline/glasses, very dark brown
+
+$color-success: #38A169;       // Tailwind green-600
+$color-warning: #D69E2E;       // Tailwind yellow-600
+$color-error: #E53E3E;         // Tailwind red-600
+
+// --- Light Mode ---
+$light-background: #FFFDF9;
+$light-surface: #FDE6C4;
+$light-text: #2D1E12;
+$light-border: #E8DCCF;
+
+// --- Dark Mode ---
+$dark-background: #1A1410;
+$dark-surface: #2D1E12;
+$dark-text: #FDE6C4;
+$dark-border: #3A2B1C;
+
+// Optional button variations
+$btn-primary-bg: $color-primary;
+$btn-primary-text: #ffffff;
+
+$btn-secondary-bg: $color-secondary;
+$btn-secondary-text: #ffffff;
