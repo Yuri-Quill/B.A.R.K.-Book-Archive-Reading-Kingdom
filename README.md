@@ -1,11 +1,110 @@
-# React + TypeScript + Vite
+# BARK — Book Archive Reading Kingdom
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<div align="center">
+  <img src="src/assets/logo/logo-large.png" alt="BARK Logo" width="300"/>
+  
+  ### *Sit. Stay. Read.*
+</div>
 
-Currently, two official plugins are available:
+BARK is your digital reading kingdom — a clean, modern bookstore where you can explore, search, and collect stories across genres. Built with React + TypeScript, BARK combines a beautiful UI with powerful features like filtering, favorites, carts, user profiles, and a responsive design ready for all screen sizes. Whether you're hunting for your next fantasy epic or a cozy weekend read, BARK makes discovery a breeze.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
+
+- 📚 Extensive book catalog with detailed information
+- 🔍 Advanced search and filtering system
+- ❤️ Favorites and reading lists
+- 🛒 Shopping cart functionality
+- 👤 User profiles and authentication
+- 📱 Responsive design for all devices
+- 🌙 Dark/Light theme support
+- 🌐 Modern, intuitive interface
+
+## 🛠️ Tech Stack
+
+- **Frontend Framework:** React 19
+- **Language:** TypeScript
+- **Build Tool:** Vite
+- **State Management:** Redux Toolkit
+- **Routing:** React Router v7
+- **Styling:** SCSS with PostCSS
+- **Form Handling:** Formik + Yup
+- **HTTP Client:** Axios
+- **UI Components:** Custom components with Lucide icons
+- **Notifications:** React Toastify
+
+## 📦 Project Structure
+
+```
+src/
+├── api/          # API integration and services
+├── assets/       # Images, fonts, and other static files
+├── Components/   # Reusable UI components
+├── hooks/        # Custom React hooks
+├── Layout/       # Layout components
+├── pages/        # Page components
+├── shared/       # Shared utilities and types
+├── store/        # Redux store configuration
+├── styles/       # Global styles and SCSS modules
+└── utils/        # Utility functions
+```
+
+## 🚀 Getting Started
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/yourusername/BARK-Book-Archive-Reading-Kingdom.git
+cd BARK-Book-Archive-Reading-Kingdom
+```
+
+2. **Install dependencies**
+```bash
+npm install
+```
+
+3. **Start the development server**
+```bash
+npm run dev
+```
+
+4. **Build for production**
+```bash
+npm run build
+```
+
+## 🔧 Environment Variables
+
+Create a `.env` file in the root directory with the following variables:
+```env
+VITE_API_URL=your_api_url
+```
+
+## 📝 Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run lint` - Run ESLint
+- `npm run preview` - Preview production build
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👤 Author
+
+- **Author:** [Your Name]
+- **GitHub:** [@yourusername]
+- **Website:** [your-website.com]
+
+---
+
+<div align="center">
+  Made with ❤️ by [Your Name]<br>
+  Don't forget to ⭐ this repository if you found it helpful!
+</div>
 
 ## Expanding the ESLint configuration
 
