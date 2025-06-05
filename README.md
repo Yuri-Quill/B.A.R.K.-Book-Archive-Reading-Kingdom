@@ -2,7 +2,7 @@
 
 <div align="center">
   <img src="src/assets/logo/logo-large.png" alt="BARK Logo" width="300"/>
-  
+
   ### *Sit. Stay. Read.*
 </div>
 
