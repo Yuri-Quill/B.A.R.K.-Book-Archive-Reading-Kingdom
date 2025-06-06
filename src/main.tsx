@@ -6,6 +6,7 @@ import { Provider } from "react-redux";
 import { store } from "@/store/store";
 import router from "@/router";
 
+import "@/styles/reset.scss";
 import "react-toastify/dist/ReactToastify.css";
 import "./index.scss";
 
