@@ -1,26 +1,134 @@
-/* Базовые переменные */
-
-
-/* Полный сброс стилей */
-*,
-*::before,
-*::after {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	box-sizing: border-box;
+// Базовый сброс для всех элементов
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   border: none;
+   outline: none;
+   vertical-align: baseline;
+   background: transparent;
 }
 
-html,
-body,
-#root {
-	height: 100%;
-	scroll-behavior: smooth;
+// Сброс списков
+ul,
+ol,
+dl {
+   list-style: none;
+   margin: 0;
+   padding: 0;
 }
 
-/* Нормализация HTML */
+// Сброс ссылок
+a {
+   text-decoration: none;
+   color: inherit;
+}
 
-/* Блочные элементы */
+// Сброс изображений
+img,
+picture,
+video,
+canvas,
+svg {
+   display: block;
+   max-width: 100%;
+   border: none;
+}
+
+// Сброс заголовков
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   margin: 0;
+}
+
+// Сброс параграфов
+p {
+   margin: 0;
+}
+
+// Сброс форм и их элементов
+form {
+   margin: 0;
+}
+
+button,
+input,
+select,
+textarea,
+optgroup,
+option {
+   margin: 0;
+   padding: 0;
+   border: none;
+   outline: none;
+   background: none;
+   color: inherit;
+   appearance: none; // Убираем стандартные стили браузера
+}
+
+button {
+   cursor: pointer;
+   overflow: visible; // Исправляем обрезку в некоторых браузерах
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+   margin: 0;
+   padding: 0;
+}
+
+fieldset {
+   margin: 0;
+   padding: 0;
+   border: none;
+}
+
+legend {
+   padding: 0;
+}
+
+// Сброс таблиц
+table {
+   border-collapse: collapse;
+   border-spacing: 0;
+}
+
+caption,
+th,
+td {
+   padding: 0;
+   border: none;
+   text-align: left; // Убираем выравнивание по центру в некоторых браузерах
+}
+
+// Сброс цитат
+blockquote,
+q {
+   margin: 0;
+   quotes: none;
+}
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+   content: "";
+   content: none;
+}
+
+// Сброс горизонтальных линий
+hr {
+   margin: 0;
+   border: none;
+   height: 1px;
+   background-color: #000;
+}
+
+// Сброс элементов семантической разметки
 article,
 aside,
 details,
@@ -29,188 +137,114 @@ figure,
 footer,
 header,
 hgroup,
+main,
 menu,
 nav,
 section,
-div {
-	display: block;
-	margin: 0;
-	padding: 0;
+summary {
+   display: block;
+   margin: 0;
+   padding: 0;
 }
 
+details {
+   display: block;
+}
+
+summary {
+   display: list-item;
+   cursor: pointer;
+}
+
+// Сброс элементов abbr, dfn и mark
+abbr[title],
+dfn[title] {
+   border-bottom: none;
+   cursor: inherit;
+   text-decoration: none;
+}
+
+mark {
+   background: none;
+   color: inherit;
+}
+
+// Сброс элементов кода
+code,
+kbd,
+pre,
+samp {
+   font-family: inherit;
+}
+
+// Сброс элементов sub и sup
+sub,
+sup {
+   font-size: inherit;
+   line-height: inherit;
+   position: relative;
+   vertical-align: baseline;
+}
+
+sub {
+   bottom: -0.25em;
+}
+
+sup {
+   top: -0.5em;
+}
+
+// Сброс аудио и видео
+audio,
+video {
+   display: inline-block;
+}
+
+audio:not([controls]) {
+   display: none;
+   height: 0;
+}
+
+// Сброс прогресс-баров и счетчиков
+progress {
+   vertical-align: baseline;
+}
+
+meter {
+   appearance: none;
+}
+
+// Сброс встроенных элементов
+iframe {
+   border: none;
+   margin: 0;
+   padding: 0;
+}
+
+// Сброс элементов управления
+dialog {
+   margin: 0;
+   padding: 0;
+   border: none;
+   background: none;
+}
+
+// Прижатие футера к низу страницы
 html {
-
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizeLegibility;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	direction: ltr;
+   height: 100%;
 }
 
-.wrapper {
-	min-height: 100dvh;
-	display: flex;
-	flex-direction: column;
-}
-
-/* Body и футер */
-body {
-
-	margin: 0;
-	padding: 0;
+body, #root {
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+   margin: 0;
 }
 
 main {
-	flex: 1;
-	margin: 0;
-	padding: 0;
+   flex: 1 0 auto; // Растягиваем основной контент
 }
 
 footer {
-	flex-shrink: 0;
-	margin: 0;
-	padding: 0;
-}
-
-/* Заголовки и параграфы */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-li {
-	margin: 0;
-	padding: 0;
-}
-
-/* Списки */
-ol,
-ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-
-/* Цитаты */
-blockquote,
-q {
-	quotes: initial;
-	margin: 0;
-	padding: 0;
-}
-
-/* Таблицы */
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-	margin: 0;
-	padding: 0;
-}
-
-/* Ссылки */
-a {
-	text-decoration: none;
-	color: inherit;
-	margin: 0;
-	padding: 0;
-}
-
-/* Мультимедиа */
-img,
-video,
-audio,
-iframe,
-object,
-embed {
-	display: block;
-	// width: 100%;
-	max-width: 100%;
-	height: auto;
-	margin: 0;
-	padding: 0;
-	border: 0;
-}
-
-
-
-/* Формы */
-button,
-input,
-select,
-textarea {
-	margin: 0;
-	padding: 0;
-	background: none;
-	border: none;
-	outline: none;
-	appearance: none;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-	-webkit-appearance: none;
-	margin: 0;
-}
-
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus {
-	-webkit-box-shadow: 0 0 0 1000px transparent inset;
-	transition: background-color 5000s ease-in-out 0s;
-}
-
-/* Дополнительные элементы */
-pre,
-code,
-kbd,
-samp {
-	margin: 0;
-	padding: 0;
-
-}
-
-hr {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	height: 1px;
-
-}
-
-/* Figure и Figcaption */
-figure {
-	margin: 0;
-	padding: 0;
-}
-
-figcaption {
-	margin: 0;
-	padding: 0;
-
-}
-
-/* Grid и Flexbox */
-.grid,
-[style*="display: grid"],
-[style*="display: flex"] {
-	margin: 0;
-	padding: 0;
-}
-
-.grid>*,
-[style*="display: grid"]>*,
-[style*="display: flex"]>* {
-	margin: 0;
-	padding: 0;
-}
-
-button,
-[type="button"],
-[type="submit"],
-[role="button"] {
-	cursor: pointer;
-	touch-action: manipulation;
+   flex-shrink: 0; // Предотвращаем сжатие футера
 }

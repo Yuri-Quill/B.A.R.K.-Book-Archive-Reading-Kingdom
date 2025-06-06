@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 const MainLayout = () => {
    return (
       <>
-         <header>Header</header>
+         <header className="header">Header</header>
 
          <main className="main">
             <Suspense fallback={<div>Loading...</div>}>
@@ -12,7 +12,7 @@ const MainLayout = () => {
             </Suspense>
          </main>
 
-         <footer>footer</footer>
+         <footer className="footer">footer</footer>
       </>
    );
 };
