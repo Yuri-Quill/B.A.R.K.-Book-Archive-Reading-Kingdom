@@ -1,67 +1,36 @@
-// ===================================
-// BARK - Book Archive Reading Kingdom
-// ===================================
+// ===== 🎨 ТЕКСТ =====
+$color-heading: var(--color-heading);           // Заголовки (H1, H2 и т.д.)
+$color-subtext: var(--color-subtext);           // Сабтекст (второстепенная информация, описания)
+$color-text: var(--color-text);                 // Основной текст (параграфы, кнопки и т.д.)
 
-// ===================================
-// LIGHT THEME
-// ===================================
+// ===== 🪵 ФОНЫ =====
+$color-bg: var(--color-bg);                     // Фоновый цвет всей страницы
+$color-bg-section: var(--color-bg-section);     // Фон секций (например, блок с рекомендованными книгами)
+$color-bg-card: var(--color-bg-card);           // Фон карточек (например, карточка книги или товара)
 
-// Brand Colors (from logo)
-$color-primary: #d2691e; // Orange from dog
-$color-secondary: #2c5282; // Blue from book
+// ===== 🟡 КНОПКИ =====
+$color-btn-bg: var(--color-btn-bg);             // Фон активной кнопки
+$color-btn-border: var(--color-btn-border);     // Обводка кнопки
+$color-btn-hover: var(--color-btn-hover);       // Ховер кнопки
 
-// Backgrounds
-$color-bg-main: #ffffff; // Main background
-$color-bg-card: #f7fafc; // Cards, panels
-$color-bg-nav: #ffffff; // Navigation
+// ===== 🎯 СОСТОЯНИЯ =====
+$color-focus: var(--color-focus);               // Цвет подсветки активного поля (input, textarea и т.д.)
+$color-active: var(--color-active);             // Цвет активных элементов (чекбоксы, радиокнопки и т.п.)
+$color-disabled: var(--color-disabled);         // Цвет для disabled-состояний (кнопки, формы)
 
-// Text
-$color-text-main: #1a202c; // Main text
-$color-text-muted: #718096; // Secondary text
-$color-text-white: #ffffff; // Text on dark backgrounds
+// ===== ✅ СООБЩЕНИЯ =====
+$color-success: var(--color-success);           // Сообщения об успехе (например, "Книга добавлена в корзину")
+$color-error: var(--color-error);               // Ошибки (например, "Не удалось загрузить книгу")
+$color-warning: var(--color-warning);           // Предупреждения (например, "Пароль слишком короткий")
 
-// Interactive
-$color-button-primary: #d2691e; // Primary buttons
-$color-button-hover: #b8541a; // Button hover
-$color-input-border: #e2e8f0; // Input borders
-$color-input-focus: #d2691e; // Input focus
-$color-input-active: #b8541a; // Input active state
+// ===== 📏 ГРАНИЦЫ =====
+$color-border: var(--color-border);             // Основные границы (карточки, модалки, секции)
+$color-border-muted: var(--color-border-muted); // Тонкие/второстепенные границы (input, разделители)
 
-// Shadows
-$shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05); // Small shadow
-$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1); // Medium shadow
-$shadow-focus: 0 0 0 3px rgba(210, 105, 30, 0.1); // Focus shadow
-
-// Status & Special
-$color-success: #38a169; // Success states
-$color-error: #e53e3e; // Error states
-$color-favorite: #e53e3e; // Heart/favorite
-$color-border: #e2e8f0; // General borders
-
-// ===================================
-// DARK THEME
-// ===================================
-
-$color-primary-dark: #f6ad55; // Brighter orange for dark
-$color-secondary-dark: #63b3ed; // Brighter blue for dark
-
-$color-bg-main-dark: #1a202c; // Dark main background
-$color-bg-card-dark: #2d3748; // Dark cards
-$color-bg-nav-dark: #2d3748; // Dark navigation
-
-$color-text-main-dark: #f7fafc; // Light text on dark
-$color-text-muted-dark: #a0aec0; // Muted text on dark
-$color-text-dark: #1a202c; // Dark text on light backgrounds
-
-$color-button-primary-dark: #f6ad55; // Primary buttons dark
-$color-button-hover-dark: #ed8936; // Button hover dark
-$color-input-border-dark: #4a5568; // Input borders dark
-$color-input-focus-dark: #f6ad55; // Input focus dark
-$color-input-active-dark: #ed8936; // Input active dark
-
-// Shadows for dark theme
-$shadow-sm-dark: 0 1px 2px rgba(0, 0, 0, 0.3); // Small shadow dark
-$shadow-md-dark: 0 4px 6px rgba(0, 0, 0, 0.4); // Medium shadow dark
-$shadow-focus-dark: 0 0 0 3px rgba(246, 173, 85, 0.2); // Focus shadow dark
-
-$color-border-dark: #4a5568; // General borders dark
+// ===== 🌑 ТЕНИ =====
+$shadow-xs: var(--shadow-xs);                   // Самая лёгкая тень (например, для небольших карточек)
+$shadow-sm: var(--shadow-sm);                   // Мелкие UI элементы (input, кнопки)
+$shadow-md: var(--shadow-md);                   // Стандартная карточка, блок
+$shadow-lg: var(--shadow-lg);                   // Модалки, ховеры, выделенные блоки
+$shadow-xl: var(--shadow-xl);                   // Эффектные всплывающие окна, dropdown и popover
+$shadow-inner: var(--shadow-inner);             // Внутренняя тень (используется редко, но может пригодиться)

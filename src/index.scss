@@ -1,7 +1,80 @@
+:root {
+   // Текст
+   --color-heading: #f5c24d; // Жёлтые заголовки
+   --color-subtext: #6b6b6b;
+   --color-text: #2c2c2c;
+
+   // Фон
+   --color-bg: #fff8f0; // Тёплый мягкий фон
+   --color-bg-section: #f7f2ea;
+   --color-bg-card: #ffffff;
+
+   // Кнопки
+   --color-btn-bg: #f5c24d; // основной жёлтый
+   --color-btn-border: #e0a100;
+   --color-btn-hover: #fcd672;
+
+   // Границы
+   --color-border: #e0e0e0;
+   --color-border-muted: #f2f2f2;
+
+   // Состояния
+   --color-focus: #4062bb; // синий с книги
+   --color-active: #4062bb; // тоже синий
+   --color-disabled: #ccc;
+
+   // Сообщения
+   --color-success: #4caf50;
+   --color-error: #e63946;
+   --color-warning: #ffbe0b;
+
+   // Тени
+   --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
+   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+   --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.15);
+   --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.2);
+   --shadow-inner: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
 body {
    font-family: "Work Sans", sans-serif;
    font-size: 1rem;
    font-weight: 400;
    font-style: normal;
    font-optical-sizing: auto;
+
+   color: $color-text;
+}
+
+[data-theme="dark"] {
+   --color-heading: #f5c24d; // жёлтый остаётся и в тёмной теме
+   --color-subtext: #b0b0b0;
+   --color-text: #d8d8d8;
+
+   --color-bg: #1a1919;
+   --color-bg-section: #232120;
+   --color-bg-card: #2b2a28;
+
+   --color-btn-bg: #f5c24d;
+   --color-btn-border: #d29a00;
+   --color-btn-hover: #fcd672;
+
+   --color-border: #333;
+   --color-border-muted: #222;
+
+   --color-focus: #4062bb; // синий
+   --color-active: #4062bb;
+   --color-disabled: #555;
+
+   --color-success: #5cb85c;
+   --color-error: #ff6b6b;
+   --color-warning: #ffca28;
+
+   --shadow-xs: 0 1px 2px rgba(255, 255, 255, 0.03);
+   --shadow-sm: 0 1px 3px rgba(255, 255, 255, 0.05);
+   --shadow-md: 0 4px 6px rgba(255, 255, 255, 0.05);
+   --shadow-lg: 0 10px 15px rgba(255, 255, 255, 0.08);
+   --shadow-xl: 0 20px 25px rgba(255, 255, 255, 0.1);
+   --shadow-inner: inset 0 2px 4px rgba(255, 255, 255, 0.03);
 }
