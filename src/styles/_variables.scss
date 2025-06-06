@@ -1,0 +1,67 @@
+// ===================================
+// BARK - Book Archive Reading Kingdom
+// ===================================
+
+// ===================================
+// LIGHT THEME
+// ===================================
+
+// Brand Colors (from logo)
+$color-primary: #d2691e; // Orange from dog
+$color-secondary: #2c5282; // Blue from book
+
+// Backgrounds
+$color-bg-main: #ffffff; // Main background
+$color-bg-card: #f7fafc; // Cards, panels
+$color-bg-nav: #ffffff; // Navigation
+
+// Text
+$color-text-main: #1a202c; // Main text
+$color-text-muted: #718096; // Secondary text
+$color-text-white: #ffffff; // Text on dark backgrounds
+
+// Interactive
+$color-button-primary: #d2691e; // Primary buttons
+$color-button-hover: #b8541a; // Button hover
+$color-input-border: #e2e8f0; // Input borders
+$color-input-focus: #d2691e; // Input focus
+$color-input-active: #b8541a; // Input active state
+
+// Shadows
+$shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05); // Small shadow
+$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1); // Medium shadow
+$shadow-focus: 0 0 0 3px rgba(210, 105, 30, 0.1); // Focus shadow
+
+// Status & Special
+$color-success: #38a169; // Success states
+$color-error: #e53e3e; // Error states
+$color-favorite: #e53e3e; // Heart/favorite
+$color-border: #e2e8f0; // General borders
+
+// ===================================
+// DARK THEME
+// ===================================
+
+$color-primary-dark: #f6ad55; // Brighter orange for dark
+$color-secondary-dark: #63b3ed; // Brighter blue for dark
+
+$color-bg-main-dark: #1a202c; // Dark main background
+$color-bg-card-dark: #2d3748; // Dark cards
+$color-bg-nav-dark: #2d3748; // Dark navigation
+
+$color-text-main-dark: #f7fafc; // Light text on dark
+$color-text-muted-dark: #a0aec0; // Muted text on dark
+$color-text-dark: #1a202c; // Dark text on light backgrounds
+
+$color-button-primary-dark: #f6ad55; // Primary buttons dark
+$color-button-hover-dark: #ed8936; // Button hover dark
+$color-input-border-dark: #4a5568; // Input borders dark
+$color-input-focus-dark: #f6ad55; // Input focus dark
+$color-input-active-dark: #ed8936; // Input active dark
+
+// Shadows for dark theme
+$shadow-sm-dark: 0 1px 2px rgba(0, 0, 0, 0.3); // Small shadow dark
+$shadow-md-dark: 0 4px 6px rgba(0, 0, 0, 0.4); // Medium shadow dark
+$shadow-focus-dark: 0 0 0 3px rgba(246, 173, 85, 0.2); // Focus shadow dark
+
+$color-border-dark: #4a5568; // General borders dark
