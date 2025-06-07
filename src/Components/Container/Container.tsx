@@ -1,5 +1,5 @@
 import clsify from "@/utils/clsify";
-import "./Container.scss";
+import "./container.scss";
 
 interface ContainerProps {
    children: React.ReactNode;
