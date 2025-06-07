@@ -1,14 +1,17 @@
 import clsx from "clsx";
 
-type Modifiers = Record<string, boolean>;
+type Modifiers = (string | undefined | false)[];
 
-export function clsify(baseClass: string, modifiers: Modifiers = {}, rest: string[]): string {
-   return clsx(
-      baseClass,
-      Object.entries(modifiers)
-         .filter((_, isOn) => isOn)
-         .map(([mod]) => `${baseClass}--${mod}`),
-      ...rest
-   );
-}
+const clsify = (
+   baseClass: string,
+
+   modifiers: Modifiers = [],
+
+   rest: (string | undefined)[] = []
+): string => {
+   const modClasses = modifiers.filter(Boolean).map((mod) => `${baseClass}--${mod}`);
+
+   return clsx(baseClass, modClasses, ...rest.filter(Boolean));
+};
+
 export default clsify;
