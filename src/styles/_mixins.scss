@@ -1,8 +1,23 @@
-@mixin light-theme {
-
-}
 
 
 @mixin dark-theme {
-   
+   $title-color: #fff;
+   $text-color: #fff;
+   $btn-bg: #a259ff;
+   $btn-border: #a259ff;
+
+   $main-bg: #2b2b2b;
+   $card-bg: #3b3b3b;
+   $caption-text: #858584;
+
+   $placeholder-color: #2b2b2b;
+   $icon-color: #858584;
+
+   $input-focus: #a259ff;
+   $input-active: #a259ff;
+   $input-border: #858584;
+
+   $glass-bg: rgba(255, 255, 255, 0.1) backdrop-filter blur(25px);
+
+   $box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
