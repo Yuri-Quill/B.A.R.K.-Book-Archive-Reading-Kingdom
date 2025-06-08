@@ -56,7 +56,7 @@ BARK is your digital reading kingdom — a clean, modern bookstore where you can
     │   ├── data/        # Data files
     │   ├── hooks/       # Custom React hooks
     │   ├── types/       # TypeScript definitions
-    │   └── validation   s/ # Form validations
+    │   └── validation   # Form validations
     ├── store/           # Redux store
     │   └── slices/      # Redux slices
     ├── styles/          # Global styles
