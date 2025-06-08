@@ -1,10 +1,11 @@
+import Header from "@/Components/Header/Header";
 import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
 
 const MainLayout = () => {
    return (
       <>
-         <header className="header">Header</header>
+         <Header />
 
          <main className="main">
             <Suspense fallback={<div>Loading...</div>}>

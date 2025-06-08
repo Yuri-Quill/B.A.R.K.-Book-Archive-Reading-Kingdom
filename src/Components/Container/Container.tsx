@@ -3,11 +3,11 @@ import "./container.scss";
 
 interface ContainerProps {
    children: React.ReactNode;
-   modifier?: string;
+   cn?: string;
 }
 
-const Container = ({ children, modifier }: ContainerProps) => {
-   return <div className={clsify("container", [modifier])}>{children}</div>;
+const Container = ({ children, cn }: ContainerProps) => {
+   return <div className={clsify("container", [cn])}>{children}</div>;
 };
 
 export default Container;
