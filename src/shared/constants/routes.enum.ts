@@ -1,4 +1,4 @@
-export enum Routes {
+export const enum Routes {
    Books = "/books",
    Genres = "/books?genre=all",
    About = "/about",
@@ -10,4 +10,4 @@ export enum Routes {
    Logout = "/logout",
    Settings = "/settings",
    Search = "",
-}
+} 

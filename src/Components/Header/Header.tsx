@@ -1,14 +1,12 @@
-import Container from "@/Components/Container/Container";
+import Container from "@/components/container/container";
 import "./header.scss";
 
-const Header = () => {
+export const Header = () => {
    return (
       <header className="header">
-         <Container cn="header">
-            Header
-         </Container>
+         <Container cn="header">Header</Container>
       </header>
    );
 };
 
-export default Header;
+

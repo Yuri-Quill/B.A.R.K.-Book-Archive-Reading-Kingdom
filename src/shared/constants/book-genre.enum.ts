@@ -1,4 +1,4 @@
-export enum BookGenre {
+export const enum BookGenre {
    All = "all",
    Fiction = "fiction",
    NonFiction = "non-fiction",

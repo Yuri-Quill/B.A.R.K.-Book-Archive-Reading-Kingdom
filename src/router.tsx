@@ -1,5 +1,5 @@
-import MainLayout from "@/Layouts/MainLayout";
-import Home from "@/pages/Home/HomePage";
+import MainLayout from "@/layouts/main-layot";
+import Home from "@/pages/home-page/home-page";
 
 import { createBrowserRouter } from "react-router-dom";
 
