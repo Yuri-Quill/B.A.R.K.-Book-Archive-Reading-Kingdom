@@ -8,6 +8,8 @@ import { router } from "@/app/router";
 
 import "@assets/styles/reset.scss";
 
+import "@assets/fonts/work-sans/font-work-sans.scss";
+
 import "./index.scss";
 
 createRoot(document.getElementById("root")!).render(

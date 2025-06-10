@@ -1,5 +1,5 @@
 import { useRouteError, isRouteErrorResponse } from "react-router-dom";
-import { ArrowBigLeft } from "lucide-react";
+import { LibraryBig } from "lucide-react";
 
 import type { AppError } from "@/shared/types/error";
 
@@ -34,12 +34,12 @@ const ErrorPage = () => {
       >
          <article className="error-page__wrapper">
             <h2 className="error-page__title">Oops, something went wrong!</h2>
-            <h3 className="error-page__status">{error.status}</h3>
+            <h3 className="error-page__subtitle">{error.status}</h3>
             <p className="error-page__text">{error.message || error.statusText}</p>
             <ButtonLink
                className="error-page__btn-lnk"
                to="/"
-               icon={<ArrowBigLeft />}
+               icon={<LibraryBig />}
                children="Go Back"
                aria-label="Go back to Home page"
             />
