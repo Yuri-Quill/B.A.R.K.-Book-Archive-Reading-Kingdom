@@ -1,0 +1,11 @@
+@use "sass:math";
+
+@function clamp-font($min-font, $max-font, $min-vw: 290, $max-vw: 1080) {
+   $min-rem: math.div($min-font, 16);
+   $max-rem: math.div($max-font, 16);
+
+   $slope: math.div(($max-rem - $min-rem), ($max-vw - $min-vw)) * 100;
+   $y-intercept: $min-rem - $slope * math.div($min-vw, 100);
+
+   @return clamp(#{$min-rem}rem, #{$y-intercept}rem + #{$slope}vw, #{$max-rem}rem);
+}
