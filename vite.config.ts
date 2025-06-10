@@ -36,7 +36,6 @@ export default defineConfig({
             @use "sass:color";
             @use "@/assets/styles/_variables.scss" as *;
             @use "@/assets/styles/_mixins.scss" as *;
-		      @use "@/assets/styles/_functions.scss" as *;
             `,
          },
       },

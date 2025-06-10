@@ -21,14 +21,16 @@
       filter: blur(3px);
       z-index: 1;
    }
+
    &__wrapper {
       @include df-full-c;
       flex-direction: column;
-      gap: clamp-func(20, 30);
+      gap: clamp(1.25rem, 1.092rem + 0.87vw, 1.875rem);
       padding: 2rem;
       border-radius: 1rem;
-      background: rgba(0, 0, 0, 0.4);
-      color: $error-text-color;
+
+      @include glass-effect;
+
       position: relative;
       z-index: 2;
       margin: 0 15px;
@@ -36,14 +38,14 @@
 
    &__title {
       color: $error-title-color;
-      font-size: clamp(2rem, 5vw, 3rem);
+      font-size: clamp(2rem, 1.748rem + 1.391vw, 3rem);
       text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
       text-align: center;
    }
 
    &__subtitle {
       color: $error-subtitle-color;
-      font-size: clamp(3rem, 6vw, 4rem);
+      font-size: clamp(3rem, 2.748rem + 1.391vw, 4rem);
    }
 
    &__text {
