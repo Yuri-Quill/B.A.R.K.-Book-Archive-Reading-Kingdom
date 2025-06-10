@@ -33,7 +33,6 @@
       "@images/*": ["src/assets/images/*"],
       "@features/*": ["src/features/*"],
       "@layouts/*": ["src/layouts/*"],
-      "@pages/*": ["src/pages/*"],
       "@shared/*": ["src/shared/*"],
       "@shared/types/*": ["src/shared/types/*"],
       "@components/*": ["src/shared/components/*"],
