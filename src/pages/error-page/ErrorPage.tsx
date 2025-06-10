@@ -1,10 +1,11 @@
 import { useRouteError, isRouteErrorResponse } from "react-router-dom";
+import { ArrowBigLeft } from "lucide-react";
 
 import type { AppError } from "@/shared/types/error";
 
-import "./error-page.scss";
 import { ButtonLink } from "@/shared/components/ButtonLink/ButtonLink";
-import { ArrowBigLeft } from "lucide-react";
+
+import "./error-page.scss";
 
 const ErrorPage = () => {
    const rawError = useRouteError();
@@ -17,7 +18,7 @@ const ErrorPage = () => {
 
    if (isRouteErrorResponse(rawError)) {
       error = {
-         message: rawError.data?.message,
+         message: rawError.data,
          status: rawError.status,
          statusText: rawError.statusText,
       };
@@ -34,7 +35,7 @@ const ErrorPage = () => {
          <article className="error-page__wrapper">
             <h2 className="error-page__title">Oops, something went wrong!</h2>
             <h3 className="error-page__status">{error.status}</h3>
-            <p className="error-page__text">{error.statusText || error.message}</p>
+            <p className="error-page__text">{error.message || error.statusText}</p>
             <ButtonLink
                className="error-page__btn-lnk"
                to="/"

@@ -1,6 +1,6 @@
 @use "sass:math";
 
-@function clamp-font($min-font, $max-font, $min-vw: 290, $max-vw: 1080) {
+@function clamp-func($min-font, $max-font, $min-vw: 290, $max-vw: 1080) {
    $min-rem: math.div($min-font, 16);
    $max-rem: math.div($max-font, 16);
 

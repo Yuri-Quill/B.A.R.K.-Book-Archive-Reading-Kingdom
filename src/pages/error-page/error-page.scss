@@ -1,3 +1,37 @@
-.error-page{
+.error-page {
+   position: relative;
+
+   @include df-full-c;
+
    width: 100%;
+   height: 100dvh;
+   overflow: hidden;
+
+   &::before {
+      content: "";
+
+      position: absolute;
+
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      background: url("../../assets/images/error/error-bg.webp") no-repeat center/cover;
+      filter: blur(3px);
+      z-index: 1;
+   }
+
+   &__wrapper {
+      @include df-full-c;
+      flex-direction: column;
+      gap: clamp-func(10, 20);
+
+      padding: 1.25rem;
+
+      position: relative;
+      z-index: 2;
+
+      @include glass-effect;
+   }
 }
