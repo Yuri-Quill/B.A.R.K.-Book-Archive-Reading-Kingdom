@@ -4,7 +4,7 @@ import type { AppError } from "@/shared/types/error";
 
 import "./error-page.scss";
 
-export const ErrorPage = () => {
+const ErrorPage = () => {
    const rawError = useRouteError();
 
    let error: Partial<AppError> = {
@@ -37,3 +37,5 @@ export const ErrorPage = () => {
       </section>
    );
 };
+
+export default ErrorPage;
