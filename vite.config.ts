@@ -34,9 +34,9 @@ export default defineConfig({
          scss: {
             additionalData: `
             @use "sass:color";
-            @use "@/styles/_variables.scss" as *;
-            @use "@/styles/_mixins.scss" as *;
-		      @use "@/styles/_functions.scss" as *;
+            @use "@/assets/styles/_variables.scss" as *;
+            @use "@/assets/styles/_mixins.scss" as *;
+		      @use "@/assets/styles/_functions.scss" as *;
             `,
          },
       },
