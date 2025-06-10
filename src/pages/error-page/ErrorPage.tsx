@@ -3,6 +3,8 @@ import { useRouteError, isRouteErrorResponse } from "react-router-dom";
 import type { AppError } from "@/shared/types/error";
 
 import "./error-page.scss";
+import { ButtonLink } from "@/shared/components/ButtonLink/ButtonLink";
+import { ArrowBigLeft } from "lucide-react";
 
 const ErrorPage = () => {
    const rawError = useRouteError();
@@ -33,6 +35,13 @@ const ErrorPage = () => {
             <h2 className="error-page__title">Oops, something went wrong!</h2>
             <h3 className="error-page__status">{error.status}</h3>
             <p className="error-page__text">{error.statusText || error.message}</p>
+            <ButtonLink
+               className="error-page__btn-lnk"
+               to="/"
+               icon={<ArrowBigLeft />}
+               children="Go Back"
+               aria-label="Go back to Home page"
+            />
          </article>
       </section>
    );
