@@ -1,7 +1,5 @@
+
+
 export const HomePage = () => {
-   return (
-      <>
-      Home
-      </>
-   )
-}
+   return <>home</>;
+};
