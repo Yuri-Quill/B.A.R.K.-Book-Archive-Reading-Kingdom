@@ -1,11 +1,13 @@
 body {
-   color: $main-color;
+   color: $primary-color;
 
    font-family: "Work Sans", sans-serif;
    font-optical-sizing: auto;
    font-size: 1rem;
    font-weight: 400;
    line-height: 1.4;
+
+   background: $primary-bg;
 }
 
 // @media (prefers-color-scheme: light) {
