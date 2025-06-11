@@ -1,0 +1,12 @@
+import { createContext } from "react";
+
+import { ThemeMode } from "@/shared/constants/theme";
+
+import type { ThemeContextValue } from "@/shared/context/ThemeContext/theme.types";
+
+export const ThemeContext = createContext<ThemeContextValue>({
+   theme: ThemeMode.Dark,
+   toggleTheme: () => {},
+});
+
+

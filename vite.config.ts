@@ -21,6 +21,7 @@ export default defineConfig({
          "@features": path.resolve(__dirname, "src/features"),
          "@layouts": path.resolve(__dirname, "src/layouts"),
          "@shared": path.resolve(__dirname, "src/shared"),
+         "@context": path.resolve(__dirname, "src/shared/context"),
          "@shared/types": path.resolve(__dirname, "src/shared/types"),
          "@components": path.resolve(__dirname, "src/shared/components"),
          "@constants": path.resolve(__dirname, "src/shared/constants"),

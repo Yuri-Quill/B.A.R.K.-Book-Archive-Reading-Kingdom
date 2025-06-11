@@ -34,6 +34,7 @@
          "@features/*": ["src/features/*"],
          "@layouts/*": ["src/features/layouts/*"],
          "@shared/*": ["src/shared/*"],
+         "@context/*": ["src/shared/context/*"],
          "@shared/types/*": ["src/shared/types/*"],
          "@components/*": ["src/shared/components/*"],
          "@constants/*": ["src/shared/constants/*"],
