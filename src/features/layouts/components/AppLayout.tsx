@@ -1,14 +1,15 @@
 import { Suspense, useContext, useLayoutEffect } from "react";
 import { Outlet } from "react-router-dom";
 
+import { ThemeContext } from "@/shared/context/ThemeContext/ThemeContext";
+import { ThemeMode } from "@/shared/constants/theme";
+
 import { Footer } from "@/features/footer/components/Footer";
 import { Header } from "@/features/header/components/Header";
 import { Loader } from "@/shared/components/Loader/Loader";
+
 import DarkFav from "@assets/logo/logo-dark-theme.webp";
 import LightFav from "@assets/logo/logo-light-theme.webp";
-
-import { ThemeContext } from "@/shared/context/ThemeContext/ThemeContext";
-import { ThemeMode } from "@/shared/constants/theme";
 
 export const AppLayout = () => {
    const { theme } = useContext(ThemeContext);
