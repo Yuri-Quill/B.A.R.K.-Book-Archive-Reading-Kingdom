@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import LogoImage from "@assets/logo/logo-small.png";
+import LogoImage from "@assets/logo/logo-black-theme.webp";
 
 import "./logo.scss";
 
@@ -12,7 +12,7 @@ export const Logo = () => {
             src={LogoImage}
             alt="Reading Kingdom logo"
             width={32}
-            height={32}
+            height={42}
             aria-hidden="true"
          />
 
