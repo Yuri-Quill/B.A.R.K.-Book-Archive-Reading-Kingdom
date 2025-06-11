@@ -1,10 +1,20 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 
-import LogoImage from "@assets/logo/logo-black-theme.webp";
+import { ThemeContext } from "@/shared/context/ThemeContext/ThemeContext";
+
+import { ThemeMode } from "@/shared/constants/theme";
+
+import DarkLogoImage from "@assets/logo/logo-dark-theme.webp";
+import LightLogoImage from "@assets/logo/logo-light-theme.webp";
 
 import "./logo.scss";
 
 export const Logo = () => {
+   const { theme } = useContext(ThemeContext);
+
+   const LogoImage = theme === ThemeMode.Dark ? DarkLogoImage : LightLogoImage;
+
    return (
       <Link to="/" className="logo" aria-labelledby="site-name site-subtitle">
          <img
