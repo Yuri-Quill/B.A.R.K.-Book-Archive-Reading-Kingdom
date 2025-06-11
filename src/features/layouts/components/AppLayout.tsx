@@ -8,8 +8,8 @@ import { Footer } from "@/features/footer/components/Footer";
 import { Header } from "@/features/header/components/Header";
 import { Loader } from "@/shared/components/Loader/Loader";
 
-import DarkFav from "@assets/logo/logo-dark-theme.webp";
-import LightFav from "@assets/logo/logo-light-theme.webp";
+import DarkFav from "/fav-dark.ico";
+import LightFav from "/fav-light.ico";
 
 export const AppLayout = () => {
    const { theme } = useContext(ThemeContext);
