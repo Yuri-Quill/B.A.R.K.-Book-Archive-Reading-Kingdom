@@ -8,15 +8,22 @@ import { ThemeMode } from "@/shared/constants/theme";
 import DarkLogoImage from "@assets/logo/logo-dark-theme.webp";
 import LightLogoImage from "@assets/logo/logo-light-theme.webp";
 
-import "./logo.scss";
+import type { ClassNameProps } from "@/app/types/common";
 
-export const Logo = () => {
+import "./logo.scss";
+import clsify from "@/shared/utils/clsify";
+
+export const Logo = ({ className }: ClassNameProps) => {
    const { theme } = useContext(ThemeContext);
 
    const LogoImage = theme === ThemeMode.Dark ? DarkLogoImage : LightLogoImage;
 
    return (
-      <Link to="/" className="logo" aria-labelledby="site-name site-subtitle">
+      <Link
+         to="/"
+         className={clsify("logo", [className && className])}
+         aria-labelledby="site-name site-subtitle"
+      >
          <img
             className="logo__image"
             src={LogoImage}
@@ -26,14 +33,7 @@ export const Logo = () => {
             aria-hidden="true"
          />
 
-         <span className="logo__text-group">
-            <span id="site-name" className="logo__name">
-               B.A.R.K.
-            </span>
-            <span id="site-subtitle" className="logo__subtitle">
-               Book Archive Reading Kingdom
-            </span>
-         </span>
+         <span className="logo__name">B.A.R.K.</span>
       </Link>
    );
 };
