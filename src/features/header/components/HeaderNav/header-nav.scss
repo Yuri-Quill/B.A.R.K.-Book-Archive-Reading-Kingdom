@@ -11,15 +11,7 @@
    &-link {
       @include df-align-c;
       gap: 0.375rem;
-      transition: color 0.2s ease-in;
-
-      &:hover {
-         color: $active-hover-color;
-      }
-
-      &:active {
-         transform: scale(0.98);
-      }
+      @include header-hover;
    }
 
    &-icon {

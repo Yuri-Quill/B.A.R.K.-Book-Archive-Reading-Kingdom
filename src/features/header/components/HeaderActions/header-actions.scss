@@ -1,0 +1,20 @@
+.header__actions {
+   &-list {
+      @include df-align-c;
+      gap: 0.625rem;
+   }
+
+   &-link {
+      @include df-align-c;
+      @include header-hover;
+   }
+
+   &-icon {
+      width: 1.25rem;
+      height: 1.25rem;
+
+      &--active {
+         fill: $error-btn-hover;
+      }
+   }
+}

@@ -1,5 +1,5 @@
 import {
-   BookHeart,
+   Crown,
    BookOpenText,
    Castle,
    Handshake,
@@ -46,7 +46,7 @@ export const actionsNavData: NavItem[] = [
    {
       id: 1,
       name: "Favorites",
-      icon: BookHeart,
+      icon: Crown,
       link: Routes.Favorites,
       description: "List of favorite books",
    },
