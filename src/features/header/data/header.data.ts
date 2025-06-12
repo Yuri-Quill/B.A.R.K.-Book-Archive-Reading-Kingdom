@@ -9,34 +9,35 @@ import {
 } from "lucide-react";
 
 import type { NavItem } from "@/features/header/header.types";
+import { Routes } from "@/shared/constants/routes";
 
 export const headerNavData: NavItem[] = [
    {
       id: 1,
       name: "Home",
       icon: Castle,
-      link: "/",
+      link: Routes.Home,
       description: "Main page of the B.A.R.K — Book Archive Reading Kingdom",
    },
    {
       id: 2,
       name: "Books",
       icon: LibraryBig,
-      link: "/books",
+      link: Routes.Books,
       description: "Catalog of books",
    },
    {
       id: 3,
       name: "About Us",
       icon: BookOpenText,
-      link: "/about",
+      link: Routes.AboutUs,
       description: "Information about us",
    },
    {
       id: 4,
       name: "Contacts",
       icon: Handshake,
-      link: "/contacts",
+      link: Routes.Contacts,
       description: "Contact us",
    },
 ];
@@ -46,21 +47,21 @@ export const actionsNavData: NavItem[] = [
       id: 1,
       name: "Favorites",
       icon: BookHeart,
-      link: "/favorites",
+      link: Routes.Favorites,
       description: "List of favorite books",
    },
    {
       id: 2,
       name: "Cart",
       icon: ShoppingBag,
-      link: "/cart",
+      link: Routes.Cart,
       description: "Shopping cart",
    },
    {
       id: 3,
       name: "auth",
       icon: LogIn,
-      link: "/auth",
+      link: Routes.Auth,
       description: "Authorization page",
    },
 ];

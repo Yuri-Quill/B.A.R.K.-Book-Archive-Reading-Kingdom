@@ -18,6 +18,7 @@ export const HeaderNav = memo(({ items }: HeaderNavProps) => (
                   to={link}
                   className="header__nav-link"
                   aria-label={description}
+                  title={description}
                >
                   <Icon className="header__nav-icon" aria-hidden="true" size={20}/>
                   <span className="header__nav-text" aria-hidden="true">
