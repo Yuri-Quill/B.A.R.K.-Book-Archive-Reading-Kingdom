@@ -10,9 +10,12 @@ body {
    background: $primary-bg;
 }
 
-// @media (prefers-color-scheme: light) {
-
+// [data-theme="light"] {
+//    body {
+//       background: $white-color;
+//    }
 // }
+
 
 h1,
 h2 {
