@@ -1,7 +1,7 @@
 import {
    BookHeart,
    BookOpenText,
-   Crown,
+   Castle,
    Handshake,
    LibraryBig,
    LogIn,
@@ -14,7 +14,7 @@ export const headerNavData: NavItem[] = [
    {
       id: 1,
       name: "Home",
-      icon: Crown,
+      icon: Castle,
       link: "/",
       description: "Main page of the B.A.R.K — Book Archive Reading Kingdom",
    },

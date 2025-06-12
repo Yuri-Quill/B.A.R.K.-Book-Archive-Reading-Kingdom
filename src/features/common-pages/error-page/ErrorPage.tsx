@@ -1,5 +1,5 @@
 import { useRouteError, isRouteErrorResponse } from "react-router-dom";
-import { LibraryBig } from "lucide-react";
+import { Castle } from "lucide-react";
 
 import type { AppError } from "@/shared/types/error";
 
@@ -41,7 +41,7 @@ const ErrorPage = () => {
             <ButtonLink
                className="error-page__btn-lnk"
                to="/"
-               icon={<LibraryBig />}
+               icon={<Castle />}
                children="Go Back"
                aria-label="Go back to Home page"
             />
