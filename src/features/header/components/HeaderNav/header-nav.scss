@@ -1,0 +1,22 @@
+.header__nav {
+   &-list {
+      @include df-align-c;
+      gap: clamp(0.938rem, 0.839rem + 0.543vw, 1.25rem);
+   }
+   &-link {
+      @include df-align-c;
+      gap: 0.25rem;
+      transition: color 0.2s ease-in;
+      &:hover {
+         color: $active-hover-color;
+      }
+      &:active {
+         transform: scale(0.98);
+      }
+   }
+
+   &-icon {
+      width: 20px;
+      height: 20px;
+   }
+}

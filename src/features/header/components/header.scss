@@ -1,3 +1,7 @@
 .header {
    padding: clamp(0.938rem, 0.839rem + 0.543vw, 1.25rem) 0;
+
+   & > .content-wrapper {
+      @include df-space-b;
+   }
 }
