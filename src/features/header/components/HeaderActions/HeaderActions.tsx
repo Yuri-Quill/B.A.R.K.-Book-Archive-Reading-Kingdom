@@ -26,7 +26,7 @@ export const HeaderActions = memo(({ items }: HeaderActionsProps) => {
                         className={clsify("header__actions-icon", [
                            isActive && "active",
                         ])}
-                        size={24}
+                        size={20}
                      />
                   </Link>
                </li>
