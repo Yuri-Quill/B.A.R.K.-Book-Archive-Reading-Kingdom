@@ -1,17 +1,30 @@
 .logo {
    @include df-align-c;
    gap: 8px;
+   transition: scale 0.2s ease-in;
+   
+   &:active {
+      transform: scale(0.98);
+   }
+
    &__image {
       width: clamp(1.75rem, 1.671rem + 0.435vw, 2rem);
       height: clamp(2.375rem, 2.296rem + 0.435vw, 2.625rem);
    }
 
    &__name {
-      font-size: clamp(1.125rem, 0.987rem + 0.761vw, 1.563rem);
-      color: $logo-color;
       font-family: "Savate", "Work Sans", sans-serif;
       font-optical-sizing: auto;
       font-weight: 400;
       font-style: normal;
+      font-size: clamp(1.125rem, 0.987rem + 0.761vw, 1.563rem);
+
+      color: $logo-color;
+
+      transition: color 0.2s ease-in;
+
+      &:hover {
+         color: $active-hover-color;
+      }
    }
 }
