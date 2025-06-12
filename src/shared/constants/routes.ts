@@ -13,3 +13,5 @@ export const Routes = {
    AuthLogin: "/auth/login",
    AuthRegister: "/auth/register",
 } as const;
+
+export type RoutePath = (typeof Routes)[keyof typeof Routes];

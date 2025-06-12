@@ -4,4 +4,3 @@ export const ThemeMode = {
 } as const;
 
 export type ThemeModeType = (typeof ThemeMode)[keyof typeof ThemeMode];
-
