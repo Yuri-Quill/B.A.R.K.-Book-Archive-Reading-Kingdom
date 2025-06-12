@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 
+import clsify from "@/shared/utils/clsify";
+
 import { ThemeContext } from "@/shared/context/ThemeContext/ThemeContext";
 
 import { ThemeMode } from "@/shared/constants/theme";
@@ -11,7 +13,6 @@ import LightLogoImage from "@assets/logo/logo-light-theme.webp";
 import type { ClassNameProps } from "@/app/types/common";
 
 import "./logo.scss";
-import clsify from "@/shared/utils/clsify";
 
 export const Logo = ({ className }: ClassNameProps) => {
    const { theme } = useContext(ThemeContext);
