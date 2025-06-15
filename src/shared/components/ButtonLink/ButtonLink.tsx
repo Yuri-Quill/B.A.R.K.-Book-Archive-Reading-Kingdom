@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-
-import clsify from "@/shared/utils/clsify";
+import clsx from "clsx";
 
 import type { IconProps } from "@/shared/types/props";
 import type { LinkProps } from "react-router-dom";
@@ -16,7 +15,7 @@ export const ButtonLink = ({
    ...rest
 }: ButtonLinkProps) => {
    return (
-      <Link className={clsify("button-lnk", [], [className])} {...rest}>
+      <Link className={clsx("button-link", className)} {...rest}>
          {icon && <span className="button-lnk__icon">{icon}</span>}
          {children}
       </Link>
