@@ -14,7 +14,6 @@ http.interceptors.response.use(
          originalRequest._retry = true;
 
          try {
-            // Запросим refresh token
             await http.get("/auth/refreshToken");
 
             return http(originalRequest);
