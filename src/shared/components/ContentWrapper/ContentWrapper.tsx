@@ -10,5 +10,13 @@ export const ContentWrapper = ({
    children,
    className,
 }: ContentWrapperProps) => {
-   return <div className={clsx("content-wrapper", className)}>{children}</div>;
+   return (
+      <div
+         className={clsx("content-wrapper", {
+            [`content-wrapper--${className}`]: className,
+         })}
+      >
+         {children}
+      </div>
+   );
 };
