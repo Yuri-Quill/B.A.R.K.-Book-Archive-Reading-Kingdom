@@ -31,37 +31,7 @@
     ├── 📂 assets
     │   ├── 📂 fonts
     │   │   └── 📂 work-sans
-    │   │       ├── 📄 font-work-sans.scss
-    │   │       ├── 📄 WorkSans-Black.woff
-    │   │       ├── 📄 WorkSans-Black.woff2
-    │   │       ├── 📄 WorkSans-BlackItalic.woff
-    │   │       ├── 📄 WorkSans-BlackItalic.woff2
-    │   │       ├── 📄 WorkSans-Bold.woff
-    │   │       ├── 📄 WorkSans-Bold.woff2
-    │   │       ├── 📄 WorkSans-BoldItalic.woff
-    │   │       ├── 📄 WorkSans-BoldItalic.woff2
-    │   │       ├── 📄 WorkSans-ExtraBold.woff
-    │   │       ├── 📄 WorkSans-ExtraBold.woff2
-    │   │       ├── 📄 WorkSans-ExtraBoldItalic.woff
-    │   │       ├── 📄 WorkSans-ExtraBoldItalic.woff2
-    │   │       ├── 📄 WorkSans-ExtraLight.woff
-    │   │       ├── 📄 WorkSans-ExtraLight.woff2
-    │   │       ├── 📄 WorkSans-ExtraLightItalic.woff
-    │   │       ├── 📄 WorkSans-ExtraLightItalic.woff2
-    │   │       ├── 📄 WorkSans-Italic.woff
-    │   │       ├── 📄 WorkSans-Italic.woff2
-    │   │       ├── 📄 WorkSans-Light.woff
-    │   │       ├── 📄 WorkSans-Light.woff2
-    │   │       ├── 📄 WorkSans-LightItalic.woff
-    │   │       ├── 📄 WorkSans-LightItalic.woff2
-    │   │       ├── 📄 WorkSans-Medium.woff
-    │   │       ├── 📄 WorkSans-Medium.woff2
-    │   │       ├── 📄 WorkSans-MediumItalic.woff
-    │   │       ├── 📄 WorkSans-MediumItalic.woff2
-    │   │       ├── 📄 WorkSans-Regular.woff
-    │   │       ├── 📄 WorkSans-Regular.woff2
-    │   │       ├── 📄 WorkSans-SemiBold.woff
-    │   │       └── 📄 WorkSans-SemiBold.woff2
+    │   │       └── 📄 font-work-sans.scss
     │   ├── 📂 images
     │   │   └── 📂 error
     │   │       └── 📄 error-bg.webp
@@ -154,7 +124,7 @@ Core application setup:
 
 Static resources:
 
--  Fonts (Work Sans family with complete set of weights and styles)
+-  Fonts (Work Sans font family with SCSS configuration)
 -  Images for error states and UI
 -  Logo files for light/dark themes
 -  Global SCSS styles with mixins and variables
