@@ -1,6 +1,6 @@
-import clsify from "@/shared/utils/clsify";
+import clsx from "clsx";
 
-import type { ChildrenProps, ClassNameProps } from "@/app/types/common";
+import type { ChildrenProps, ClassNameProps } from "@/shared/types/props";
 
 import "./content-wrapper.scss";
 
@@ -10,9 +10,5 @@ export const ContentWrapper = ({
    children,
    className,
 }: ContentWrapperProps) => {
-   return (
-      <div className={clsify("content-wrapper", [className && className])}>
-         {children}
-      </div>
-   );
+   return <div className={clsx("content-wrapper", className)}>{children}</div>;
 };

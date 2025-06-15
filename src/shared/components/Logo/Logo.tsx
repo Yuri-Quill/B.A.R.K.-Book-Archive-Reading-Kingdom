@@ -10,7 +10,7 @@ import { ThemeMode } from "@/shared/constants/theme";
 import DarkLogoImage from "@assets/logo/logo-dark-theme.webp";
 import LightLogoImage from "@assets/logo/logo-light-theme.webp";
 
-import type { ClassNameProps } from "@/app/types/common";
+import type { ClassNameProps } from "@/shared/types/props";
 
 import "./logo.scss";
 
