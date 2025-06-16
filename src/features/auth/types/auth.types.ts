@@ -14,7 +14,7 @@ export interface User {
    email: string;
    role: "user" | "admin";
    active: boolean;
-   favorites: string[]; 
+   favorites: string[];
    cart: string[];
    orders: string[];
    createdAt: string;
@@ -34,4 +34,20 @@ export interface UserProfile {
    zipCode: string;
    firstName: string;
    lastName: string;
+}
+
+export interface SigninPayload {
+   email: string;
+   password: string;
+}
+
+export interface SignupPayload {
+   username: string;
+   email: string;
+   password: string;
+   confirmPassword: string;
+}
+
+export interface LogoutPayload {
+   status: "success" | "fail";
 }

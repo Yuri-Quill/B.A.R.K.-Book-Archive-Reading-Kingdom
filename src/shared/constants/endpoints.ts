@@ -1,10 +1,13 @@
 export const endpoints = {
    auth: {
-      login: "/auth/login",
+      signin: "/auth/signin",
       signup: "/auth/signup",
       logout: "/auth/logout",
       refreshToken: "/auth/refreshToken",
       forgotPassword: "/auth/forgotPassword",
+   }as const,
+
+   user: {
       resetPassword: (token: string) => `/auth/resetPassword/${token}`,
       updatePassword: "/auth/updatePassword",
       updateUser: "/auth/updateUser/",
