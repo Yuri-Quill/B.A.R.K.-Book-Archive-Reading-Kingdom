@@ -42,7 +42,7 @@ export const forgotPassword = async (
    return data;
 };
 
-export const refreshToken = async (): Promise<AuthResponse | ApiStatusResponse> => {
+export const refreshToken = async (): Promise<AuthResponse> => {
    const { data } = await http.get<AuthResponse>(
       endpoints.auth.refreshToken
    );

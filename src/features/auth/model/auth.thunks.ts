@@ -86,7 +86,7 @@ export const forgotPasswordThunk = createAsyncThunk<
 );
 
 export const refreshTokenThunk = createAsyncThunk<
-   AuthResponse | ApiStatusResponse,
+   AuthResponse,
    void,
    { rejectValue: { message: string } }
 >("auth/refreshToken", async (_, { rejectWithValue }) => {
