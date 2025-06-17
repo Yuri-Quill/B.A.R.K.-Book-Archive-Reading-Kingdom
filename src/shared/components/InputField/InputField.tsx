@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { Field, ErrorMessage, type FieldAttributes } from "formik";
 
-import { Castle, Eye, EyeClosed, type LucideProps } from "lucide-react";
+import { Eye, EyeClosed, type LucideProps } from "lucide-react";
 import { useState } from "react";
 
 import "./input-field.scss";
@@ -24,6 +24,7 @@ export const InputField = ({
    inputClassName,
    errorClassName,
    icon: Icon,
+
    type,
    ...fieldProps
 }: InputFieldProps) => {
@@ -46,7 +47,7 @@ export const InputField = ({
                   iconClassName,
                   modifier && `input__icon--${modifier}`
                )}
-               size={23}
+               size={20}
             />
          )}
 

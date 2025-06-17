@@ -1,12 +1,22 @@
 .input-wrapper {
-   max-width: 20.625rem;
-   @include df-align-c;
+
+   @include df-full-c;
    gap: 0.75rem;
    padding: 1rem 1.25rem;
 
    border: 1px solid $border-color;
    border-radius: 1.25rem;
    background-color: $white-color;
+
+   transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+   &:focus-within,
+   &:hover {
+      border-color: color.adjust($input-focus, $lightness: 15%);
+      box-shadow: 0 0 6px 3px rgba($input-focus, 0.6);
+   }
+
+   position: relative;
 }
 
 .input {
@@ -19,12 +29,24 @@
    &::placeholder {
       color: $input-placeholder;
    }
-}
 
-// 💥 ВНЕ блока .input
-.input__icon,
-.input__toggle-icon {
-   color: $input-icon-color;
-   width: 20px;
-   height: 20px;
+   &__icon,
+   &__toggle-icon {
+      color: $input-icon-color;
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+   }
+
+   &__error {
+      display: flex;
+      justify-content: center;
+      align-self: center;
+      position: absolute;
+      width: 100%;
+      top: -25px;
+      left: 0;
+      text-align: center;
+      color: $error-color;
+   }
 }

@@ -28,10 +28,10 @@ a {
 img,
 picture,
 video,
-canvas,
-svg {
-   width: 100%;
+canvas
+{
    display: block;
+   width: 100%;
    max-width: 100%;
    border: none;
 }

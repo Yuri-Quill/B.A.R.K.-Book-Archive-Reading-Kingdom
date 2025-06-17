@@ -6,6 +6,7 @@ import { Loader } from "@/shared/components/Loader/Loader";
 import "./sign-in-form.scss";
 import { InputField } from "@/shared/components/InputField/InputField";
 import { Mail, Lock } from "lucide-react";
+import { signInSchema } from "@/features/auth/validation/signin.validation";
 
 const initialValues = {
    email: "",
@@ -16,7 +17,7 @@ export const SignInForm = () => {
    return (
       <Formik
          initialValues={initialValues}
-         validationSchema={{}}
+         validationSchema={signInSchema}
          onSubmit={(values) => {
             console.log(values);
          }}
@@ -44,16 +45,16 @@ export const SignInForm = () => {
                      placeholder="Password"
                      aria-label="Enter your password"
                   />
+                  <Button
+                     className="signin-form__submit"
+                     type="submit"
+                     disabled={isSubmitting}
+                     aria-label="Sign In"
+                     isActive={true}
+                  >
+                     {isSubmitting ? <Loader /> : "Sign In"}
+                  </Button>
                </Form>
-               <Button
-                  className="signin-form__submit"
-                  type="submit"
-                  disabled={isSubmitting}
-                  aria-label="Sign In"
-                  isActive={true}
-               >
-                  {isSubmitting ? <Loader /> : "Sign In"}
-               </Button>
             </article>
          )}
       </Formik>
