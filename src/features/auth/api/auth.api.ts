@@ -4,7 +4,8 @@ import { endpoints } from "@/shared/constants/endpoints";
 
 import type {
    AuthResponse,
-   LogoutPayload,
+   ForgotPasswordPayload,
+   ApiStatusResponse,
    SigninPayload,
    SignupPayload,
 } from "@/features/auth/types/auth.types";
@@ -26,12 +27,24 @@ export const signup = async (payload: SignupPayload): Promise<AuthResponse> => {
    return data;
 };
 
-export const logout = async (): Promise<LogoutPayload> => {
-   const { data } = await http.post<LogoutPayload>(endpoints.auth.logout);
+export const logout = async (): Promise<ApiStatusResponse> => {
+   const { data } = await http.post<ApiStatusResponse>(endpoints.auth.logout);
    return data;
 };
 
+export const forgotPassword = async (
+   payload: ForgotPasswordPayload
+): Promise<ApiStatusResponse> => {
+   const { data } = await http.post<ApiStatusResponse>(
+      endpoints.auth.forgotPassword,
+      payload
+   );
+   return data;
+};
 
-export const forgotPassword = () => {};
-
-export const refreshToken = () => {};
+export const refreshToken = async (): Promise<AuthResponse | ApiStatusResponse> => {
+   const { data } = await http.get<AuthResponse>(
+      endpoints.auth.refreshToken
+   );
+   return data;
+};

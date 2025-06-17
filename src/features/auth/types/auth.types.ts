@@ -1,3 +1,8 @@
+export interface ApiStatusResponse {
+   status: "success" | "fail";
+   message?: string;
+}
+
 export interface AuthResponse {
    status: "success";
    accessToken: string;
@@ -36,11 +41,6 @@ export interface UserProfile {
    lastName: string;
 }
 
-export interface SigninPayload {
-   email: string;
-   password: string;
-}
-
 export interface SignupPayload {
    username: string;
    email: string;
@@ -48,6 +48,6 @@ export interface SignupPayload {
    confirmPassword: string;
 }
 
-export interface LogoutPayload {
-   status: "success" | "fail";
-}
+export type SigninPayload = Pick<SignupPayload, "email" | "password">;
+
+export type ForgotPasswordPayload = Pick<SignupPayload, "email">;

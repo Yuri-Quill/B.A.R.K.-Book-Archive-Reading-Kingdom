@@ -3,15 +3,15 @@ export const endpoints = {
       signin: "/auth/signin",
       signup: "/auth/signup",
       logout: "/auth/logout",
-      refreshToken: "/auth/refreshToken",
-      forgotPassword: "/auth/forgotPassword",
-   }as const,
+      refreshToken: "/auth/refresh-token",
+      forgotPassword: "/auth/forgot-password",
+   } as const,
 
    user: {
-      resetPassword: (token: string) => `/auth/resetPassword/${token}`,
-      updatePassword: "/auth/updatePassword",
-      updateUser: "/auth/updateUser/",
-      updateProfile: "/auth/updateProfile",
+      resetPassword: (token: string) => `/auth/reset-password/${token}`,
+      updatePassword: "/auth/update-password",
+      updateUser: "/auth/update-user",
+      updateProfile: "/auth/update-profile",
    },
 
    products: {
@@ -63,6 +63,7 @@ export const endpoints = {
    },
 } as const;
 
+// Utility type to extract all endpoint paths into a union type
 type Paths<T> = T extends string
    ? T
    : T extends object
