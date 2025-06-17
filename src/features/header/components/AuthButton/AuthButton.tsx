@@ -3,11 +3,9 @@ import clsx from "clsx";
 
 import { useAppSelector } from "@/app/store/hooks";
 
-import { LogIn, ContactRound } from "lucide-react";
-
+import { LogIn, SquareUserRound } from "lucide-react";
 
 import { Routes } from "@/shared/constants/routes";
-
 
 interface AuthButtonProps {
    className: string;
@@ -27,7 +25,10 @@ export const AuthButton = ({ className, cnImg }: AuthButtonProps) => {
          title="Authorization page"
       >
          {isAuthenticated ? (
-            <ContactRound className={clsx("auth-btn__img", cnImg)} size={25} />
+            <SquareUserRound
+               className={clsx("auth-btn__img", cnImg)}
+               size={25}
+            />
          ) : (
             <LogIn className={clsx("auth-btn__img", cnImg)} size={20} />
          )}
