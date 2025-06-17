@@ -34,13 +34,13 @@ export const ButtonLink = ({
                className={clsx(
                   "button-link__image",
                   className && className,
-                  modifier && `button-link__image--${modifier}`,
-                  isActive && "button-link__image--active"
+                  modifier && `button-link__icon--${modifier}`,
+                  isActive && "button-link__icon--active"
                )}
                size={20}
             />
          )}
-         
+
          {children}
       </Link>
    );
