@@ -1,3 +1,5 @@
+import type { LucideProps } from "lucide-react";
+
 export interface ClassNameProps {
    className?: string;
 }
@@ -15,7 +17,7 @@ export interface ImageProps {
 }
 
 export interface IconProps {
-   icon?: React.ReactNode;
+   icon?: React.ComponentType<LucideProps>;
 }
 
 export interface OnClickProps {

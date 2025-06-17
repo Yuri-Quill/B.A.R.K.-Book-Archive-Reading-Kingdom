@@ -6,17 +6,36 @@ import type { LinkProps } from "react-router-dom";
 
 import "./button-link.scss";
 
-interface ButtonLinkProps extends LinkProps, IconProps {}
+interface ButtonLinkProps extends LinkProps, IconProps {
+   isActive: boolean;
+}
 
 export const ButtonLink = ({
    className,
    children,
-   icon,
+   icon: Icon,
+   isActive = false,
    ...rest
 }: ButtonLinkProps) => {
    return (
-      <Link className={clsx("button-link", className)} {...rest}>
-         {icon && <span className="button-lnk__icon">{icon}</span>}
+      <Link
+         className={clsx(
+            "button-link",
+            className,
+            isActive && "button-link--active"
+         )}
+         {...rest}
+      >
+         {Icon && (
+            <Icon
+               className={clsx(
+                  "button-link__image",
+                  className,
+                  isActive && "button-link__image--active"
+               )}
+               size={20}
+            />
+         )}
          {children}
       </Link>
    );
