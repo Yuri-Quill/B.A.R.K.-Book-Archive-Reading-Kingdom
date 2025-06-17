@@ -29,14 +29,14 @@ export const router = createBrowserRouter([
          },
          {
             path: "/auth",
-            element: <Navigate to={Routes.authSignin} replace />,
+            element: <Navigate to={Routes.authSignIn} replace />,
          },
          {
-            path: Routes.authSignin,
+            path: Routes.authSignIn,
             element: <SigninPage />,
          },
          {
-            path: Routes.authSignup,
+            path: Routes.authSignUp,
             element: <SignupPage />,
          },
       ],

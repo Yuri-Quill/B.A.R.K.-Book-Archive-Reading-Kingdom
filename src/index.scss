@@ -5,16 +5,12 @@ body {
    font-optical-sizing: auto;
    font-size: 1rem;
    font-weight: 400;
-   line-height: 1.4;
+   line-height: 1;
 
    background: $primary-bg;
 }
 
 
-h1,
-h2 {
-   line-height: 1.1;
-}
 
 h1,
 h2,
@@ -34,10 +30,9 @@ h2 {
 
 h3 {
    font-size: clamp(1.75rem, 0.969rem + 2.083vw, 2.375rem);
-   line-height: 1.2;
+
 }
 
 h4 {
    font-size: 1.75rem;
-   line-height: 1.4;
 }

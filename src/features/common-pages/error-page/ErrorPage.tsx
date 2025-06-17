@@ -1,9 +1,9 @@
 import { useRouteError, isRouteErrorResponse } from "react-router-dom";
 import { Castle } from "lucide-react";
 
-import type { AppError } from "@/shared/types/error";
-
 import { ButtonLink } from "@/shared/components/ButtonLink/ButtonLink";
+
+import type { AppError } from "@/shared/types/error";
 
 import "./error-page.scss";
 
@@ -39,11 +39,12 @@ const ErrorPage = () => {
                {error.message || error.statusText}
             </p>
             <ButtonLink
-               className="error-page__btn-lnk"
+               className="error-page__btn-link"
                to="/"
-               icon={<Castle />}
+               icon={Castle}
                children="Go Back"
                aria-label="Go back to Home page"
+               isActive={true}
             />
          </article>
       </section>

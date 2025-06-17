@@ -8,8 +8,9 @@ export const Routes = {
    orders: "/orders",
    profile: "/profile",
    auth: "/auth",
-   authSignin: "/auth/signin",
-   authSignup: "/auth/signup",
+   authSignIn: "/auth/sign-in",
+   authSignUp: "/auth/sign-up",
+   authLogout: "/auth/logout",
 } as const;
 
 export type RoutePath = (typeof Routes)[keyof typeof Routes];

@@ -1,0 +1,50 @@
+.button-link {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   gap: 0.75rem;
+
+   padding: 1.1875rem 3.125rem;
+   border: 2px solid $btn-border-color;
+   border-radius: 1.25rem;
+
+   color: $primary-color;
+   font-weight: 600;
+
+   box-shadow: none;
+
+   transition: all 0.2s ease-in-out;
+
+   &:hover {
+      background-color: $btn-bg;
+
+      & > svg {
+         color: $primary-color;
+      }
+   }
+
+   &:active {
+      opacity: 0.8;
+      box-shadow: $box-shadow;
+   }
+
+   &--active {
+      border: none;
+
+      background-color: $btn-bg;
+
+      &:hover {
+         background-color: color.adjust($btn-bg, $lightness: 4%);
+      }
+   }
+
+   &__image {
+      color: $btn-bg;
+
+      transition: all 0.2s ease-in;
+
+      &--active {
+         color: $primary-color;
+      }
+   }
+}

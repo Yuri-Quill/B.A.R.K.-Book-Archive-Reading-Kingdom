@@ -6,6 +6,7 @@ export const HomePage = () => {
    return (
       <>
          <button onClick={toggleTheme}>{theme}</button>
+
       </>
    );
 };
