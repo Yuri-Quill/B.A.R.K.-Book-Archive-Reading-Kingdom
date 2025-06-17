@@ -2,11 +2,11 @@ import clsx from "clsx";
 
 import "./loader.scss";
 
-export const Loader = ({ fullPage = false }) => {
-   if (fullPage) {
+export const Loader = ({ fullscreen = false }) => {
+   if (fullscreen) {
       return (
          <div
-            className={clsx("loader-wrapper", { fullpage: fullPage })}
+            className={clsx("loader-wrapper", { "loader-wrapper--fullscreen": fullscreen })}
             role="dialog"
             aria-label="Loading content"
             aria-live="polite"

@@ -4,7 +4,7 @@ import type { IconProps } from "@/shared/types/props";
 
 import "./button.scss";
 
-interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement>, IconProps {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, IconProps {
    isActive?: boolean;
    modifier?: string;
 }

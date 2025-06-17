@@ -30,6 +30,7 @@ picture,
 video,
 canvas,
 svg {
+   width: 100%;
    display: block;
    max-width: 100%;
    border: none;
@@ -234,7 +235,8 @@ html {
    height: 100%;
 }
 
-body, #root {
+body,
+#root {
    min-height: 100vh;
    display: flex;
    flex-direction: column;

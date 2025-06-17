@@ -32,7 +32,7 @@ export const AppLayout = () => {
          <Header />
 
          <main>
-            <Suspense fallback={<Loader fullPage={true} />}>
+            <Suspense fallback={<Loader fullscreen={true} />}>
                <Outlet />
             </Suspense>
          </main>

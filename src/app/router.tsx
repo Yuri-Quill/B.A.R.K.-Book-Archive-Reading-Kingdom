@@ -1,21 +1,17 @@
 import { lazy } from "react";
 import { createBrowserRouter, Navigate } from "react-router-dom";
 
-import { HomePage } from "@/features/home/pages/HomePage";
-import { AppLayout } from "@/features/layouts/AppLayout/AppLayout";
-import { Routes } from "@/shared/constants/routes";
+import { HomePage } from "@features/home/pages/HomePage";
+import { AppLayout } from "@features/layouts/AppLayout/AppLayout";
+import { Routes } from "@shared/constants/routes";
 
-const ErrorPage = lazy(
-   () => import("@/features/common-pages/error-page/ErrorPage")
-);
+const ErrorPage = lazy(() => import("@features/common-pages/error-page/ErrorPage"));
 
-const SigninPage = lazy(
-   () => import("@/features/auth/pages/SigninPage/SigninPage")
-);
+const SignInPage = lazy(() => import("@features/auth/pages/SignInPage/SignInPage"));
 
-const SignupPage = lazy(
-   () => import("@features/auth/pages/SignupPage/SignupPage")
-);
+const SignUpPage = lazy(() => import("@features/auth/pages/SignUpPage/SignUpPage"));
+
+
 
 export const router = createBrowserRouter([
    {
@@ -33,11 +29,11 @@ export const router = createBrowserRouter([
          },
          {
             path: Routes.authSignIn,
-            element: <SigninPage />,
+            element: <SignInPage />,
          },
          {
             path: Routes.authSignUp,
-            element: <SignupPage />,
+            element: <SignUpPage />,
          },
       ],
    },

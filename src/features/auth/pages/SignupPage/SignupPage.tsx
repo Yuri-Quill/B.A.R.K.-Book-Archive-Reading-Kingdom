@@ -1,7 +1,8 @@
-import "./signup-page.scss";
+import './sign-up-page.scss'
 
-const SignupPage = () => {
-   return <section>Signup page</section>;
-};
-
-export default SignupPage;
+const SignUpPage = ()=>{
+   return (
+      <section>Sign up page</section>
+   )
+}
+export default SignUpPage

@@ -1,46 +1,84 @@
 import clsx from "clsx";
 import { Field, ErrorMessage, type FieldAttributes } from "formik";
 
-import type { LucideProps } from "lucide-react";
+import { Castle, Eye, EyeClosed, type LucideProps } from "lucide-react";
+import { useState } from "react";
 
-interface InputFieldProps extends FieldAttributes<HTMLInputElement> {
-   icon: React.ComponentType<LucideProps>;
-   className?: string;
-   name: string;
+import "./input-field.scss";
+
+interface InputFieldProps
+   extends FieldAttributes<HTMLInputElement>,
+      React.InputHTMLAttributes<HTMLInputElement> {
+   icon?: React.ComponentType<LucideProps>;
+   modifier?: string;
+   wrapperClassName?: string;
+   iconClassName?: string;
+   inputClassName?: string;
+   errorClassName?: string;
 }
 
 export const InputField = ({
-   name,
-   className,
+   modifier,
+   wrapperClassName,
+   iconClassName,
+   inputClassName,
+   errorClassName,
    icon: Icon,
-   ...rest
+   type,
+   ...fieldProps
 }: InputFieldProps) => {
+   const [showPassword, setShowPassword] = useState(false);
+   const isPassword = type === "password";
+   const actualType = isPassword && showPassword ? "text" : type;
+
    return (
       <div
          className={clsx(
             "input-wrapper",
-            className && `input-wrapper--${className}`
+            wrapperClassName,
+            modifier && `input-wrapper--${modifier}`
          )}
       >
+         {Icon && (
+            <Icon
+               className={clsx(
+                  "input__icon",
+                  iconClassName,
+                  modifier && `input__icon--${modifier}`
+               )}
+               size={23}
+            />
+         )}
+
          <Field
-            className={clsx("input", className && `input--${className}`)}
-            name={name}
-            {...rest}
-         />
-         <Icon
+            type={actualType}
             className={clsx(
-               "input__icon",
-               className && `input__icon--${className}`
+               "input",
+               inputClassName,
+               modifier && `input--${modifier}`
             )}
+            {...fieldProps}
          />
 
+         {isPassword && (
+            <button
+               type="button"
+               className="input__toggle"
+               onClick={() => setShowPassword((p) => !p)}
+               aria-label={showPassword ? "Hide password" : "Show password"}
+            >
+               {showPassword ? (
+                  <EyeClosed className="input__toggle-icon" size={20} />
+               ) : (
+                  <Eye className="input__toggle-icon" size={20} />
+               )}
+            </button>
+         )}
+
          <ErrorMessage
-            className={clsx(
-               "input__error",
-               className && `input__error--${className}`
-            )}
-            name={name}
+            name={fieldProps.name as string}
             component="div"
+            className={clsx("input__error", errorClassName)}
          />
       </div>
    );

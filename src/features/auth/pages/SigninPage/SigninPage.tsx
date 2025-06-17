@@ -1,7 +1,12 @@
-import "./signin-page.scss";
+import { SignInForm } from "@/features/auth/components/SignInForm/SignInForm";
+import "./sign-in-page.scss";
 
-const SigninPage = () => {
-   return <section>signin page</section>;
+const SignInPage = () => {
+   return (
+      <section>
+         <SignInForm />
+      </section>
+   );
 };
 
-export default SigninPage;
+export default SignInPage;
