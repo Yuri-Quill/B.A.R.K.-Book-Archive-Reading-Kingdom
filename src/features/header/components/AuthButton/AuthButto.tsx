@@ -1,9 +1,13 @@
+import { Link } from "react-router-dom";
+import clsx from "clsx";
+
 import { useAppSelector } from "@/app/store/hooks";
+
+import { LogIn, ContactRound } from "lucide-react";
+
+
 import { Routes } from "@/shared/constants/routes";
 
-import clsx from "clsx";
-import { LogIn, ContactRound } from "lucide-react";
-import { Link } from "react-router-dom";
 
 interface AuthButtonProps {
    className: string;
