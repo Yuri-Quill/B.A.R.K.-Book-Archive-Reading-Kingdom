@@ -9,7 +9,7 @@ import {
 const dispatch: AppDispatch = store.dispatch;
 
 export const http = axios.create({
-   baseURL: "http://localhost:10000/http/v1",
+   baseURL: "http://localhost:10000/api/v1",
    withCredentials: true,
 });
 
