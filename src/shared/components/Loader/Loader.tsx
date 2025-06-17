@@ -1,11 +1,12 @@
-import clsify from "@/shared/utils/clsify";
+import clsx from "clsx";
+
 import "./loader.scss";
 
 export const Loader = ({ fullPage = false }) => {
    if (fullPage) {
       return (
          <div
-            className={clsify("loader-wrapper", [fullPage && "fullpage"])}
+            className={clsx("loader-wrapper", { fullpage: fullPage })}
             role="dialog"
             aria-label="Loading content"
             aria-live="polite"

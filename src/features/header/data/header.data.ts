@@ -4,7 +4,6 @@ import {
    Castle,
    Handshake,
    LibraryBig,
-   LogIn,
    ShoppingBag,
 } from "lucide-react";
 
@@ -16,28 +15,28 @@ export const headerNavData: NavItem[] = [
       id: 1,
       name: "Home",
       icon: Castle,
-      link: Routes.Home,
+      link: Routes.home,
       description: "Main page of the B.A.R.K — Book Archive Reading Kingdom",
    },
    {
       id: 2,
       name: "Books",
       icon: LibraryBig,
-      link: Routes.Books,
+      link: Routes.books,
       description: "Catalog of books",
    },
    {
       id: 3,
       name: "About Us",
       icon: BookOpenText,
-      link: Routes.AboutUs,
+      link: Routes.aboutUs,
       description: "Information about us",
    },
    {
       id: 4,
       name: "Contacts",
       icon: Handshake,
-      link: Routes.Contacts,
+      link: Routes.contacts,
       description: "Contact us",
    },
 ];
@@ -47,21 +46,15 @@ export const actionsNavData: NavItem[] = [
       id: 1,
       name: "Favorites",
       icon: Crown,
-      link: Routes.Favorites,
+      link: Routes.favorites,
       description: "List of favorite books",
    },
    {
       id: 2,
       name: "Cart",
       icon: ShoppingBag,
-      link: Routes.Cart,
-      description: "Shopping cart",
-   },
-   {
-      id: 3,
-      name: "auth",
-      icon: LogIn,
-      link: Routes.Auth,
-      description: "Authorization page",
-   },
+      link: Routes.cart,
+      description: "Shopping cart"
+   }
+
 ];

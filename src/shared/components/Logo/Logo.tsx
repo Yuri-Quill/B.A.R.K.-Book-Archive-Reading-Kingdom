@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-
-import clsify from "@/shared/utils/clsify";
+import clsx from "clsx";
 
 import { ThemeContext } from "@/shared/context/ThemeContext/ThemeContext";
 
@@ -22,7 +21,7 @@ export const Logo = ({ className }: ClassNameProps) => {
    return (
       <Link
          to="/"
-         className={clsify("logo", [className && className])}
+         className={clsx('logo', className)}
          aria-labelledby="site-name site-subtitle"
       >
          <img

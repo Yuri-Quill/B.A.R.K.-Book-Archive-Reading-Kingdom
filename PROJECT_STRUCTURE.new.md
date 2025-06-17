@@ -2,9 +2,11 @@
 
 ```
 📦 Root
+├── 📄 .gitignore
 ├── 📄 eslint.config.js
 ├── 📄 index.html
 ├── 📄 LICENSE
+├── 📄 package-lock.json
 ├── 📄 package.json
 ├── 📄 postcss.config.js
 ├── 📄 README.md
@@ -20,14 +22,11 @@
     ├── 📄 main.tsx
     ├── 📄 vite-env.d.ts
     ├── 📂 app
-    │   ├── 📄 axios-instance.ts
+    │   ├── 📄 http.ts
     │   ├── 📄 router.tsx
-    │   ├── 📂 store
-    │   │   ├── 📄 hooks.ts
-    │   │   └── 📄 store.ts
-    │   └── 📂 types
-    │       ├── 📄 api.ts
-    │       └── 📄 common.ts
+    │   └── 📂 store
+    │       ├── 📄 hooks.ts
+    │       └── 📄 store.ts
     ├── 📂 assets
     │   ├── 📂 fonts
     │   │   └── 📂 work-sans
@@ -51,17 +50,35 @@
     │   │   ├── 📄 auth.types.ts
     │   │   ├── 📄 auth.validation.ts
     │   │   ├── 📂 components
+    │   │   │   ├── 📂 LoginForm
+    │   │   │   │   ├── 📄 login-form.scss
+    │   │   │   │   └── 📄 LoginForm.tsx
+    │   │   │   └── 📂 RegisterForm
+    │   │   │       ├── 📄 register-form.scss
+    │   │   │       └── 📄 RegisterForm.tsx
     │   │   └── 📂 pages
+    │   │       ├── 📂 LoginPage
+    │   │       │   ├── 📄 login-page.scss
+    │   │       │   └── 📄 LoginPage.tsx
+    │   │       └── 📂 RegisterPage
+    │   │           ├── 📄 register-page.scss
+    │   │           └── 📄 RegisterPage.tsx
     │   ├── 📂 common-pages
     │   │   ├── 📂 error-page
     │   │   └── 📂 test
     │   ├── 📂 footer
     │   │   ├── 📄 footer.types.ts
     │   │   ├── 📂 components
+    │   │   │   ├── 📄 footer.scss
+    │   │   │   └── 📄 Footer.tsx
     │   │   └── 📂 data
     │   ├── 📂 header
     │   │   ├── 📄 header.types.ts
     │   │   ├── 📂 components
+    │   │   │   ├── 📄 header.scss
+    │   │   │   ├── 📄 Header.tsx
+    │   │   │   ├── 📂 HeaderActions
+    │   │   │   └── 📂 HeaderNav
     │   │   └── 📂 data
     │   ├── 📂 home
     │   │   ├── 📄 home.api.ts
@@ -73,11 +90,21 @@
     └── 📂 shared
         ├── 📂 components
         │   ├── 📂 Button
+        │   │   ├── 📄 button.scss
+        │   │   └── 📄 Button.tsx
         │   ├── 📂 ButtonLink
+        │   │   ├── 📄 button-link.scss
+        │   │   └── 📄 ButtonLink.tsx
         │   ├── 📂 ContentWrapper
+        │   │   ├── 📄 content-wrapper.scss
+        │   │   └── 📄 ContentWrapper.tsx
         │   ├── 📂 Input
         │   ├── 📂 Loader
+        │   │   ├── 📄 loader.scss
+        │   │   └── 📄 Loader.tsx
         │   └── 📂 Logo
+        │       ├── 📄 logo.scss
+        │       └── 📄 Logo.tsx
         ├── 📂 constants
         │   └── 📄 theme.ts
         ├── 📂 context
@@ -100,6 +127,7 @@ Contains configuration files for the development environment:
 -  Vite configuration
 -  Package management
 -  Project documentation
+-  Git configuration
 
 ### Public Directory
 
@@ -115,10 +143,9 @@ Main application code organized into several key directories:
 
 Core application setup:
 
--  Axios instance configuration
+-  HTTP client configuration
 -  Router setup
 -  Redux store configuration
--  Common types and interfaces
 
 #### `assets/`
 

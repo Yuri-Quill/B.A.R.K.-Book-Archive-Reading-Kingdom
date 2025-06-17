@@ -1,17 +1,15 @@
 export const Routes = {
-   Home: "/",
-   Books: "/catalog",
-   AboutUs: "/about-us",
-   Contacts: "/contacts",
-
-   Favorites: "/favorites",
-   Cart: "/cart",
-   Orders: "/orders",
-   Profile: "/profile",
-
-   Auth: "/auth",
-   AuthLogin: "/auth/login",
-   AuthRegister: "/auth/register",
+   home: "/",
+   books: "/catalog",
+   aboutUs: "/about-us",
+   contacts: "/contacts",
+   favorites: "/favorites",
+   cart: "/cart",
+   orders: "/orders",
+   profile: "/profile",
+   auth: "/auth",
+   authLogin: "/auth/login",
+   authRegister: "/auth/register",
 } as const;
 
 export type RoutePath = (typeof Routes)[keyof typeof Routes];

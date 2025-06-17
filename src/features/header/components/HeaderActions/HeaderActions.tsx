@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 import type { NavItem } from "@/features/header/header.types";
 
 import "./header-actions.scss";
+import { AuthButton } from "@/features/header/components/AuthButton/AuthButto";
 
 interface HeaderActionsProps {
    items: NavItem[];
 }
 
 export const HeaderActions = memo(({ items }: HeaderActionsProps) => {
-
    return (
       <nav className="header__actions">
          <ul className="header__actions-list">
@@ -26,6 +26,12 @@ export const HeaderActions = memo(({ items }: HeaderActionsProps) => {
                   </Link>
                </li>
             ))}
+            <li className="header__actions-item">
+               <AuthButton
+                  className="header__actions-link"
+                  cnImg="header__actions-icon"
+               />
+            </li>
          </ul>
       </nav>
    );
