@@ -6,7 +6,7 @@ import { Loader } from "@/shared/components/Loader/Loader";
 import "./sign-in-form.scss";
 import { InputField } from "@/shared/components/InputField/InputField";
 import { Mail, Lock } from "lucide-react";
-import { signInSchema } from "@/features/auth/validation/signin.validation";
+import { signInSchema } from "@/features/auth/schemas/signInSchema";
 
 const initialValues = {
    email: "",
