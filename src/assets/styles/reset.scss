@@ -1,12 +1,12 @@
 // Базовый сброс для всех элементов
-* {
+*,
+*::before,
+*::after {
    margin: 0;
    padding: 0;
    box-sizing: border-box;
    border: none;
    outline: none;
-   vertical-align: baseline;
-   background: transparent;
 }
 
 // Сброс списков
@@ -16,6 +16,13 @@ dl {
    list-style: none;
    margin: 0;
    padding: 0;
+}
+
+input:-webkit-autofill {
+   background-color: transparent !important;
+   -webkit-box-shadow: 0 0 0 1000px #fff inset !important;
+   -webkit-text-fill-color: inherit !important;
+   transition: background-color 5000s ease-in-out 0s;
 }
 
 // Сброс ссылок
@@ -28,8 +35,7 @@ a {
 img,
 picture,
 video,
-canvas
-{
+canvas {
    display: block;
    width: 100%;
    max-width: 100%;

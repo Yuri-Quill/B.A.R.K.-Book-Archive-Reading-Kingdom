@@ -1,4 +1,5 @@
 @use "./_variables.scss" as *;
+@use "sass:color";
 
 @mixin df-full-c {
    display: flex;
@@ -35,5 +36,14 @@
 
    &:active {
       transform: scale(0.98);
+   }
+}
+
+@mixin link-hint {
+   color: $btn-bg;
+   transition: color 0.2s ease-in;
+
+   &:hover {
+      color: color.adjust($active-hover-color, $lightness: 20%);
    }
 }

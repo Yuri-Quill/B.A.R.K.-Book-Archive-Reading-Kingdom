@@ -58,6 +58,7 @@ export const InputField = ({
                inputClassName,
                modifier && `input--${modifier}`
             )}
+            required
             {...fieldProps}
          />
 
