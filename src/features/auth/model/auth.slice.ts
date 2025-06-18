@@ -30,8 +30,6 @@ const authSlice = createSlice({
       builder
          .addCase(signinAuthThunk.pending, (state) => {
             state.loading = true;
-
-            state.error = null;
          })
          .addCase(
             signinAuthThunk.fulfilled,
@@ -50,8 +48,6 @@ const authSlice = createSlice({
          })
          .addCase(signupAuthThunk.pending, (state) => {
             state.loading = true;
-
-            state.error = null;
          })
          .addCase(
             signupAuthThunk.fulfilled,
@@ -70,8 +66,6 @@ const authSlice = createSlice({
          })
          .addCase(logoutAuthThunk.pending, (state) => {
             state.loading = true;
-
-            state.error = null;
          })
          .addCase(logoutAuthThunk.fulfilled, (state) => {
             state.loading = false;
@@ -86,7 +80,6 @@ const authSlice = createSlice({
          })
          .addCase(forgotPasswordThunk.pending, (state) => {
             state.loading = true;
-            state.error = null;
          })
 
          .addCase(forgotPasswordThunk.fulfilled, (state) => {
@@ -100,7 +93,6 @@ const authSlice = createSlice({
          })
          .addCase(refreshTokenThunk.pending, (state) => {
             state.loading = true;
-            state.error = null;
          })
          .addCase(
             refreshTokenThunk.fulfilled,
@@ -111,12 +103,12 @@ const authSlice = createSlice({
                state.error = null;
             }
          )
-         .addCase(refreshTokenThunk.rejected, (state, action) => {
+         .addCase(refreshTokenThunk.rejected, (state) => {
             state.loading = false;
             state.user = null;
             state.isAuthenticated = false;
-            state.error =
-               action.payload?.message || "Unknown error with token refresh!";
+            // state.error =
+            //    action.payload?.message || "Unknown error with token refresh!";
          });
    },
 });

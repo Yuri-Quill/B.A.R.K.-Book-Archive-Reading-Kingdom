@@ -58,7 +58,7 @@ export const InputField = ({
                inputClassName,
                modifier && `input--${modifier}`
             )}
-            required
+            autoComplete="off"
             {...fieldProps}
          />
 

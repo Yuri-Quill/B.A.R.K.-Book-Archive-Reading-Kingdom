@@ -10,8 +10,6 @@ body {
    background: $primary-bg;
 }
 
-
-
 h1,
 h2,
 h3,
@@ -30,9 +28,13 @@ h2 {
 
 h3 {
    font-size: clamp(1.75rem, 0.969rem + 2.083vw, 2.375rem);
-
 }
 
 h4 {
    font-size: 1.75rem;
+}
+
+.server-error {
+   color: $error-color;
+   font-size: 1rem;
 }

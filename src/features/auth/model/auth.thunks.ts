@@ -1,4 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import { apiErrorhandler } from "@/shared/utils/api/errorHandler";
 
 import {
    forgotPassword,
@@ -20,15 +21,12 @@ export const signinAuthThunk = createAsyncThunk<
    AuthResponse,
    SigninPayload,
    { rejectValue: { message: string } }
->("auth/signin", async (payload: SigninPayload, { rejectWithValue }) => {
+>("auth/signin", async (payload, { rejectWithValue }) => {
    try {
       const data = await signin(payload);
       return data;
    } catch (error: unknown) {
-      if (error instanceof Error) {
-         return rejectWithValue({ message: error.message });
-      }
-      return rejectWithValue({ message: "Sign In failed, unknown error 🫠" });
+      return rejectWithValue({ message: apiErrorhandler(error) });
    }
 });
 
@@ -36,15 +34,12 @@ export const signupAuthThunk = createAsyncThunk<
    AuthResponse,
    SignupPayload,
    { rejectValue: { message: string } }
->("auth/signup", async (payload: SignupPayload, { rejectWithValue }) => {
+>("auth/signup", async (payload, { rejectWithValue }) => {
    try {
       const data = await signup(payload);
       return data;
-   } catch (error: unknown) {
-      if (error instanceof Error) {
-         return rejectWithValue({ message: error.message });
-      }
-      return rejectWithValue({ message: "Sign Up failed, unknown error 🫠" });
+   } catch (error) {
+      return rejectWithValue({ message: apiErrorhandler(error) });
    }
 });
 
@@ -56,11 +51,8 @@ export const logoutAuthThunk = createAsyncThunk<
    try {
       const data = await logout();
       return data;
-   } catch (error: unknown) {
-      if (error instanceof Error) {
-         return rejectWithValue({ message: error.message });
-      }
-      return rejectWithValue({ message: "Logout failed, unknown error 🫠" });
+   } catch (error) {
+      return rejectWithValue({ message: apiErrorhandler(error) });
    }
 });
 
@@ -68,22 +60,14 @@ export const forgotPasswordThunk = createAsyncThunk<
    ApiStatusResponse,
    ForgotPasswordPayload,
    { rejectValue: { message: string } }
->(
-   "auth/forgotPassword",
-   async (payload: ForgotPasswordPayload, { rejectWithValue }) => {
-      try {
-         const data = await forgotPassword(payload);
-         return data;
-      } catch (error: unknown) {
-         if (error instanceof Error) {
-            return rejectWithValue({ message: error.message });
-         }
-         return rejectWithValue({
-            message: "Forgot password failed, unknown error 🫠",
-         });
-      }
+>("auth/forgotPassword", async (payload, { rejectWithValue }) => {
+   try {
+      const data = await forgotPassword(payload);
+      return data;
+   } catch (error) {
+      return rejectWithValue({ message: apiErrorhandler(error) });
    }
-);
+});
 
 export const refreshTokenThunk = createAsyncThunk<
    AuthResponse,
@@ -93,12 +77,7 @@ export const refreshTokenThunk = createAsyncThunk<
    try {
       const response = await refreshToken();
       return response;
-   } catch (error: unknown) {
-      if (error instanceof Error) {
-         return rejectWithValue({ message: error.message });
-      }
-      return rejectWithValue({
-         message: "Refresh token failed, unknown error 🫠",
-      });
+   } catch (error) {
+      return rejectWithValue({ message: apiErrorhandler(error) });
    }
 });

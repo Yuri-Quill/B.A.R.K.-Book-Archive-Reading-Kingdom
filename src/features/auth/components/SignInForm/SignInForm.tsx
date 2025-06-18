@@ -9,6 +9,9 @@ import { Mail, Lock } from "lucide-react";
 import { signInSchema } from "@/features/auth/schemas/signInSchema";
 import { Link } from "react-router-dom";
 import { Routes } from "@/shared/constants/routes";
+import { useAppDispatch, useAppSelector } from "@/app/store/hooks";
+import { signinAuthThunk } from "@/features/auth/model/auth.thunks";
+import type { SigninPayload } from "@/features/auth/types/auth.types";
 
 const initialValues = {
    email: "",
@@ -16,13 +19,22 @@ const initialValues = {
 };
 
 export const SignInForm = () => {
+   const dispatch = useAppDispatch();
+   const { error } = useAppSelector((state) => state.auth);
+
+   const signInHandler = async (values: SigninPayload) => {
+      try {
+         await dispatch(signinAuthThunk(values)).unwrap();
+      } catch (err) {
+         console.log("Sign in failed:", err);
+      }
+   };
+
    return (
       <Formik
          initialValues={initialValues}
          validationSchema={signInSchema}
-         onSubmit={(values) => {
-            console.log(values);
-         }}
+         onSubmit={signInHandler}
       >
          {({ isSubmitting }) => (
             <article className="signin-form__wrapper">
@@ -41,7 +53,8 @@ export const SignInForm = () => {
                   Log in and reclaim your reading throne.
                </p>
 
-               <Form className="signin-form">
+               <Form className="signin-form" autoComplete="off">
+                  {error && <p className="server_error">{error}</p>}
                   <InputField
                      wrapperClassName="signin-input__wrapper"
                      inputClassName="signin-input"
@@ -72,7 +85,9 @@ export const SignInForm = () => {
                      {isSubmitting ? <Loader /> : "Sign In"}
                   </Button>
                </Form>
-               <Link className="signin-form__link" to={Routes.authSignUp}>Don`t have account yet?</Link>
+               <Link className="signin-form__link" to={Routes.authSignUp}>
+                  Don`t have account yet?
+               </Link>
             </article>
          )}
       </Formik>
