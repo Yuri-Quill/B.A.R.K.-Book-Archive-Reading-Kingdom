@@ -1,9 +1,16 @@
 .signup-form__wrapper {
    @include df-full-c;
    flex-direction: column;
-   gap: 20px;
-   max-width: 20.625rem;
+   gap: 25px;
+   width: 100%;
+   max-width: 31.25rem;
    text-align: center;
+
+   padding: clamp(0.938rem, 0.67rem + 1.478vw, 2rem);
+   margin: 0 15px;
+   border-radius: 1rem;
+
+   @include glass-effect;
 }
 
 .signup-form {
@@ -13,6 +20,11 @@
    gap: 1.25rem;
 
    position: relative;
+
+   &__subtitle {
+      display: block;
+      line-height: 1.4;
+   }
 
    &__link {
       @include link-hint;

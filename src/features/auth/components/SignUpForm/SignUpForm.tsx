@@ -1,5 +1,5 @@
 import { Form, Formik } from "formik";
-import { Navigate } from "react-router-dom";
+import { Navigate, Link } from "react-router-dom";
 import { Mail, Lock, User } from "lucide-react";
 import { toast } from "react-toastify";
 
@@ -18,6 +18,7 @@ import { Routes } from "@/shared/constants/routes";
 import type { SignupPayload } from "@/features/auth/types/auth.types";
 
 import "./sign-up-form.scss";
+import { useHead } from "@/shared/hooks/useHead";
 
 const initialValues = {
    username: "",
@@ -30,9 +31,16 @@ export const SignUpForm = () => {
    const { isAuthenticated } = useAppSelector((state) => state.auth);
    const dispatch = useAppDispatch();
 
+   useHead({
+      title: "Sign Up - B.A.R.K. Digital Library",
+      description:
+         "Join B.A.R.K. and manage your digital book collection. Organize, track, and explore your reading journey.",
+   });
+
    if (isAuthenticated) {
       return <Navigate to={Routes.home} replace />;
    }
+
    const signUpHandler = async (values: SignupPayload) => {
       try {
          await dispatch(signupAuthThunk(values)).unwrap();
@@ -42,6 +50,7 @@ export const SignUpForm = () => {
          toast.error(error.message);
       }
    };
+
    return (
       <Formik
          initialValues={initialValues}
@@ -50,7 +59,21 @@ export const SignUpForm = () => {
       >
          {({ isSubmitting }) => (
             <article className="signup-form__wrapper">
-               <Form autoComplete="off">
+               <h4
+                  className="signup-form__title"
+                  aria-label="Join the Kingdom and start your journey"
+               >
+                  Join the Kingdom <span  className="signup-form__subtitle">and start your journey!</span>
+               </h4>
+
+               <p
+                  className="signup-form__text"
+                  aria-label="Sign up and explore your new realm of books"
+                  role="text"
+               >
+                  Sign up and explore your new realm of books.
+               </p>
+               <Form className="signup-form" autoComplete="off">
                   <InputField
                      wrapperClassName="signup-input__wrapper"
                      inputClassName="signup-input"
@@ -101,6 +124,9 @@ export const SignUpForm = () => {
                      {isSubmitting ? <Loader /> : "Sign Up"}
                   </Button>
                </Form>
+               <Link className="signup-form__link" to={Routes.authSignIn}>
+                  You already have an account?
+               </Link>
             </article>
          )}
       </Formik>

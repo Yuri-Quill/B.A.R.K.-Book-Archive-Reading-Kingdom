@@ -3,7 +3,7 @@ import "./sign-up-page.scss";
 
 const SignUpPage = () => {
    return (
-      <section>
+      <section className="sign-up__page">
          <SignUpForm />
       </section>
    );

@@ -40,10 +40,10 @@
 }
 
 @mixin link-hint {
-   color: $btn-bg;
+   color: color.adjust($active-hover-color, $lightness: 20%);
    transition: color 0.2s ease-in;
 
    &:hover {
-      color: color.adjust($active-hover-color, $lightness: 20%);
+      color: color.adjust($active-hover-color, $lightness: 30%);
    }
 }

@@ -2,7 +2,7 @@ import * as Yup from "yup";
 
 export const userNameSchema = Yup.string()
    .min(4, "Username must be at least four characters")
-   .max(20, "Username must be no longer than twenty characters")
+   .max(20, "To long username, maximum twenty characters")
    .matches(
       /^[a-zA-Z0-9\-_]+$/,
       'Username can only contain letters, numbers, "-" and "_"'

@@ -2,8 +2,14 @@
    @include df-full-c;
    flex-direction: column;
    gap: 20px;
-   max-width: 20.625rem;
+   width: 100%;
+   max-width: 25rem;
    text-align: center;
+   padding: clamp(0.938rem, 0.67rem + 1.478vw, 2rem);
+   margin: 0 15px;
+   border-radius: 1rem;
+
+   @include glass-effect;
 }
 
 .signin-form {

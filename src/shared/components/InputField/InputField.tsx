@@ -70,9 +70,9 @@ export const InputField = ({
                aria-label={showPassword ? "Hide password" : "Show password"}
             >
                {showPassword ? (
-                  <EyeClosed className="input__toggle-icon" size={20} />
-               ) : (
                   <Eye className="input__toggle-icon" size={20} />
+               ) : (
+                  <EyeClosed  className="input__toggle-icon" size={20} />
                )}
             </button>
          )}
