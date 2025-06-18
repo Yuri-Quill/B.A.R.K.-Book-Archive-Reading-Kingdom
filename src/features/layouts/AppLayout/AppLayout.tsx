@@ -1,5 +1,6 @@
 import { Suspense, useContext, useEffect, useLayoutEffect } from "react";
 import { Outlet } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 
 import { ThemeContext } from "@/shared/context/ThemeContext/ThemeContext";
 import { ThemeMode } from "@/shared/constants/theme";
@@ -10,12 +11,12 @@ import { Loader } from "@/shared/components/Loader/Loader";
 
 import DarkFav from "/fav-dark.ico";
 import LightFav from "/fav-light.ico";
-import { useAppDispatch, useAppSelector } from "@/app/store/hooks";
+import { useAppDispatch } from "@/app/store/hooks";
 import { refreshTokenThunk } from "@/features/auth/model/auth.thunks";
 
 export const AppLayout = () => {
    const dispatch = useAppDispatch();
-   const { loading } = useAppSelector((state) => state.auth);
+
    const { theme } = useContext(ThemeContext);
 
    useEffect(() => {
@@ -30,8 +31,6 @@ export const AppLayout = () => {
       }
    }, [theme]);
 
-   if (loading) return <Loader fullscreen />;
-
    return (
       <>
          <Header />
@@ -41,6 +40,19 @@ export const AppLayout = () => {
             </Suspense>
          </main>
          <Footer />
+
+         <ToastContainer
+            position="top-right"
+            autoClose={2000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover={false}
+            theme={theme === ThemeMode.Dark ? "dark" : "light"}
+         />
       </>
    );
 };

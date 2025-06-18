@@ -12,6 +12,8 @@
    flex-direction: column;
    gap: 1.25rem;
 
+   position: relative;
+
    &__link {
       @include link-hint;
    }

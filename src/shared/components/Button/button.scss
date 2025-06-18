@@ -1,7 +1,7 @@
 .button {
    width: 100%;
    @include df-full-c;
-   
+
    gap: 0.75rem;
 
    padding: 1.1875rem 3.125rem;
@@ -14,7 +14,7 @@
    font-weight: 600;
 
    transition: all 0.2s ease-in-out;
-
+   position: relative;
    &:hover {
       background-color: $btn-bg;
 
@@ -46,5 +46,10 @@
       &--active {
          color: $primary-color;
       }
+   }
+
+   &:disabled {
+      background-color: rgb(134, 134, 134);
+      cursor: not-allowed;
    }
 }

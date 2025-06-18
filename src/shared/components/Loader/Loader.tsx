@@ -12,7 +12,7 @@ export const Loader = ({ fullscreen = false }) => {
          aria-label="Loading content"
          aria-live="polite"
       >
-         <div className="loader" role="status" aria-label="Loading" />
+         <span className="loader" role="status" aria-label="Loading" />
       </div>
    );
 };

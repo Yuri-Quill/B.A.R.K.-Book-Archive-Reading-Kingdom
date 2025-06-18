@@ -1,17 +1,23 @@
+import { Link, Navigate } from "react-router-dom";
 import { Formik, Form } from "formik";
+import { Mail, Lock } from "lucide-react";
+import { toast } from "react-toastify";
 
+import { useAppDispatch, useAppSelector } from "@/app/store/hooks";
+
+import { InputField } from "@/shared/components/InputField/InputField";
 import { Button } from "@/shared/components/Button/Button";
 import { Loader } from "@/shared/components/Loader/Loader";
 
-import "./sign-in-form.scss";
-import { InputField } from "@/shared/components/InputField/InputField";
-import { Mail, Lock } from "lucide-react";
-import { signInSchema } from "@/features/auth/schemas/signInSchema";
-import { Link } from "react-router-dom";
-import { Routes } from "@/shared/constants/routes";
-import { useAppDispatch, useAppSelector } from "@/app/store/hooks";
 import { signinAuthThunk } from "@/features/auth/model/auth.thunks";
+
+import { signInSchema } from "@/features/auth/schemas/signInSchema";
+
+import { Routes } from "@/shared/constants/routes";
+
 import type { SigninPayload } from "@/features/auth/types/auth.types";
+
+import "./sign-in-form.scss";
 
 const initialValues = {
    email: "",
@@ -20,13 +26,20 @@ const initialValues = {
 
 export const SignInForm = () => {
    const dispatch = useAppDispatch();
-   const { error } = useAppSelector((state) => state.auth);
+   const { isAuthenticated } = useAppSelector((state) => state.auth);
+
+   if (isAuthenticated) {
+      return <Navigate to={Routes.home} replace />;
+   }
 
    const signInHandler = async (values: SigninPayload) => {
       try {
          await dispatch(signinAuthThunk(values)).unwrap();
+         toast.success("Welcome back, 👑");
       } catch (err) {
-         console.log("Sign in failed:", err);
+         const error = err as { message: string };
+         toast.error(error.message);
+         console.log(error);
       }
    };
 
@@ -54,7 +67,7 @@ export const SignInForm = () => {
                </p>
 
                <Form className="signin-form" autoComplete="off">
-                  {error && <p className="server_error">{error}</p>}
+
                   <InputField
                      wrapperClassName="signin-input__wrapper"
                      inputClassName="signin-input"
