@@ -40,7 +40,6 @@ export const SignUpForm = () => {
       } catch (err) {
          const error = err as { message: string };
          toast.error(error.message);
-         console.log(error);
       }
    };
    return (
