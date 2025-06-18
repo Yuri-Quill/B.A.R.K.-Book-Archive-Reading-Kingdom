@@ -3,7 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { Mail, Lock, User } from "lucide-react";
 import { toast } from "react-toastify";
 
-import { useAppDispatch, useAppSelector } from "@/app/store/hooks";
+import { useAppDispatch } from "@/app/store/hooks";
 import { useHead } from "@/shared/hooks/useHead";
 
 import { signupAuthThunk } from "@/features/auth/model/auth.thunks";
