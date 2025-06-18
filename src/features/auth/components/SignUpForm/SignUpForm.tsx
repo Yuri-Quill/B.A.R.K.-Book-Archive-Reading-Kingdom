@@ -1,5 +1,5 @@
 import { Form, Formik } from "formik";
-import { Navigate, Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { Mail, Lock, User } from "lucide-react";
 import { toast } from "react-toastify";
 
@@ -28,23 +28,20 @@ const initialValues = {
 };
 
 export const SignUpForm = () => {
-   const { isAuthenticated } = useAppSelector((state) => state.auth);
    const dispatch = useAppDispatch();
+   const navigate = useNavigate();
 
    useHead({
-      title: "Sign Up - B.A.R.K. Digital Library",
+      title: "Sign Up | B.A.R.K. - Book Archive Reading Kingdom",
       description:
          "Join B.A.R.K. and manage your digital book collection. Organize, track, and explore your reading journey.",
    });
 
-   if (isAuthenticated) {
-      return <Navigate to={Routes.home} replace />;
-   }
-
    const signUpHandler = async (values: SignupPayload) => {
       try {
          await dispatch(signupAuthThunk(values)).unwrap();
-         toast.success("Welcome to the Kingdom, 👑");
+         toast.success("Welcome to the Kingdom 👑");
+         navigate(Routes.home, { replace: true });
       } catch (err) {
          const error = err as { message: string };
          toast.error(error.message);
@@ -76,7 +73,12 @@ export const SignUpForm = () => {
                >
                   Sign up and explore your new realm of books.
                </p>
-               <Form className="signup-form" autoComplete="off">
+               <Form
+                  className="signup-form"
+                  autoComplete="off"
+                  aria-label="Sign up for an account"
+                  role="form"
+               >
                   <InputField
                      wrapperClassName="signup-input__wrapper"
                      inputClassName="signup-input"

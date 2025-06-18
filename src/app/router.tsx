@@ -5,13 +5,21 @@ import { HomePage } from "@features/home/pages/HomePage";
 import { AppLayout } from "@features/layouts/AppLayout/AppLayout";
 import { Routes } from "@shared/constants/routes";
 
-const ErrorPage = lazy(() => import("@features/common-pages/error-page/ErrorPage"));
+const ErrorPage = lazy(
+   () => import("@features/common-pages/error-page/ErrorPage")
+);
 
-const SignInPage = lazy(() => import("@features/auth/pages/SignInPage/SignInPage"));
+const SignInPage = lazy(
+   () => import("@features/auth/pages/SignInPage/SignInPage")
+);
 
-const SignUpPage = lazy(() => import("@features/auth/pages/SignUpPage/SignUpPage"));
+const SignUpPage = lazy(
+   () => import("@features/auth/pages/SignUpPage/SignUpPage")
+);
 
-
+const ForgotPAsswordPage = lazy(
+   () => import("@features/auth/pages/ForgotPasswordPage/ForgotPasswordPage")
+);
 
 export const router = createBrowserRouter([
    {
@@ -35,6 +43,7 @@ export const router = createBrowserRouter([
             path: Routes.authSignUp,
             element: <SignUpPage />,
          },
+         { path: Routes.authForgotPassword, element: <ForgotPAsswordPage /> },
       ],
    },
 ]);

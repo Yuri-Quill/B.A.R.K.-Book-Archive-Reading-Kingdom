@@ -52,13 +52,14 @@ export const InputField = ({
          )}
 
          <Field
-            {...fieldProps}
             type={actualType}
             className={clsx(
                "input",
                inputClassName,
                modifier && `input--${modifier}`
             )}
+            autoComplete="new-password"
+            {...fieldProps}
 
          />
 

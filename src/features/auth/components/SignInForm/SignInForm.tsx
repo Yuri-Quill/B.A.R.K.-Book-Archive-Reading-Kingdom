@@ -1,9 +1,9 @@
-import { Link, Navigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Formik, Form } from "formik";
 import { Mail, Lock } from "lucide-react";
 import { toast } from "react-toastify";
 
-import { useAppDispatch, useAppSelector } from "@/app/store/hooks";
+import { useAppDispatch } from "@/app/store/hooks";
 import { useHead } from "@/shared/hooks/useHead";
 
 import { InputField } from "@/shared/components/InputField/InputField";
@@ -27,22 +27,19 @@ const initialValues = {
 
 export const SignInForm = () => {
    const dispatch = useAppDispatch();
-   const { isAuthenticated } = useAppSelector((state) => state.auth);
+   const navigate = useNavigate();
 
    useHead({
-      title: "Sign In - B.A.R.K. Digital Library",
+      title: "Sign In | B.A.R.K. - Book Archive Reading Kingdom",
       description:
          "Access your account at B.A.R.K. Digital Library and continue exploring your reading journey.",
    });
 
-   if (isAuthenticated) {
-      return <Navigate to={Routes.home} replace />;
-   }
-
    const signInHandler = async (values: SigninPayload) => {
       try {
          await dispatch(signinAuthThunk(values)).unwrap();
-         toast.success("Welcome back, 👑");
+         toast.success("Welcome back, to the Kingdom 👑");
+         navigate(Routes.home, { replace: true });
       } catch (err) {
          const error = err as { message: string };
          toast.error(error.message);
@@ -71,8 +68,12 @@ export const SignInForm = () => {
                >
                   Log in and reclaim your reading throne.
                </p>
-
-               <Form className="signin-form" autoComplete="off">
+               <Form
+                  className="signin-form"
+                  autoComplete="off"
+                  aria-label="Sign in to your account"
+                  role="form"
+               >
                   <InputField
                      wrapperClassName="signin-input__wrapper"
                      inputClassName="signin-input"
