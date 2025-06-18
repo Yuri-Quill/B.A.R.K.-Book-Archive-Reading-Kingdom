@@ -5,6 +5,11 @@
 .signin-form {
    @include form-style;
 
+   &__links {
+      display: flex;
+      flex-direction: column;
+      gap: .625rem;
+   }
    &__link {
       @include link-hint;
    }

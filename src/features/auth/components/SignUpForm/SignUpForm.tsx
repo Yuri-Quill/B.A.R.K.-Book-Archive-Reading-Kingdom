@@ -127,7 +127,12 @@ export const SignUpForm = () => {
                      {isSubmitting ? <Loader /> : "Sign Up"}
                   </Button>
                </Form>
-               <Link className="signup-form__link" to={Routes.authSignIn}>
+
+               <Link
+                  className="signup-form__link"
+                  to={Routes.authSignIn}
+                  aria-label=" You already have an account? Redirect to sign up page!"
+               >
                   You already have an account?
                </Link>
             </article>

@@ -103,9 +103,22 @@ export const SignInForm = () => {
                      {isSubmitting ? <Loader /> : "Sign In"}
                   </Button>
                </Form>
-               <Link className="signin-form__link" to={Routes.authSignUp}>
-                  Don`t have account yet?
-               </Link>
+               <div className="signin-form__links">
+                  <Link
+                     className="signin-form__link"
+                     to={Routes.authSignUp}
+                     aria-label="Don't have an account yet? Redirect to sign up page!"
+                  >
+                     Don't have an account yet?
+                  </Link>
+                  <Link
+                     className="signin-form__link"
+                     to={Routes.authForgotPassword}
+                     aria-label="Forgot your password? Redirect to reset password page"
+                  >
+                     Forgot your password?
+                  </Link>
+               </div>
             </article>
          )}
       </Formik>

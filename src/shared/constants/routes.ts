@@ -11,6 +11,8 @@ export const Routes = {
    authSignIn: "/auth/sign-in",
    authSignUp: "/auth/sign-up",
    authLogout: "/auth/logout",
+   authForgotPassword: "/auth/forgot-password",
+   authResetPassword: "/auth/reset-password",
 } as const;
 
 export type RoutePath = (typeof Routes)[keyof typeof Routes];
