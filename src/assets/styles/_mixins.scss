@@ -47,3 +47,25 @@
       color: color.adjust($active-hover-color, $lightness: 30%);
    }
 }
+
+@mixin form-wrapper {
+   @include df-full-c;
+   flex-direction: column;
+   gap: 25px;
+   width: 100%;
+   max-width: 31.25rem;
+   text-align: center;
+   padding: clamp(0.938rem, 0.67rem + 1.478vw, 2rem);
+   margin: 0 15px;
+   border-radius: 1rem;
+   @include glass-effect;
+}
+
+@mixin form-style {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   gap: 1.25rem;
+
+   position: relative;
+}

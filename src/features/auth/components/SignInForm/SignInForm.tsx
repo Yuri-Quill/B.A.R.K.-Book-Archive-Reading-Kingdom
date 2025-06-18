@@ -4,6 +4,7 @@ import { Mail, Lock } from "lucide-react";
 import { toast } from "react-toastify";
 
 import { useAppDispatch, useAppSelector } from "@/app/store/hooks";
+import { useHead } from "@/shared/hooks/useHead";
 
 import { InputField } from "@/shared/components/InputField/InputField";
 import { Button } from "@/shared/components/Button/Button";
@@ -18,7 +19,6 @@ import { Routes } from "@/shared/constants/routes";
 import type { SigninPayload } from "@/features/auth/types/auth.types";
 
 import "./sign-in-form.scss";
-import { useHead } from "@/shared/hooks/useHead";
 
 const initialValues = {
    email: "",

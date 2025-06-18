@@ -4,6 +4,7 @@ import { Mail, Lock, User } from "lucide-react";
 import { toast } from "react-toastify";
 
 import { useAppDispatch, useAppSelector } from "@/app/store/hooks";
+import { useHead } from "@/shared/hooks/useHead";
 
 import { signupAuthThunk } from "@/features/auth/model/auth.thunks";
 
@@ -18,7 +19,6 @@ import { Routes } from "@/shared/constants/routes";
 import type { SignupPayload } from "@/features/auth/types/auth.types";
 
 import "./sign-up-form.scss";
-import { useHead } from "@/shared/hooks/useHead";
 
 const initialValues = {
    username: "",
@@ -63,7 +63,10 @@ export const SignUpForm = () => {
                   className="signup-form__title"
                   aria-label="Join the Kingdom and start your journey"
                >
-                  Join the Kingdom <span  className="signup-form__subtitle">and start your journey!</span>
+                  Join the Kingdom{" "}
+                  <span className="signup-form__subtitle">
+                     and start your journey!
+                  </span>
                </h4>
 
                <p
