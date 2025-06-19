@@ -21,6 +21,8 @@ const ForgotPAsswordPage = lazy(
    () => import("@features/auth/pages/ForgotPasswordPage/ForgotPasswordPage")
 );
 
+const ResetPasswordPage =lazy(()=> import("@features/auth/pages/ResetPasswordPage/ResetPasswordPage"))
+
 export const router = createBrowserRouter([
    {
       path: Routes.home,
@@ -44,6 +46,10 @@ export const router = createBrowserRouter([
             element: <SignUpPage />,
          },
          { path: Routes.authForgotPassword, element: <ForgotPAsswordPage /> },
+         {
+            path:Routes.authResetPassword,
+            element:<ResetPasswordPage/>
+         }
       ],
    },
 ]);
