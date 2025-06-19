@@ -51,3 +51,5 @@ export interface SignupPayload {
 export type SigninPayload = Pick<SignupPayload, "email" | "password">;
 
 export type ForgotPasswordPayload = Pick<SignupPayload, "email">;
+
+export type ResetPasswordPayload = Pick<SignupPayload, 'password' | 'confirmPassword'>

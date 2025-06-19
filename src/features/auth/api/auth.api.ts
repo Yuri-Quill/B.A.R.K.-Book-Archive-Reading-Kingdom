@@ -8,6 +8,7 @@ import type {
    ApiStatusResponse,
    SigninPayload,
    SignupPayload,
+   ResetPasswordPayload,
 } from "@/features/auth/types/auth.types";
 
 export const signin = async (payload: SigninPayload): Promise<AuthResponse> => {
@@ -43,8 +44,17 @@ export const forgotPassword = async (
 };
 
 export const refreshToken = async (): Promise<AuthResponse> => {
-   const { data } = await http.get<AuthResponse>(
-      endpoints.auth.refreshToken
+   const { data } = await http.get<AuthResponse>(endpoints.auth.refreshToken);
+   return data;
+};
+
+export const resetPassword = async (
+   payload: ResetPasswordPayload,
+   token: string
+): Promise<AuthResponse> => {
+   const { data } = await http.post<AuthResponse>(
+      endpoints.user.resetPassword(token),
+      payload
    );
    return data;
 };
