@@ -53,7 +53,12 @@ export const SignInForm = () => {
          onSubmit={signInHandler}
       >
          {({ isSubmitting }) => (
-            <article className="signin-form__wrapper">
+            <Form
+               className="signin-form"
+               autoComplete="off"
+               aria-label="Sign in to your account"
+               role="form"
+            >
                <h4
                   className="signin-form__title"
                   aria-label="Welcome back to the Kingdom"
@@ -68,11 +73,10 @@ export const SignInForm = () => {
                >
                   Log in and reclaim your reading throne.
                </p>
-               <Form
-                  className="signin-form"
-                  autoComplete="off"
-                  aria-label="Sign in to your account"
-                  role="form"
+
+               <fieldset
+                  className="signin-form__fieldset"
+                  disabled={isSubmitting}
                >
                   <InputField
                      wrapperClassName="signin-input__wrapper"
@@ -83,6 +87,7 @@ export const SignInForm = () => {
                      type="email"
                      placeholder="Email Address"
                      aria-label="Enter your email address"
+                     disabled={isSubmitting}
                   />
                   <InputField
                      wrapperClassName="signin-input__wrapper"
@@ -103,24 +108,25 @@ export const SignInForm = () => {
                   >
                      {isSubmitting ? <Loader /> : "Sign In"}
                   </Button>
-               </Form>
-               <div className="signin-form__links">
-                  <Link
-                     className="signin-form__link"
-                     to={Routes.authSignUp}
-                     aria-label="Don't have an account yet? Redirect to sign up page!"
-                  >
-                     Don't have an account yet?
-                  </Link>
-                  <Link
-                     className="signin-form__link"
-                     to={Routes.authForgotPassword}
-                     aria-label="Forgot your password? Redirect to reset password page"
-                  >
-                     Forgot your password?
-                  </Link>
-               </div>
-            </article>
+
+                  <div className="signin-form__links">
+                     <Link
+                        className="signin-form__link"
+                        to={Routes.authSignUp}
+                        aria-label="Don't have an account yet? Redirect to sign up page!"
+                     >
+                        Don't have an account yet?
+                     </Link>
+                     <Link
+                        className="signin-form__link"
+                        to={Routes.authForgotPassword}
+                        aria-label="Forgot your password? Redirect to reset password page"
+                     >
+                        Forgot your password?
+                     </Link>
+                  </div>
+               </fieldset>
+            </Form>
          )}
       </Formik>
    );

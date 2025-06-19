@@ -42,15 +42,16 @@ export const ResetPasswordForm = () => {
       confirmPassword,
    }: ResetPasswordPayload) => {
       try {
-         const data = await dispatch(
+         await dispatch(
             resetPasswordAuthThunk({
                payload: { password, confirmPassword },
                token,
             })
+         ).unwrap();
+
+         toast.success(
+            `Password reset successfully! Welcome back to theKingdom`
          );
-         console.log(data);
-         toast.success(`Password reset successfully!
-                        Welcome back to theKingdom`);
 
          navigate(Routes.home, { replace: true });
       } catch (err: unknown) {
@@ -66,25 +67,29 @@ export const ResetPasswordForm = () => {
          onSubmit={resetPasswordHandler}
       >
          {({ isSubmitting }) => (
-            <article className="reset-password__form-wrapper">
+            <Form
+               className="reset-password__form"
+               autoComplete="off"
+               aria-label="Reset password form"
+            >
                <h4
-                  className="reset-password__title"
+                  className="reset-password__form-title"
                   aria-label="Reset your password?"
                >
                   Reset your password?
                </h4>
 
                <p
-                  className="reset-password__text"
+                  className="reset-password__form-text"
                   aria-label="Enter your new password to reset it."
                   role="text"
                >
                   Enter your new password to reset it.
                </p>
-               <Form
-                  className="reset-password__form"
-                  autoComplete="off"
-                  aria-label="Reset password form"
+
+               <fieldset
+                  className="reset-password__form-fieldset"
+                  disabled={isSubmitting}
                >
                   <InputField
                      wrapperClassName="reset-password__input-wrapper"
@@ -115,8 +120,8 @@ export const ResetPasswordForm = () => {
                   >
                      {isSubmitting ? <Loader /> : "Reset Password"}
                   </Button>
-               </Form>
-            </article>
+               </fieldset>
+            </Form>
          )}
       </Formik>
    );

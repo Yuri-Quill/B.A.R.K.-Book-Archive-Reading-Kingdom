@@ -55,7 +55,12 @@ export const SignUpForm = () => {
          onSubmit={signUpHandler}
       >
          {({ isSubmitting }) => (
-            <article className="signup-form__wrapper">
+            <Form
+               className="signup-form"
+               autoComplete="off"
+               aria-label="Sign up for an account"
+               role="form"
+            >
                <h4
                   className="signup-form__title"
                   aria-label="Join the Kingdom and start your journey"
@@ -73,11 +78,9 @@ export const SignUpForm = () => {
                >
                   Sign up and explore your new realm of books.
                </p>
-               <Form
-                  className="signup-form"
-                  autoComplete="off"
-                  aria-label="Sign up for an account"
-                  role="form"
+               <fieldset
+                  className="signup-form__fieldset"
+                  disabled={isSubmitting}
                >
                   <InputField
                      wrapperClassName="signup-input__wrapper"
@@ -128,16 +131,15 @@ export const SignUpForm = () => {
                   >
                      {isSubmitting ? <Loader /> : "Sign Up"}
                   </Button>
-               </Form>
-
-               <Link
-                  className="signup-form__link"
-                  to={Routes.authSignIn}
-                  aria-label=" You already have an account? Redirect to sign up page!"
-               >
-                  You already have an account?
-               </Link>
-            </article>
+                  <Link
+                     className="signup-form__link"
+                     to={Routes.authSignIn}
+                     aria-label=" You already have an account? Redirect to sign up page!"
+                  >
+                     You already have an account?
+                  </Link>
+               </fieldset>
+            </Form>
          )}
       </Formik>
    );

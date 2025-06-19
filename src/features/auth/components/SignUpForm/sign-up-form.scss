@@ -1,7 +1,3 @@
-.signup-form__wrapper {
-   @include form-wrapper;
-}
-
 .signup-form {
    @include form-style;
 
@@ -12,5 +8,10 @@
 
    &__link {
       @include link-hint;
+   }
+
+   &__fieldset {
+      @include fieldset-style;
+      @include staggered-fade-in;
    }
 }

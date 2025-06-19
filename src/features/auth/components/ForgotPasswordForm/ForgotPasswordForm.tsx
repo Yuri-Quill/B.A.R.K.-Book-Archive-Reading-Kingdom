@@ -12,7 +12,6 @@ import { InputField } from "@/shared/components/InputField/InputField";
 import { Button } from "@/shared/components/Button/Button";
 import { Loader } from "@/shared/components/Loader/Loader";
 
-
 import { forgotPasswordSchema } from "@/features/auth/schemas/forgotPasswordSchema";
 
 import { Routes } from "@/shared/constants/routes";
@@ -36,7 +35,6 @@ export const ForgotPasswordForm = () => {
    });
 
    const forgotPasswordHandler = async (values: ForgotPasswordPayload) => {
-
       try {
          await dispatch(forgotPasswordThunk(values)).unwrap();
          toast.success(
@@ -56,33 +54,36 @@ export const ForgotPasswordForm = () => {
          onSubmit={forgotPasswordHandler}
       >
          {({ isSubmitting }) => (
-            <article className="forgot-password__form-wrapper">
+            <Form
+               className="forgot-password__form"
+               autoComplete="off"
+               aria-label="Forgot password form"
+               role="form"
+            >
                <h4
-                  className="forgot-password__title"
+                  className="forgot-password__form-title"
                   aria-label="Forgot your password?"
                >
                   Forgot your password?
                </h4>
 
                <p
-                  className="forgot-password__text"
+                  className="forgot-password__form-text"
                   aria-label="Enter your email address and we'll send you a link to reset your password."
                   role="text"
                >
                   Enter your email address and we'll send you a link to reset
                   your password.
                </p>
-               <Form
-                  className="forgot-password__form"
-                  autoComplete="off"
-                  aria-label="Forgot password form"
-                  role="form"
-               >
 
+               <fieldset
+                  className="forgot-password__form-fieldset"
+                  disabled={isSubmitting}
+               >
                   <InputField
-                     wrapperClassName="forgot-password__wrapper"
-                     inputClassName="forgot-password"
-                     iconClassName="forgot-password__icon"
+                     wrapperClassName="forgot-password__input-wrapper"
+                     inputClassName="forgot-password__input"
+                     iconClassName="forgot-password__input-icon"
                      icon={Mail}
                      name="email"
                      type="email"
@@ -98,8 +99,8 @@ export const ForgotPasswordForm = () => {
                   >
                      {isSubmitting ? <Loader /> : "Sign In"}
                   </Button>
-               </Form>
-            </article>
+               </fieldset>
+            </Form>
          )}
       </Formik>
    );

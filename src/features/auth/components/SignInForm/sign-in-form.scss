@@ -1,16 +1,18 @@
-.signin-form__wrapper {
-   @include form-wrapper;
-}
-
 .signin-form {
    @include form-style;
 
    &__links {
       display: flex;
       flex-direction: column;
-      gap: .625rem;
+      gap: 0.625rem;
    }
    &__link {
       @include link-hint;
+   }
+
+   &__fieldset {
+      @include fieldset-style;
+
+      @include staggered-fade-in;
    }
 }

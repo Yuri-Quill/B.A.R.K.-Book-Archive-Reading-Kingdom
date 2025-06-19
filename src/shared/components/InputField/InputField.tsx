@@ -24,8 +24,8 @@ export const InputField = ({
    inputClassName,
    errorClassName,
    icon: Icon,
-
    type,
+
    ...fieldProps
 }: InputFieldProps) => {
    const [showPassword, setShowPassword] = useState(false);
@@ -60,7 +60,6 @@ export const InputField = ({
             )}
             autoComplete="new-password"
             {...fieldProps}
-
          />
 
          {isPassword && (
@@ -73,7 +72,7 @@ export const InputField = ({
                {showPassword ? (
                   <Eye className="input__toggle-icon" size={20} />
                ) : (
-                  <EyeClosed  className="input__toggle-icon" size={20} />
+                  <EyeClosed className="input__toggle-icon" size={20} />
                )}
             </button>
          )}

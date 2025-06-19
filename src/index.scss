@@ -45,3 +45,7 @@ h4 {
    font-size: 14px;
    text-align: center;
 }
+
+fieldset:disabled {
+   @include fieldset-disabled;
+}
