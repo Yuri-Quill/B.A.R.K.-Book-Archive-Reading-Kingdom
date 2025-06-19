@@ -12,7 +12,8 @@ import { InputField } from "@/shared/components/InputField/InputField";
 import { Button } from "@/shared/components/Button/Button";
 import { Loader } from "@/shared/components/Loader/Loader";
 
-import { emailSchema } from "@/shared/validation/commonSchemas";
+
+import { forgotPasswordSchema } from "@/features/auth/schemas/forgotPasswordSchema";
 
 import { Routes } from "@/shared/constants/routes";
 
@@ -22,6 +23,7 @@ import "./forgot-password-form.scss";
 
 const initialValues = {
    email: "",
+   clientURL: window.location.origin,
 };
 
 export const ForgotPasswordForm = () => {
@@ -34,6 +36,7 @@ export const ForgotPasswordForm = () => {
    });
 
    const forgotPasswordHandler = async (values: ForgotPasswordPayload) => {
+
       try {
          await dispatch(forgotPasswordThunk(values)).unwrap();
          toast.success(
@@ -49,7 +52,7 @@ export const ForgotPasswordForm = () => {
    return (
       <Formik
          initialValues={initialValues}
-         validationSchema={emailSchema}
+         validationSchema={forgotPasswordSchema}
          onSubmit={forgotPasswordHandler}
       >
          {({ isSubmitting }) => (
@@ -75,6 +78,7 @@ export const ForgotPasswordForm = () => {
                   aria-label="Forgot password form"
                   role="form"
                >
+
                   <InputField
                      wrapperClassName="forgot-password__wrapper"
                      inputClassName="forgot-password"

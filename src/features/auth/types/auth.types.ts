@@ -48,8 +48,18 @@ export interface SignupPayload {
    confirmPassword: string;
 }
 
+export interface ForgotPasswordPayload {
+   email: string;
+   clientURL: string;
+}
+
 export type SigninPayload = Pick<SignupPayload, "email" | "password">;
 
-export type ForgotPasswordPayload = Pick<SignupPayload, "email">;
-
-export type ResetPasswordPayload = Pick<SignupPayload, 'password' | 'confirmPassword'>
+export type ResetPasswordPayload = Pick<
+   SignupPayload,
+   "password" | "confirmPassword"
+>;
+export interface ResetPasswordArgs {
+   payload: ResetPasswordPayload;
+   token: string;
+}

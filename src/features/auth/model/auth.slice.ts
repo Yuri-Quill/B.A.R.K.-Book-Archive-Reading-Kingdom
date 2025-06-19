@@ -7,6 +7,7 @@ import {
    refreshTokenThunk,
    signinAuthThunk,
    signupAuthThunk,
+   resetPasswordAuthThunk,
 } from "@/features/auth/model/auth.thunks";
 
 import type { AuthResponse } from "@/features/auth/types/auth.types";
@@ -107,8 +108,24 @@ const authSlice = createSlice({
             state.loading = false;
             state.user = null;
             state.isAuthenticated = false;
-            // state.error =
-            //    action.payload?.message || "Unknown error with token refresh!";
+         })
+         .addCase(resetPasswordAuthThunk.pending, (state) => {
+            state.loading = true;
+         })
+         .addCase(
+            resetPasswordAuthThunk.fulfilled,
+            (state, action: PayloadAction<AuthResponse>) => {
+               state.loading = false;
+               state.user = action.payload.data.user;
+               state.isAuthenticated = true;
+               state.error = null;
+            }
+         )
+         .addCase(resetPasswordAuthThunk.rejected, (state, action) => {
+            state.loading = false;
+            state.isAuthenticated = false;
+            state.error =
+               action.payload?.message || "Unknown error with sign up!";
          });
    },
 });

@@ -5,6 +5,7 @@ import {
    forgotPassword,
    logout,
    refreshToken,
+   resetPassword,
    signin,
    signup,
 } from "@/features/auth/api/auth.api";
@@ -13,6 +14,7 @@ import type {
    ApiStatusResponse,
    AuthResponse,
    ForgotPasswordPayload,
+   ResetPasswordArgs,
    SigninPayload,
    SignupPayload,
 } from "@/features/auth/types/auth.types";
@@ -77,6 +79,19 @@ export const refreshTokenThunk = createAsyncThunk<
    try {
       const response = await refreshToken();
       return response;
+   } catch (error) {
+      return rejectWithValue({ message: apiErrorhandler(error) });
+   }
+});
+
+export const resetPasswordAuthThunk = createAsyncThunk<
+   AuthResponse,
+   ResetPasswordArgs,
+   { rejectValue: { message: string } }
+>("auth/resetPassword", async (args, { rejectWithValue }) => {
+   try {
+      const data = await resetPassword(args);
+      return data;
    } catch (error) {
       return rejectWithValue({ message: apiErrorhandler(error) });
    }
