@@ -35,26 +35,57 @@ BARK is your digital reading kingdom — a clean, modern bookstore where you can
 
 ## 📦 Project Structure
 
-```plaintext
-├── public/                # Public static assets
-└── src/                  # Source code
-    ├── app/              # Application core
-    │   ├── store/       # Redux store setup
-    │   └── types/       # Core type definitions
-    ├── assets/          # Static assets
-    │   ├── fonts/       # Font files
-    │   │   └── work-sans/ # Work Sans font family
-    │   ├── images/      # Image assets
-    │   ├── logo/        # Logo variations
-    │   └── styles/      # Global style configurations
-    ├── features/        # Feature-based modules
-    ├── layouts/         # Layout components
-    ├── pages/           # Page components
-    └── shared/          # Shared resources
-        ├── components/  # Shared UI components
-        ├── constants/   # Application constants
-        ├── hooks/       # Custom React hooks
-        └── utils/       # Utility functions
+```
+📦 Root
+├── 📂 public                      # Public static assets directory
+└── 📂 src                         # Source code directory
+    ├── 📂 app                     # Core application setup
+    │   └── 📂 store              # Redux store configuration
+    ├── 📂 assets                 # Static assets
+    │   ├── 📂 fonts             # Application fonts
+    │   │   └── 📂 work-sans     # Work Sans font family
+    │   ├── 📂 images            # Application images
+    │   │   └── 📂 error         # Error page images
+    │   ├── 📂 logo              # Application logos
+    │   └── 📂 styles            # Global styles
+    ├── 📂 features              # Feature modules
+    │   ├── 📂 auth             # Authentication feature
+    │   │   ├── 📂 components   # Auth components
+    │   │   │   ├── 📂 LoginForm     # Login form component
+    │   │   │   └── 📂 RegisterForm  # Registration form component
+    │   │   └── 📂 pages        # Auth pages
+    │   │       ├── 📂 LoginPage     # Login page
+    │   │       └── 📂 RegisterPage  # Registration page
+    │   ├── 📂 common-pages     # Common pages
+    │   │   ├── 📂 error-page   # Error handling pages
+    │   │   └── 📂 test         # Test pages
+    │   ├── 📂 footer          # Footer module
+    │   │   ├── 📂 components  # Footer components
+    │   │   └── 📂 data        # Footer data
+    │   ├── 📂 header          # Header module
+    │   │   ├── 📂 components  # Header components
+    │   │   │   ├── 📂 HeaderActions  # Header actions components
+    │   │   │   └── 📂 HeaderNav      # Navigation components
+    │   │   └── 📂 data        # Header data
+    │   ├── 📂 home           # Home page module
+    │   │   ├── 📂 components # Home components
+    │   │   └── 📂 pages      # Home pages
+    │   └── 📂 layouts        # Layout templates
+    │       └── 📂 components # Layout components
+    └── 📂 shared             # Shared resources
+        ├── 📂 components     # Reusable components
+        │   ├── 📂 Button          # Button component
+        │   ├── 📂 ButtonLink      # Button link component
+        │   ├── 📂 ContentWrapper  # Content wrapper component
+        │   ├── 📂 Input          # Input component
+        │   ├── 📂 Loader         # Loading indicator component
+        │   └── 📂 Logo           # Logo component
+        ├── 📂 constants     # Application constants
+        ├── 📂 context       # React contexts
+        │   └── 📂 ThemeContext  # Theme context
+        ├── 📂 hooks         # Custom hooks
+        ├── 📂 types        # Common types
+        └── 📂 utils        # Utility functions
 ```
 
 ## 📄 License
