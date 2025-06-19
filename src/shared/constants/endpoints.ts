@@ -63,7 +63,7 @@ export const endpoints = {
    },
 } as const;
 
-// Utility type to extract all endpoint paths into a union type
+
 type Paths<T> = T extends string
    ? T
    : T extends object
