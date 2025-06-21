@@ -10,11 +10,11 @@ const ErrorPage = lazy(
 );
 
 const SignInPage = lazy(
-   () => import("@features/auth/pages/SignInPage/SignInPage")
+   () => import("@/features/auth/pages/SignInPage/SignInPage")
 );
 
 const SignUpPage = lazy(
-   () => import("@features/auth/pages/SignUpPage/SignUpPage")
+   () => import("@/features/auth/pages/SignUpPage/SignUpPage")
 );
 
 const ForgotPAsswordPage = lazy(
