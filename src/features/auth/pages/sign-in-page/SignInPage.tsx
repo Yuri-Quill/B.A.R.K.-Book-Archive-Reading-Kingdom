@@ -1,4 +1,4 @@
-import { SignInForm } from "@/features/auth/components/SignInForm/SignInForm";
+import { SignInForm } from "@/features/auth/components/sign-in-form/SignInForm";
 
 import "./sign-in-page.scss";
 

@@ -1,7 +1,7 @@
-import { UserProfileForm } from "@/features/user/components/UserProfileForm/UserProfileForm";
+import { UserAccountForm } from "@/features/user/components/user-account-form/UserAccountForm";
+import { UserProfileForm } from "@/features/user/components/user-profile-form/UserProfileForm";
+import { ContentWrapper } from "@/shared/components/content-wrapper/ContentWrapper";
 import "./user-account-page.scss";
-import { ContentWrapper } from "@/shared/components/ContentWrapper/ContentWrapper";
-import { UserAccountForm } from "@/features/user/components/UserAccountForm/UserAccountForm";
 
 const UserAccountPage = () => {
    return (

@@ -1,7 +1,7 @@
-import { ContentWrapper } from "@/shared/components/ContentWrapper/ContentWrapper";
-import { Logo } from "@/shared/components/Logo/Logo";
-import { HeaderNav } from "@/features/header/components/HeaderNav/HeaderNav";
-import { HeaderActions } from "@/features/header/components/HeaderActions/HeaderActions";
+import { HeaderActions } from "@/features/header/components/header-actions/HeaderActions";
+import { HeaderNav } from "@/features/header/components/header-nav/HeaderNav";
+import { ContentWrapper } from "@/shared/components/content-wrapper/ContentWrapper";
+import { Logo } from "@/shared/components/logo/Logo";
 
 import {
    actionsNavData,

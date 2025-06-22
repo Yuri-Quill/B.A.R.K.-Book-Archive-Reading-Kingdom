@@ -1,5 +1,5 @@
+import { InputField } from "@/shared/components/input-field/InputField";
 import { Form, Formik } from "formik";
-import { InputField } from "@/shared/components/InputField/InputField";
 import "./user-account-form.scss";
 
 export const UserAccountForm = () => {
@@ -14,12 +14,7 @@ export const UserAccountForm = () => {
          {({ isSubmitting }) => (
             <Form autoComplete="off">
                <fieldset disabled={isSubmitting}>
-
-                  <InputField
-                     name="username"
-                     placeholder="Username"
-                     
-                  />
+                  <InputField name="username" placeholder="Username" />
                </fieldset>
             </Form>
          )}

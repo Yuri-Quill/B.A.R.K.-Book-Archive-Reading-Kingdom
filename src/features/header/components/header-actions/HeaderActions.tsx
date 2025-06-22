@@ -1,7 +1,7 @@
 import { memo } from "react";
 import { Link } from "react-router-dom";
 
-import { AuthButton } from "@/features/header/components/AuthButton/AuthButton";
+import { AuthButton } from "@/features/header/components/auth-button/AuthButton";
 
 import type { NavItem } from "@/features/header/header.types";
 

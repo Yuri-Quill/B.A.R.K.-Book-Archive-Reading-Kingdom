@@ -2,7 +2,7 @@ import { lazy } from "react";
 import { createBrowserRouter, Navigate } from "react-router-dom";
 
 import { HomePage } from "@features/home/pages/HomePage";
-import { AppLayout } from "@features/layouts/AppLayout/AppLayout";
+import { AppLayout } from "@/features/layouts/app-layout/AppLayout";
 import { Routes } from "@shared/constants/routes";
 
 const ErrorPage = lazy(
@@ -10,23 +10,23 @@ const ErrorPage = lazy(
 );
 
 const SignInPage = lazy(
-   () => import("@/features/auth/pages/SignInPage/SignInPage")
+   () => import("@/features/auth/pages/sign-in-page/SignInPage")
 );
 
 const SignUpPage = lazy(
-   () => import("@/features/auth/pages/SignUpPage/SignUpPage")
+   () => import("@/features/auth/pages/sign-up-page/SignUpPage")
 );
 
 const ForgotPAsswordPage = lazy(
-   () => import("@features/auth/pages/ForgotPasswordPage/ForgotPasswordPage")
+   () => import("@/features/auth/pages/forgot-password-page/ForgotPasswordPage")
 );
 
 const UserAccountPage = lazy(
-   () => import("@/features/user/pages/UserAccountPage/UserAccountPage")
+   () => import("@/features/user/pages/user-account-page/UserAccountPage")
 );
 
 const ResetPasswordPage = lazy(
-   () => import("@features/auth/pages/ResetPasswordPage/ResetPasswordPage")
+   () => import("@/features/auth/pages/reset-password-page/ResetPasswordPage")
 );
 
 export const router = createBrowserRouter([

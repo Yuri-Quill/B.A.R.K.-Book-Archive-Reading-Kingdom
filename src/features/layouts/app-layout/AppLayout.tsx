@@ -7,7 +7,7 @@ import { ThemeContext } from "@/shared/context/theme-context/theme-context";
 
 import { Footer } from "@/features/footer/components/Footer";
 import { Header } from "@/features/header/components/Header";
-import { Loader } from "@/shared/components/Loader/Loader";
+import { Loader } from "@/shared/components/loader/Loader";
 
 import { useAppDispatch } from "@/app/store/hooks";
 import { refreshTokenThunk } from "@/features/auth/model/auth.thunks";

@@ -8,9 +8,9 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import { useAppDispatch } from "@/app/store/hooks";
 import { useHead } from "@/shared/hooks/use-head";
 
-import { Button } from "@/shared/components/Button/Button";
-import { InputField } from "@/shared/components/InputField/InputField";
-import { Loader } from "@/shared/components/Loader/Loader";
+import { Button } from "@/shared/components/button/Button";
+import { InputField } from "@/shared/components/input-field/InputField";
+import { Loader } from "@/shared/components/loader/Loader";
 
 import {
    resetPasswordAuthThunk,

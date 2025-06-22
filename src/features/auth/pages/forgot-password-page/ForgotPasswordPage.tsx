@@ -1,4 +1,4 @@
-import { ForgotPasswordForm } from "@/features/auth/components/ForgotPasswordForm/ForgotPasswordForm";
+import { ForgotPasswordForm } from "@/features/auth/components/forgot-password-form/ForgotPasswordForm";
 import "./forgot-password-page.scss";
 
 const ForgotPasswordPage = () => {

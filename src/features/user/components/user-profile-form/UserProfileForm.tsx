@@ -1,6 +1,6 @@
-import { Form, Formik } from "formik";
 import { useAppSelector } from "@/app/store/hooks";
-import { InputField } from "@/shared/components/InputField/InputField";
+import { InputField } from "@/shared/components/input-field/InputField";
+import { Form, Formik } from "formik";
 
 import "./user-profile-form.scss";
 export const UserProfileForm = () => {
