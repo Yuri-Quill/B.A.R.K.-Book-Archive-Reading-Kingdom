@@ -1,15 +1,8 @@
 import { Form, Formik } from "formik";
-import { useAppSelector } from "@/app/store/hooks";
 import { InputField } from "@/shared/components/InputField/InputField";
+import "./user-account-form.scss";
 
-import "./user-profile-form.scss";
-export const UserProfileForm = () => {
-   const { user } = useAppSelector((state) => state.auth);
-
-   if (!user || !user.profile) return null;
-
-   const profile = user.profile;
-
+export const UserAccountForm = () => {
    return (
       <Formik
          initialValues={{}}
@@ -21,11 +14,11 @@ export const UserProfileForm = () => {
          {({ isSubmitting }) => (
             <Form autoComplete="off">
                <fieldset disabled={isSubmitting}>
+
                   <InputField
-                     name="Address"
-                     placeholder="Address"
-                     type="text"
-                     value={profile.address}
+                     name="username"
+                     placeholder="Username"
+                     
                   />
                </fieldset>
             </Form>

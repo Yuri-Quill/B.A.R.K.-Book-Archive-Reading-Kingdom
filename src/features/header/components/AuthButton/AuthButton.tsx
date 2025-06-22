@@ -15,7 +15,7 @@ interface AuthButtonProps {
 export const AuthButton = ({ className, cnImg }: AuthButtonProps) => {
    const { isAuthenticated } = useAppSelector((state) => state.auth);
 
-   const linkRoute = isAuthenticated ? Routes.profile : Routes.auth;
+   const linkRoute = isAuthenticated ? Routes.userProfile : Routes.auth;
 
    return (
       <Link

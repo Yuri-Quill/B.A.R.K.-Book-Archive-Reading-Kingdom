@@ -6,7 +6,7 @@ export const Routes = {
    favorites: "/favorites",
    cart: "/cart",
    orders: "/orders",
-   profile: "/profile",
+   userProfile: "/user/profile",
    auth: "/auth",
    authSignIn: "/auth/sign-in",
    authSignUp: "/auth/sign-up",
