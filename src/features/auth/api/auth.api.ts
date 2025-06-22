@@ -9,6 +9,7 @@ import type {
    SigninPayload,
    SignupPayload,
    ResetPasswordArgs,
+   ValidateResetTokenResponse,
 } from "@/features/auth/types/auth.types";
 
 export const signin = async (payload: SigninPayload): Promise<AuthResponse> => {
@@ -55,6 +56,15 @@ export const resetPassword = async ({
    const { data } = await http.patch<AuthResponse>(
       endpoints.user.resetPassword(token),
       payload
+   );
+   return data;
+};
+
+export const validateResetToken = async (
+   token: string
+): Promise<ValidateResetTokenResponse> => {
+   const { data } = await http.get<ValidateResetTokenResponse>(
+      endpoints.user.validateResetToken(token)
    );
    return data;
 };

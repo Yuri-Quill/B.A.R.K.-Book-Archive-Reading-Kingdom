@@ -5,10 +5,12 @@ export const endpoints = {
       logout: "/auth/logout",
       refreshToken: "/auth/refresh-token",
       forgotPassword: "/auth/forgot-password",
+
    } as const,
 
    user: {
       resetPassword: (token: string) => `/auth/reset-password/${token}`,
+      validateResetToken:(token:string)=> `/auth/validate-reset-token/${token}`,
       updatePassword: "/auth/update-password",
       updateUser: "/auth/update-user",
       updateProfile: "/auth/update-profile",

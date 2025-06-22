@@ -63,3 +63,7 @@ export interface ResetPasswordArgs {
    payload: ResetPasswordPayload;
    token: string;
 }
+
+export interface ValidateResetTokenResponse {
+   valid: boolean;
+}

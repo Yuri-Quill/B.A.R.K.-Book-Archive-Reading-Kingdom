@@ -4,7 +4,7 @@ interface ErrorResponseType {
    message: string;
 }
 
-export const apiErrorhandler = (error: unknown): string => {
+export const apiErrorHandler = (error: unknown): string => {
    if (axios.isAxiosError(error)) {
       const axiosError = error as AxiosError<ErrorResponseType>;
       return (

@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { apiErrorhandler } from "@/shared/utils/api/errorHandler";
+import { apiErrorHandler } from "@/shared/utils/api/errorHandler";
 
 import {
    forgotPassword,
@@ -8,6 +8,7 @@ import {
    resetPassword,
    signin,
    signup,
+   validateResetToken,
 } from "@/features/auth/api/auth.api";
 
 import type {
@@ -17,6 +18,7 @@ import type {
    ResetPasswordArgs,
    SigninPayload,
    SignupPayload,
+   ValidateResetTokenResponse,
 } from "@/features/auth/types/auth.types";
 
 export const signinAuthThunk = createAsyncThunk<
@@ -28,7 +30,7 @@ export const signinAuthThunk = createAsyncThunk<
       const data = await signin(payload);
       return data;
    } catch (error: unknown) {
-      return rejectWithValue({ message: apiErrorhandler(error) });
+      return rejectWithValue({ message: apiErrorHandler(error) });
    }
 });
 
@@ -41,7 +43,7 @@ export const signupAuthThunk = createAsyncThunk<
       const data = await signup(payload);
       return data;
    } catch (error) {
-      return rejectWithValue({ message: apiErrorhandler(error) });
+      return rejectWithValue({ message: apiErrorHandler(error) });
    }
 });
 
@@ -54,7 +56,7 @@ export const logoutAuthThunk = createAsyncThunk<
       const data = await logout();
       return data;
    } catch (error) {
-      return rejectWithValue({ message: apiErrorhandler(error) });
+      return rejectWithValue({ message: apiErrorHandler(error) });
    }
 });
 
@@ -67,7 +69,7 @@ export const forgotPasswordThunk = createAsyncThunk<
       const data = await forgotPassword(payload);
       return data;
    } catch (error) {
-      return rejectWithValue({ message: apiErrorhandler(error) });
+      return rejectWithValue({ message: apiErrorHandler(error) });
    }
 });
 
@@ -80,7 +82,7 @@ export const refreshTokenThunk = createAsyncThunk<
       const response = await refreshToken();
       return response;
    } catch (error) {
-      return rejectWithValue({ message: apiErrorhandler(error) });
+      return rejectWithValue({ message: apiErrorHandler(error) });
    }
 });
 
@@ -93,6 +95,21 @@ export const resetPasswordAuthThunk = createAsyncThunk<
       const data = await resetPassword(args);
       return data;
    } catch (error) {
-      return rejectWithValue({ message: apiErrorhandler(error) });
+      return rejectWithValue({ message: apiErrorHandler(error) });
+   }
+});
+
+export const validateResetTokenThunk = createAsyncThunk<
+   ValidateResetTokenResponse,
+   string,
+   {
+      rejectValue: { message: string };
+   }
+>("auth/validateResetToken", async (token, { rejectWithValue }) => {
+   try {
+      const data = await validateResetToken(token);
+      return data;
+   } catch (error) {
+      return rejectWithValue({ message: apiErrorHandler(error) });
    }
 });

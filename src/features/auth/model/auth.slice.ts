@@ -8,6 +8,7 @@ import {
    signinAuthThunk,
    signupAuthThunk,
    resetPasswordAuthThunk,
+   validateResetTokenThunk,
 } from "@/features/auth/model/auth.thunks";
 
 import type { AuthResponse } from "@/features/auth/types/auth.types";
@@ -26,7 +27,6 @@ const authSlice = createSlice({
       resetAuthError(state) {
          state.error = null;
       },
-      
    },
    extraReducers: (builder) => {
       builder
@@ -127,6 +127,17 @@ const authSlice = createSlice({
             state.isAuthenticated = false;
             state.error =
                action.payload?.message || "Unknown error with sign up!";
+         })
+         .addCase(validateResetTokenThunk.pending, (state) => {
+            state.loading = true;
+         })
+         .addCase(validateResetTokenThunk.fulfilled, (state) => {
+            state.loading = false;
+            state.error = null;
+         })
+         .addCase(validateResetTokenThunk.rejected, (state, action) => {
+            state.loading = false;
+            state.error = action.payload?.message || "Token validation failed!";
          });
    },
 });

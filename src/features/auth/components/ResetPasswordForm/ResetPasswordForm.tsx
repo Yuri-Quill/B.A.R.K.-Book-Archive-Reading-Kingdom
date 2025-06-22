@@ -2,7 +2,9 @@ import { Form, Formik } from "formik";
 import { Lock } from "lucide-react";
 import { toast } from "react-toastify";
 
+import { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
+
 import { useAppDispatch } from "@/app/store/hooks";
 import { useHead } from "@/shared/hooks/useHead";
 
@@ -10,14 +12,17 @@ import { InputField } from "@/shared/components/InputField/InputField";
 import { Button } from "@/shared/components/Button/Button";
 import { Loader } from "@/shared/components/Loader/Loader";
 
-import { Routes } from "@/shared/constants/routes";
-
+import {
+   resetPasswordAuthThunk,
+   validateResetTokenThunk,
+} from "@/features/auth/model/auth.thunks";
 import { resetPasswordSchema } from "@/features/auth/schemas/resetPasswordSchema";
+
+import { Routes } from "@/shared/constants/routes";
 
 import type { ResetPasswordPayload } from "@/features/auth/types/auth.types";
 
 import "./reset-password-form.scss";
-import { resetPasswordAuthThunk } from "@/features/auth/model/auth.thunks";
 
 const initialValues = {
    password: "",
@@ -25,6 +30,7 @@ const initialValues = {
 };
 
 export const ResetPasswordForm = () => {
+   const [isValid, setIsValid] = useState<boolean | null>(null);
    const dispatch = useAppDispatch();
    const [searchParams] = useSearchParams();
    const navigate = useNavigate();
@@ -36,6 +42,33 @@ export const ResetPasswordForm = () => {
       description:
          "Reset your password and get back to reading your favorite books.",
    });
+
+   useEffect(() => {
+      if (!token) {
+         toast.warning(
+            "Looks like the royal scroll got lost in transit. Please check your email and follow the correct link to reset your password."
+         );
+         navigate(Routes.home, { replace: true });
+         return;
+      }
+
+      const validateToken = async () => {
+         try {
+            await dispatch(validateResetTokenThunk(token)).unwrap();
+
+            setIsValid(true);
+         } catch (err: unknown) {
+            const error = err as { message: string };
+            toast.error(error.message);
+            setIsValid(false);
+            navigate(Routes.home, { replace: true });
+         }
+      };
+
+      validateToken();
+   }, [token, navigate, dispatch]);
+
+   if (isValid === null) return <Loader fullscreen={true} />;
 
    const resetPasswordHandler = async ({
       password,
@@ -50,7 +83,7 @@ export const ResetPasswordForm = () => {
          ).unwrap();
 
          toast.success(
-            `Password reset successfully! Welcome back to theKingdom`
+            `Password reset successfully! Welcome back to the Kingdom`
          );
 
          navigate(Routes.home, { replace: true });
