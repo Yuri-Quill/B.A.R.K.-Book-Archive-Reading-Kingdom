@@ -1,15 +1,15 @@
+import clsx from "clsx";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import clsx from "clsx";
 
-import { ThemeContext } from "@/shared/context/ThemeContext/ThemeContext";
+import { ThemeContext } from "@/shared/context/theme-context/theme-context";
 
 import { ThemeMode } from "@/shared/constants/theme";
 
 import DarkLogoImage from "@assets/logo/logo-dark-theme.webp";
 import LightLogoImage from "@assets/logo/logo-light-theme.webp";
 
-import type { ClassNameProps } from "@/shared/types/props";
+import type { ClassNameProps } from "@/shared/types/common-props.type";
 
 import "./logo.scss";
 
@@ -21,7 +21,7 @@ export const Logo = ({ className }: ClassNameProps) => {
    return (
       <Link
          to="/"
-         className={clsx('logo', className)}
+         className={clsx("logo", className)}
          aria-labelledby="site-name site-subtitle"
       >
          <img

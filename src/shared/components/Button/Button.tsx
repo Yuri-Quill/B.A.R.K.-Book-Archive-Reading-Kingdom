@@ -1,15 +1,24 @@
 import clsx from "clsx";
 
-import type { IconProps } from "@/shared/types/props";
+import type { IconProps } from "@/shared/types/common-props.type";
 
 import "./button.scss";
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, IconProps {
+interface ButtonProps
+   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+      IconProps {
    isActive?: boolean;
    modifier?: string;
 }
 
-export const Button = ({ icon: Icon, children, isActive, modifier, className, ...rest }: ButtonProps) => {
+export const Button = ({
+   icon: Icon,
+   children,
+   isActive,
+   modifier,
+   className,
+   ...rest
+}: ButtonProps) => {
    return (
       <button
          className={clsx(

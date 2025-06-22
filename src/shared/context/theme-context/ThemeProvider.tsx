@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 
-import { ThemeContext } from "@/shared/context/ThemeContext/ThemeContext";
+import { ThemeContext } from "@/shared/context/theme-context/theme-context";
 
 import { ThemeMode } from "@/shared/constants/theme";
 
 import type { ThemeModeType } from "@/shared/constants/theme";
-import type { ChildrenProps } from "@/shared/types/props";
+import type { ChildrenProps } from "@/shared/types/common-props.type";
 
 export const ThemeProvider = ({ children }: ChildrenProps) => {
    const [theme, setTheme] = useState<ThemeModeType>(() => {

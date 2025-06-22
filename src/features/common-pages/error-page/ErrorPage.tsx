@@ -3,7 +3,7 @@ import { Castle } from "lucide-react";
 
 import { ButtonLink } from "@/shared/components/ButtonLink/ButtonLink";
 
-import type { AppError } from "@/shared/types/error";
+import type { AppError } from "@/shared/types/error.type";
 
 import "./error-page.scss";
 

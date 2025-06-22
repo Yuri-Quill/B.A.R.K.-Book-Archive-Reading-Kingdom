@@ -4,15 +4,15 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 import { useAppDispatch } from "@/app/store/hooks";
-import { useHead } from "@/shared/hooks/useHead";
+import { useHead } from "@/shared/hooks/use-head";
 
 import { forgotPasswordThunk } from "@/features/auth/model/auth.thunks";
 
-import { InputField } from "@/shared/components/InputField/InputField";
 import { Button } from "@/shared/components/Button/Button";
+import { InputField } from "@/shared/components/InputField/InputField";
 import { Loader } from "@/shared/components/Loader/Loader";
 
-import { forgotPasswordSchema } from "@/features/auth/schemas/forgotPasswordSchema";
+import { forgotPasswordSchema } from "@/features/auth/schemas/forgot-password-schema";
 
 import { Routes } from "@/shared/constants/routes";
 

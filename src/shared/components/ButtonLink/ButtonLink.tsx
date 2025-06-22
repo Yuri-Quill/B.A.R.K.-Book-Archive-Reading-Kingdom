@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
 import clsx from "clsx";
+import { Link } from "react-router-dom";
 
-import type { IconProps } from "@/shared/types/props";
+import type { IconProps } from "@/shared/types/common-props.type";
 import type { LinkProps } from "react-router-dom";
 
 import "./button-link.scss";

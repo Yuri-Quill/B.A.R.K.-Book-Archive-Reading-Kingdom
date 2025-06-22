@@ -5,7 +5,7 @@ import {
    emailSchema,
    passwordSchema,
    userNameSchema,
-} from "@/shared/validation/commonSchemas";
+} from "@/shared/validation/common-schemas";
 
 export const signUpSchema = Yup.object().shape({
    username: userNameSchema,

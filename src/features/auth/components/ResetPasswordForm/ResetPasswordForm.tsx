@@ -6,17 +6,17 @@ import { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 
 import { useAppDispatch } from "@/app/store/hooks";
-import { useHead } from "@/shared/hooks/useHead";
+import { useHead } from "@/shared/hooks/use-head";
 
-import { InputField } from "@/shared/components/InputField/InputField";
 import { Button } from "@/shared/components/Button/Button";
+import { InputField } from "@/shared/components/InputField/InputField";
 import { Loader } from "@/shared/components/Loader/Loader";
 
 import {
    resetPasswordAuthThunk,
    validateResetTokenThunk,
 } from "@/features/auth/model/auth.thunks";
-import { resetPasswordSchema } from "@/features/auth/schemas/resetPasswordSchema";
+import { resetPasswordSchema } from "@/features/auth/schemas/reset-password-schema";
 
 import { Routes } from "@/shared/constants/routes";
 

@@ -1,6 +1,9 @@
 import clsx from "clsx";
 
-import type { ChildrenProps, ClassNameProps } from "@/shared/types/props";
+import type {
+   ChildrenProps,
+   ClassNameProps,
+} from "@/shared/types/common-props.type";
 
 import "./content-wrapper.scss";
 

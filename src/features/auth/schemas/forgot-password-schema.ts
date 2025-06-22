@@ -1,6 +1,6 @@
 import * as Yup from "yup";
 
-import { emailSchema } from "@/shared/validation/commonSchemas";
+import { emailSchema } from "@/shared/validation/common-schemas";
 
 export const forgotPasswordSchema = Yup.object().shape({
    email: emailSchema,

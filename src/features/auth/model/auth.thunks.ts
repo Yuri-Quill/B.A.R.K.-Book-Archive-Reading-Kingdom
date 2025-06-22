@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { apiErrorHandler } from "@/shared/utils/api/errorHandler";
+import { apiErrorHandler } from "@/shared/utils/api/api-error-handler";
 
 import {
    forgotPassword,

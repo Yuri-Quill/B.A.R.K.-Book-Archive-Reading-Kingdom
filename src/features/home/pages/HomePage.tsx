@@ -1,8 +1,8 @@
-import { useContext } from "react";
-import { ThemeContext } from "@/shared/context/ThemeContext/ThemeContext";
-import { Button } from "@/shared/components/Button/Button";
 import { useAppDispatch, useAppSelector } from "@/app/store/hooks";
 import { logoutAuthThunk } from "@/features/auth/model/auth.thunks";
+import { Button } from "@/shared/components/Button/Button";
+import { ThemeContext } from "@/shared/context/theme-context/theme-context";
+import { useContext } from "react";
 import { toast } from "react-toastify";
 
 export const HomePage = () => {

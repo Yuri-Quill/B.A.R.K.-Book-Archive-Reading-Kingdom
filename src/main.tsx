@@ -3,10 +3,10 @@ import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
 import { RouterProvider } from "react-router-dom";
 
-import { store } from "@/app/store/store";
 import { router } from "@/app/router";
+import { store } from "@/app/store/store";
 
-import { ThemeProvider } from "@/shared/context/ThemeContext/ThemeProvider";
+import { ThemeProvider } from "@/shared/context/theme-context/ThemeProvider";
 
 import "@assets/styles/reset.scss";
 

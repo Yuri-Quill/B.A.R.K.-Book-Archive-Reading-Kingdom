@@ -1,18 +1,18 @@
+import { Form, Formik } from "formik";
+import { Lock, Mail } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
-import { Formik, Form } from "formik";
-import { Mail, Lock } from "lucide-react";
 import { toast } from "react-toastify";
 
 import { useAppDispatch } from "@/app/store/hooks";
-import { useHead } from "@/shared/hooks/useHead";
+import { useHead } from "@/shared/hooks/use-head";
 
-import { InputField } from "@/shared/components/InputField/InputField";
 import { Button } from "@/shared/components/Button/Button";
+import { InputField } from "@/shared/components/InputField/InputField";
 import { Loader } from "@/shared/components/Loader/Loader";
 
 import { signinAuthThunk } from "@/features/auth/model/auth.thunks";
 
-import { signInSchema } from "@/features/auth/schemas/signInSchema";
+import { signInSchema } from "@/features/auth/schemas/sign-in-schema";
 
 import { Routes } from "@/shared/constants/routes";
 

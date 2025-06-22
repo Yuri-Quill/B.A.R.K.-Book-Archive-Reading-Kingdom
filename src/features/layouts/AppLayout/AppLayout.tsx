@@ -2,17 +2,17 @@ import { Suspense, useContext, useEffect, useLayoutEffect } from "react";
 import { Outlet } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 
-import { ThemeContext } from "@/shared/context/ThemeContext/ThemeContext";
 import { ThemeMode } from "@/shared/constants/theme";
+import { ThemeContext } from "@/shared/context/theme-context/theme-context";
 
 import { Footer } from "@/features/footer/components/Footer";
 import { Header } from "@/features/header/components/Header";
 import { Loader } from "@/shared/components/Loader/Loader";
 
-import DarkFav from "/fav-dark.ico";
-import LightFav from "/fav-light.ico";
 import { useAppDispatch } from "@/app/store/hooks";
 import { refreshTokenThunk } from "@/features/auth/model/auth.thunks";
+import DarkFav from "/fav-dark.ico";
+import LightFav from "/fav-light.ico";
 
 export const AppLayout = () => {
    const dispatch = useAppDispatch();
