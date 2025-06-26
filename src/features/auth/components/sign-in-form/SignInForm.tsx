@@ -87,7 +87,6 @@ export const SignInForm = () => {
                      type="email"
                      placeholder="Email Address"
                      aria-label="Enter your email address"
-                     disabled={isSubmitting}
                   />
                   <InputField
                      wrapperClassName="signin-input__wrapper"

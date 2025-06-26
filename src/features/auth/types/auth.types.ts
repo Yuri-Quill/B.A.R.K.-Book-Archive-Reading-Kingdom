@@ -16,6 +16,7 @@ export interface User {
    id: string;
    _id: string;
    username: string;
+   avatar: string;
    email: string;
    role: "user" | "admin";
    active: boolean;
@@ -29,7 +30,6 @@ export interface User {
 }
 
 export interface UserProfile {
-   photo: string;
    country: string;
    city: string;
    address: string;
