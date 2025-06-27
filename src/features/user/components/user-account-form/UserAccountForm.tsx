@@ -6,7 +6,7 @@ import { useState } from "react";
 import { useAppSelector } from "@/app/store/hooks";
 
 import { InputField } from "@/shared/components/input-field/InputField";
-import { Button } from "@/shared/components/button/Button";
+
 
 import { userAccountSchema } from "@/features/user/schemas/user-account-schema";
 
@@ -32,7 +32,7 @@ export const UserAccountForm = () => {
             console.log(values);
          }}
       >
-         {({ isSubmitting }) => (
+         {() => (
             <Form className="user-account__form" autoComplete="off">
                <header className="user-account__heading-wrapper">
                   <h4 className="user-account__heading">
@@ -45,9 +45,9 @@ export const UserAccountForm = () => {
                      onClick={toggleAccountInfoEditingHandler}
                      aria-label="Edit your account information"
                      title="Edit your account information"
-                     type="button"
+                     type={!isDisabled ? 'button' : 'submit'}
                   >
-                     <span className="sr-only">Edit</span>
+                     <span className="sr-only">{isDisabled ? 'Edit': 'Confirm Changes'}</span>
                      <SquarePen className="user-account__edit-icon" />
                   </button>
                </header>

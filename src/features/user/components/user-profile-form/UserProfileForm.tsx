@@ -21,7 +21,6 @@ import { InputField } from "@/shared/components/input-field/InputField";
 import { userProfileSchema } from "@/features/user/schemas/user-profile-schema";
 
 import "./user-profile-form.scss";
-import { Button } from "@/shared/components/button/Button";
 
 export const UserProfileForm = () => {
    const { user } = useAppSelector((state) => state.auth);
@@ -50,7 +49,7 @@ export const UserProfileForm = () => {
             console.log(values);
          }}
       >
-         {({ isSubmitting }) => (
+         {() => (
             <Form className="user-profile__form" autoComplete="off">
                <header className="user-profile__heading-wrapper">
                   <h4 className="user-profile__heading visually-hidden">
@@ -63,9 +62,11 @@ export const UserProfileForm = () => {
                      onClick={toggleAccountInfoEditingHandler}
                      aria-label="Edit your account information"
                      title="Edit your account information"
-                     type="button"
+                     type={!isDisabled ? "button" : "submit"}
                   >
-                     <span className="sr-only">Edit</span>
+                     <span className="sr-only">
+                        {isDisabled ? "Edit" : "Confirm Changes"}
+                     </span>
                      <SquarePen className="user-profile__edit-icon" />
                   </button>
                </header>
@@ -164,7 +165,6 @@ export const UserProfileForm = () => {
                      aria-label="Your zipCode"
                   />
                </fieldset>
-
             </Form>
          )}
       </Formik>
