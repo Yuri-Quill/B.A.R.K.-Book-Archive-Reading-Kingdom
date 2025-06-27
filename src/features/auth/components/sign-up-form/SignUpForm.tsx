@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 import { useAppDispatch } from "@/app/store/hooks";
-import { useHead } from "@/shared/hooks/use-head";
+
 
 import { signupAuthThunk } from "@/features/auth/model/auth.thunks";
 
@@ -31,11 +31,7 @@ export const SignUpForm = () => {
    const dispatch = useAppDispatch();
    const navigate = useNavigate();
 
-   useHead({
-      title: "Sign Up | B.A.R.K. - Book Archive Reading Kingdom",
-      description:
-         "Join B.A.R.K. and manage your digital book collection. Organize, track, and explore your reading journey.",
-   });
+
 
    const signUpHandler = async (values: SignupPayload) => {
       try {

@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 import { useAppDispatch } from "@/app/store/hooks";
-import { useHead } from "@/shared/hooks/use-head";
+
 
 import { forgotPasswordThunk } from "@/features/auth/model/auth.thunks";
 
@@ -29,10 +29,7 @@ export const ForgotPasswordForm = () => {
    const dispatch = useAppDispatch();
    const navigate = useNavigate();
 
-   useHead({
-      title: "Forgot password | B.A.R.K. - Book Archive Reading Kingdom",
-      description: "Reset your password and get back to reading",
-   });
+
 
    const forgotPasswordHandler = async (values: ForgotPasswordPayload) => {
       try {

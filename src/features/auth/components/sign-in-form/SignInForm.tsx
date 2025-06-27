@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 import { useAppDispatch } from "@/app/store/hooks";
-import { useHead } from "@/shared/hooks/use-head";
+
 
 import { Button } from "@/shared/components/button/Button";
 import { InputField } from "@/shared/components/input-field/InputField";
@@ -29,11 +29,6 @@ export const SignInForm = () => {
    const dispatch = useAppDispatch();
    const navigate = useNavigate();
 
-   useHead({
-      title: "Sign In | B.A.R.K. - Book Archive Reading Kingdom",
-      description:
-         "Access your account at B.A.R.K. Digital Library and continue exploring your reading journey.",
-   });
 
    const signInHandler = async (values: SigninPayload) => {
       try {

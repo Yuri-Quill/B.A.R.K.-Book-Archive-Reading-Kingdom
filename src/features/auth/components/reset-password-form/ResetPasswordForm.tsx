@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 
 import { useAppDispatch } from "@/app/store/hooks";
-import { useHead } from "@/shared/hooks/use-head";
+
 
 import { Button } from "@/shared/components/button/Button";
 import { InputField } from "@/shared/components/input-field/InputField";
@@ -37,11 +37,7 @@ export const ResetPasswordForm = () => {
 
    const token = searchParams.get("token") as string;
 
-   useHead({
-      title: "Reset Password | B.A.R.K. - Book Archive Reading Kingdom",
-      description:
-         "Reset your password and get back to reading your favorite books.",
-   });
+
 
    useEffect(() => {
       if (!token) {
