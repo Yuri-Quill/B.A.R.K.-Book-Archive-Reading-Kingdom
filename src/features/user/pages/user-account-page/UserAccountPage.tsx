@@ -15,7 +15,7 @@ const UserAccountPage = () => {
 
    return (
       <section className="user-profile">
-         <ContentWrapper>
+         <ContentWrapper isLarge={true}>
             <h2 className="user-profile__title">
                Your account profile
             </h2>

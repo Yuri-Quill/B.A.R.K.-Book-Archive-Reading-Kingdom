@@ -13,7 +13,7 @@ import "./header.scss";
 export const Header = () => {
    return (
       <header className="header">
-         <ContentWrapper large={true}>
+         <ContentWrapper isLarge={true}>
             <Logo className="header__logo" />
 
             <HeaderNav items={headerNavData} />
