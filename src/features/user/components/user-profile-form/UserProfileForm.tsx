@@ -1,8 +1,6 @@
-import { useAppSelector } from "@/app/store/hooks";
-import { InputField } from "@/shared/components/input-field/InputField";
 import { Form, Formik } from "formik";
+import clsx from "clsx";
 
-import "./user-profile-form.scss";
 import {
    Cake,
    IdCard,
@@ -11,11 +9,23 @@ import {
    MapPinCheck,
    MapPinned,
    Phone,
+   SquarePen,
    Transgender,
 } from "lucide-react";
+
+import { useAppSelector } from "@/app/store/hooks";
+import { useState } from "react";
+
+import { InputField } from "@/shared/components/input-field/InputField";
+
 import { userProfileSchema } from "@/features/user/schemas/user-profile-schema";
+
+import "./user-profile-form.scss";
+import { Button } from "@/shared/components/button/Button";
+
 export const UserProfileForm = () => {
    const { user } = useAppSelector((state) => state.auth);
+   const [isDisabled, setIsDisabled] = useState(true);
 
    const initialValues = {
       firstName: user?.profile.firstName,
@@ -29,6 +39,9 @@ export const UserProfileForm = () => {
       zipCode: user?.profile.zipCode,
    };
 
+   const toggleAccountInfoEditingHandler = () => {
+      setIsDisabled((prev) => !prev);
+   };
    return (
       <Formik
          initialValues={initialValues}
@@ -39,11 +52,27 @@ export const UserProfileForm = () => {
       >
          {({ isSubmitting }) => (
             <Form className="user-profile__form" autoComplete="off">
+               <header className="user-profile__heading-wrapper">
+                  <h4 className="user-profile__heading visually-hidden">
+                     Profile information
+                  </h4>
+                  <button
+                     className={clsx("user-profile__edit-btn", {
+                        "user-profile__edit-btn--active": !isDisabled,
+                     })}
+                     onClick={toggleAccountInfoEditingHandler}
+                     aria-label="Edit your account information"
+                     title="Edit your account information"
+                     type="button"
+                  >
+                     <span className="sr-only">Edit</span>
+                     <SquarePen className="user-profile__edit-icon" />
+                  </button>
+               </header>
                <fieldset
                   className="user-profile__fieldset"
-                  disabled={isSubmitting}
+                  disabled={isDisabled}
                >
-
                   <InputField
                      inputClassName="user-profile__input"
                      wrapperClassName="user-profile__wrapper"
@@ -135,6 +164,7 @@ export const UserProfileForm = () => {
                      aria-label="Your zipCode"
                   />
                </fieldset>
+
             </Form>
          )}
       </Formik>

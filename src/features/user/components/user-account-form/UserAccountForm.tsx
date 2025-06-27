@@ -35,7 +35,7 @@ export const UserAccountForm = () => {
          {({ isSubmitting }) => (
             <Form className="user-account__form" autoComplete="off">
                <header className="user-account__heading-wrapper">
-                  <h4 className="user-account__heading visually-hidden">
+                  <h4 className="user-account__heading">
                      Account information
                   </h4>
                   <button
@@ -77,17 +77,7 @@ export const UserAccountForm = () => {
                      aria-label="Your email address"
                   />
                </fieldset>
-               <Button
-                  className={clsx("user-account__save-btn", {
-                     "user-account__save-btn--active": !isDisabled,
-                  })}
-                  isActive={true}
-                  disabled={isDisabled}
-                  aria-label="Save changes"
-                  type="submit"
-               >
-                  Save changes
-               </Button>
+
             </Form>
          )}
       </Formik>

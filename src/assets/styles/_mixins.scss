@@ -89,7 +89,6 @@
    }
 }
 
-
 @keyframes fadeInUp {
    from {
       opacity: 0;
@@ -98,5 +97,51 @@
    to {
       opacity: 1;
       transform: translateY(0);
+   }
+}
+
+@mixin user-account-info {
+   &__form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding-bottom: 1.5625rem;
+      border-bottom: 0.0625rem solid $border-color;
+      margin-bottom: 20px;
+   }
+
+   &__heading-wrapper {
+      @include df-space-b;
+   }
+   &__edit-btn {
+      @include df-align-c;
+      gap: 10px;
+      font-size: 1rem;
+      color: $border-color;
+      transition: all 0.2s ease;
+      &:hover {
+         color: $warning-color;
+      }
+      &--active {
+         color: $success-color;
+      }
+   }
+
+   &__fieldset {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+   }
+   &__save-btn {
+      transition: opacity 0.2s ease;
+      width: auto;
+      display: flex;
+      align-self: flex-end;
+      transition: background 0.2s ease;
+      &--active {
+         &:hover {
+            background: $success-color;
+         }
+      }
    }
 }
