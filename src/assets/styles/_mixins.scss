@@ -113,6 +113,11 @@
    &__heading-wrapper {
       @include df-space-b;
    }
+
+   &__heading {
+      font-size: clamp(1.188rem, 0.857rem + 1.826vw, 2.5rem);
+   }
+
    &__edit-btn {
       @include df-align-c;
       gap: 10px;
@@ -124,6 +129,7 @@
       }
       &--active {
          color: $success-color;
+         
       }
    }
 
@@ -131,17 +137,18 @@
       display: flex;
       flex-direction: column;
       gap: 20px;
+
+      & > input {
+         display: flex;
+         flex: 1 1 190px;
+      }
    }
    &__save-btn {
+      display: none;
       transition: opacity 0.2s ease;
-      width: auto;
-      display: flex;
-      align-self: flex-end;
       transition: background 0.2s ease;
       &--active {
-         &:hover {
-            background: $success-color;
-         }
+         display: flex;
       }
    }
 }

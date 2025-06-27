@@ -21,6 +21,7 @@ import { InputField } from "@/shared/components/input-field/InputField";
 import { userProfileSchema } from "@/features/user/schemas/user-profile-schema";
 
 import "./user-profile-form.scss";
+import { Button } from "@/shared/components/button/Button";
 
 export const UserProfileForm = () => {
    const { user } = useAppSelector((state) => state.auth);
@@ -52,9 +53,7 @@ export const UserProfileForm = () => {
          {() => (
             <Form className="user-profile__form" autoComplete="off">
                <header className="user-profile__heading-wrapper">
-                  <h4 className="user-profile__heading visually-hidden">
-                     Profile information
-                  </h4>
+                  <h4 className="user-profile__heading">Profile information</h4>
                   <button
                      className={clsx("user-profile__edit-btn", {
                         "user-profile__edit-btn--active": !isDisabled,
@@ -62,11 +61,9 @@ export const UserProfileForm = () => {
                      onClick={toggleAccountInfoEditingHandler}
                      aria-label="Edit your account information"
                      title="Edit your account information"
-                     type={!isDisabled ? "button" : "submit"}
+                     type="button"
                   >
-                     <span className="sr-only">
-                        {isDisabled ? "Edit" : "Confirm Changes"}
-                     </span>
+                     <span className="sr-only">Edit</span>
                      <SquarePen className="user-profile__edit-icon" />
                   </button>
                </header>
@@ -165,6 +162,16 @@ export const UserProfileForm = () => {
                      aria-label="Your zipCode"
                   />
                </fieldset>
+               <Button
+                  className={clsx("user-profile__save-btn", {
+                     "user-profile__save-btn--active": !isDisabled,
+                  })}
+                  disabled={isDisabled}
+                  isActive
+                  type="submit"
+               >
+                  Save Changes
+               </Button>
             </Form>
          )}
       </Formik>

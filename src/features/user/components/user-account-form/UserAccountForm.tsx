@@ -7,10 +7,10 @@ import { useAppSelector } from "@/app/store/hooks";
 
 import { InputField } from "@/shared/components/input-field/InputField";
 
-
 import { userAccountSchema } from "@/features/user/schemas/user-account-schema";
 
 import "./user-account-form.scss";
+import { Button } from "@/shared/components/button/Button";
 
 export const UserAccountForm = () => {
    const [isDisabled, setIsDisabled] = useState(true);
@@ -29,15 +29,14 @@ export const UserAccountForm = () => {
          initialValues={initialValues}
          validationSchema={userAccountSchema}
          onSubmit={(values) => {
+            setIsDisabled(true)
             console.log(values);
          }}
       >
          {() => (
             <Form className="user-account__form" autoComplete="off">
                <header className="user-account__heading-wrapper">
-                  <h4 className="user-account__heading">
-                     Account information
-                  </h4>
+                  <h4 className="user-account__heading">Account information</h4>
                   <button
                      className={clsx("user-account__edit-btn", {
                         "user-account__edit-btn--active": !isDisabled,
@@ -45,9 +44,9 @@ export const UserAccountForm = () => {
                      onClick={toggleAccountInfoEditingHandler}
                      aria-label="Edit your account information"
                      title="Edit your account information"
-                     type={!isDisabled ? 'button' : 'submit'}
+                     type="button"
                   >
-                     <span className="sr-only">{isDisabled ? 'Edit': 'Confirm Changes'}</span>
+                     <span className="sr-only">Edit</span>
                      <SquarePen className="user-account__edit-icon" />
                   </button>
                </header>
@@ -77,7 +76,16 @@ export const UserAccountForm = () => {
                      aria-label="Your email address"
                   />
                </fieldset>
-
+               <Button
+                  className={clsx("user-account__save-btn", {
+                     "user-account__save-btn--active": !isDisabled,
+                  })}
+                  disabled={isDisabled}
+                  isActive
+                  type="submit"
+               >
+                  Save Changes
+               </Button>
             </Form>
          )}
       </Formik>
