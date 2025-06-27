@@ -17,11 +17,11 @@ import { useAppSelector } from "@/app/store/hooks";
 import { useState } from "react";
 
 import { InputField } from "@/shared/components/input-field/InputField";
+import { Button } from "@/shared/components/button/Button";
 
 import { userProfileSchema } from "@/features/user/schemas/user-profile-schema";
 
 import "./user-profile-form.scss";
-import { Button } from "@/shared/components/button/Button";
 
 export const UserProfileForm = () => {
    const { user } = useAppSelector((state) => state.auth);

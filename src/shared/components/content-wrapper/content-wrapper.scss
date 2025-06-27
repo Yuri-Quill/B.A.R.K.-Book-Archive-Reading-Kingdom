@@ -1,10 +1,10 @@
 .content-wrapper {
    width: 100%;
-   max-width: 67.5rem;
+   max-width: 67.5rem; // 1080px
    margin: 0 auto;
    padding: 0 0.9375rem;
 
-   &--header {
-      max-width: 75.625rem;
+   &--large {
+      max-width: 75.625rem; // 1210px
    }
 }

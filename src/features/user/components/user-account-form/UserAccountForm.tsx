@@ -6,11 +6,11 @@ import { useState } from "react";
 import { useAppSelector } from "@/app/store/hooks";
 
 import { InputField } from "@/shared/components/input-field/InputField";
+import { Button } from "@/shared/components/button/Button";
 
 import { userAccountSchema } from "@/features/user/schemas/user-account-schema";
 
 import "./user-account-form.scss";
-import { Button } from "@/shared/components/button/Button";
 
 export const UserAccountForm = () => {
    const [isDisabled, setIsDisabled] = useState(true);
@@ -29,7 +29,7 @@ export const UserAccountForm = () => {
          initialValues={initialValues}
          validationSchema={userAccountSchema}
          onSubmit={(values) => {
-            setIsDisabled(true)
+            setIsDisabled(true);
             console.log(values);
          }}
       >

@@ -2,24 +2,17 @@ import clsx from "clsx";
 
 import type {
    ChildrenProps,
-   ClassNameProps,
+
 } from "@/shared/types/common-props.type";
 
 import "./content-wrapper.scss";
 
-interface ContentWrapperProps extends ClassNameProps, ChildrenProps {}
+interface ContentWrapperProps extends ChildrenProps {
+   large: boolean;
+}
 
-export const ContentWrapper = ({
-   children,
-   className,
-}: ContentWrapperProps) => {
+export const ContentWrapper = ({ children, large }: ContentWrapperProps) => {
    return (
-      <div
-         className={clsx("content-wrapper", {
-            [`content-wrapper--${className}`]: className,
-         })}
-      >
-         {children}
-      </div>
+      <div className={clsx("content-wrapper", large && "content-wrapper--large")}>{children}</div>
    );
 };
