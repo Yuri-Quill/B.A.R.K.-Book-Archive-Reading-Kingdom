@@ -5,8 +5,7 @@ export const avatarSchema = Yup.string()
    .typeError("Avatar must be a URL")
    .notOneOf(["file://"], "Local file URLs are not allowed")
    .matches(/^https:\/\/.*\.(png|jpe?g|svg|webp)$/i, {
-      message:
-         "Avatar must ending in .png, .jpg, .jpeg, .svg, or .webp",
+      message: "Avatar must ending in .png, .jpg, .jpeg, .svg, or .webp",
    });
 
 export const countrySchema = Yup.string()
@@ -29,7 +28,10 @@ export const phoneSchema = Yup.string()
 
 export const birthDateSchema = Yup.date()
    .typeError("Birth date must be a date")
-   .min(new Date(1900, 0, 1), "Birth date must be after 1 January 1900")
+   .min(
+      new Date(Date.now() - 1000 * 60 * 60 * 24 * 365 * 10),
+      "You must be at least 10 years old"
+   )
    .max(new Date(), "Birth date must be before today")
    .required("Birth date is required");
 
@@ -50,3 +52,9 @@ export const lastNameSchema = Yup.string()
    .max(50, "Last name must be at most 60 characters")
    .matches(/^[a-zA-Z]+$/, "Last name must contain only letters")
    .required("Last name is required");
+
+export const citySchema = Yup.string()
+   .min(2, "City must be at least 2 characters")
+   .max(50, "City must be at most 60 characters")
+   .matches(/^[a-zA-Z]+$/, "City must contain only letters")
+   .required("City is required");
