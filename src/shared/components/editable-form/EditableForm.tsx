@@ -1,7 +1,5 @@
-import './editable-form.scss'
+import "./editable-form.scss";
 
-export const EditableForm = ()=>{
-   return (
-      
-   )
-}
+export const EditableForm = () => {
+   return <div>awd</div>;
+};
