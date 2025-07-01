@@ -52,8 +52,14 @@
    @include df-full-c;
    flex-direction: column;
    gap: 25px;
+}
+
+@mixin article-form-style {
+   display: flex;
+   flex-direction: column;
    width: 100%;
    max-width: 31.25rem;
+   gap: 20px;
    text-align: center;
    padding: clamp(0.938rem, 0.67rem + 1.478vw, 2rem);
    margin: 0 15px;
@@ -62,12 +68,11 @@
 }
 
 @mixin fieldset-style {
+   position: relative;
    width: 100%;
    display: flex;
    flex-direction: column;
    gap: 1.25rem;
-
-   position: relative;
 }
 
 @mixin fieldset-disabled {

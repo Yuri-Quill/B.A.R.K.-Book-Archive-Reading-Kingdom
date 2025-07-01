@@ -14,7 +14,7 @@ import type { FormikValues } from "formik";
 import "./editable-form.scss";
 
 interface EditableFormProps<V extends FormikValues> {
-   fields: FieldConfig<V>[];
+   fields: FieldConfig[];
    initialValues: V;
    validationSchema: AnyObjectSchema;
    className: string;
@@ -44,7 +44,7 @@ export const EditableForm = <V extends FormikValues>({
          onSubmit={onSubmit}
       >
          {({ isSubmitting }) => (
-            <Form className={bem("form")}>
+            <Form className={bem("form")} autoComplete="off">
                <fieldset
                   className={bem("form-fieldset")}
                   disabled={isSubmitting}
@@ -69,6 +69,7 @@ export const EditableForm = <V extends FormikValues>({
                   className={bem("form-submit")}
                   disabled={isSubmitting}
                   type="submit"
+                  isActive={true}
                >
                   {isSubmitting ? <Loader /> : btnText}
                </Button>

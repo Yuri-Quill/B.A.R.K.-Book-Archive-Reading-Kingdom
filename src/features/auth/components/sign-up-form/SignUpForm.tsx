@@ -1,19 +1,16 @@
-import { Form, Formik } from "formik";
-import { Lock, Mail, User } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 import { useAppDispatch } from "@/app/store/hooks";
 
 import { signupAuthThunk } from "@/features/auth/model/auth.thunks";
-
-import { Button } from "@/shared/components/button/Button";
-import { InputField } from "@/shared/components/input-field/InputField";
-import { Loader } from "@/shared/components/loader/Loader";
+import { EditableForm } from "@/shared/components/editable-form/EditableForm";
 
 import { signUpSchema } from "@/features/auth/schemas/sign-up-schema";
 
 import { Routes } from "@/shared/constants/routes";
+
+import { signUpFields } from "@/features/auth/data/auth.data";
 
 import type { SignupPayload } from "@/features/auth/types/auth.types";
 
@@ -42,90 +39,33 @@ export const SignUpForm = () => {
    };
 
    return (
-      <Formik
-         initialValues={initialValues}
-         validationSchema={signUpSchema}
-         onSubmit={signUpHandler}
-      >
-         {({ isSubmitting }) => (
-            <Form
-               className="signup-form"
-               autoComplete="off"
-               aria-label="Sign up for an account"
-               role="form"
-            >
-               <h4
-                  className="signup-form__title"
-                  aria-label="Join the Kingdom and start your journey"
-               >
-                  Join the Kingdom{" "}
-                  <span className="signup-form__subtitle">
-                     and start your journey!
-                  </span>
-               </h4>
-
-               <p
-                  className="signup-form__text"
-                  aria-label="Sign up and explore your new realm of books"
-                  role="text"
-               >
-                  Sign up and explore your new realm of books.
-               </p>
-               <fieldset
-                  className="signup-form__fieldset"
-                  disabled={isSubmitting}
-               >
-                  <InputField
-                     block="signup-form"
-                     icon={User}
-                     name="username"
-                     type="text"
-                     placeholder="Username"
-                     aria-label="Enter your Username"
-                  />
-                  <InputField
-                     block="signup-form"
-                     icon={Mail}
-                     name="email"
-                     type="email"
-                     placeholder="Email Address"
-                     aria-label="Enter your email address"
-                  />
-                  <InputField
-                     block="signup-form"
-                     icon={Lock}
-                     name="password"
-                     type="password"
-                     placeholder="Password"
-                     aria-label="Enter your password"
-                  />
-                  <InputField
-                     block="signup-form"
-                     icon={Lock}
-                     name="confirmPassword"
-                     type="password"
-                     placeholder="Confirm Password"
-                     aria-label="Confirm your password"
-                  />
-                  <Button
-                     className="signup-form__submit"
-                     type="submit"
-                     disabled={isSubmitting}
-                     aria-label="Sign Up"
-                     isActive={true}
-                  >
-                     {isSubmitting ? <Loader /> : "Sign Up"}
-                  </Button>
-                  <Link
-                     className="signup-form__link"
-                     to={Routes.authSignIn}
-                     aria-label=" You already have an account? Redirect to sign up page!"
-                  >
-                     You already have an account?
-                  </Link>
-               </fieldset>
-            </Form>
-         )}
-      </Formik>
+      <article className="signup-article">
+         <header className="signup-header">
+            <h3 className="signup-header__title">
+               Join the Kingdom
+               <span className="signup-header__subtitle">
+                  and start your journey
+               </span>
+            </h3>
+            <p className="signup-header__description">
+               Sign up and explore your new realm of books.
+            </p>
+         </header>
+         <EditableForm
+            className="signup"
+            fields={signUpFields}
+            initialValues={initialValues}
+            validationSchema={signUpSchema}
+            onSubmit={signUpHandler}
+            btnText="Sign Up"
+         />
+         <Link
+            className="signup__form-link"
+            to={Routes.authSignIn}
+            aria-label=" You already have an account? Redirect to sign up page!"
+         >
+            You already have an account?
+         </Link>
+      </article>
    );
 };

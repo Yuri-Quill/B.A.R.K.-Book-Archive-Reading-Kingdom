@@ -1,17 +1,39 @@
-.signup-form {
-   @include form-style;
-
-   &__subtitle {
-      display: block;
-      line-height: 1.4;
+.signup {
+   &-article {
+      @include article-form-style;
    }
 
-   &__link {
-      @include link-hint;
+   &-header {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      gap: 15px;
+
+      &__title,
+      &__description {
+         line-height: 1.3;
+      }
+
+      &__subtitle {
+         display: block;
+      }
    }
 
-   &__fieldset {
-      @include fieldset-style;
-      @include staggered-fade-in;
+   &__form {
+      @include form-style;
+
+      &-subtitle {
+         display: block;
+         line-height: 1.4;
+      }
+
+      &-link {
+         @include link-hint;
+      }
+
+      &-fieldset {
+         @include fieldset-style;
+         @include staggered-fade-in;
+      }
    }
 }
