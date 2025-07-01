@@ -5,7 +5,7 @@ export const signInFields = [
    {
       name: "email",
       placeholder: "Enter your email",
-      icon: <Mail/>,
+      icon: Mail,
       ariaLabel: "Email address",
       type: inputTypes.email,
    },
