@@ -51,6 +51,7 @@ export const SignUpForm = () => {
                Sign up and explore your new realm of books.
             </p>
          </header>
+
          <EditableForm
             className="signup"
             fields={signUpFields}
@@ -59,13 +60,15 @@ export const SignUpForm = () => {
             onSubmit={signUpHandler}
             btnText="Sign Up"
          />
-         <Link
-            className="signup__form-link"
-            to={Routes.authSignIn}
-            aria-label=" You already have an account? Redirect to sign up page!"
-         >
-            You already have an account?
-         </Link>
+         <footer className="signup__form-footer">
+            <Link
+               className="signup__form-link"
+               to={Routes.authSignIn}
+               aria-label=" You already have an account? Redirect to sign up page!"
+            >
+               You already have an account?
+            </Link>
+         </footer>
       </article>
    );
 };
