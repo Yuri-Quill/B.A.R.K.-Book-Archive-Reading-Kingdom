@@ -5,7 +5,6 @@ import { toast } from "react-toastify";
 
 import { useAppDispatch } from "@/app/store/hooks";
 
-
 import { signupAuthThunk } from "@/features/auth/model/auth.thunks";
 
 import { Button } from "@/shared/components/button/Button";
@@ -30,8 +29,6 @@ const initialValues = {
 export const SignUpForm = () => {
    const dispatch = useAppDispatch();
    const navigate = useNavigate();
-
-
 
    const signUpHandler = async (values: SignupPayload) => {
       try {
@@ -79,9 +76,7 @@ export const SignUpForm = () => {
                   disabled={isSubmitting}
                >
                   <InputField
-                     wrapperClassName="signup-input__wrapper"
-                     inputClassName="signup-input"
-                     iconClassName="signup-input__icon"
+                     block="signup-form"
                      icon={User}
                      name="username"
                      type="text"
@@ -89,9 +84,7 @@ export const SignUpForm = () => {
                      aria-label="Enter your Username"
                   />
                   <InputField
-                     wrapperClassName="signup-input__wrapper"
-                     inputClassName="signup-input"
-                     iconClassName="signup-input__icon"
+                     block="signup-form"
                      icon={Mail}
                      name="email"
                      type="email"
@@ -99,9 +92,7 @@ export const SignUpForm = () => {
                      aria-label="Enter your email address"
                   />
                   <InputField
-                     wrapperClassName="signup-input__wrapper"
-                     inputClassName="signup-input"
-                     iconClassName="signup-input__icon"
+                     block="signup-form"
                      icon={Lock}
                      name="password"
                      type="password"
@@ -109,9 +100,7 @@ export const SignUpForm = () => {
                      aria-label="Enter your password"
                   />
                   <InputField
-                     wrapperClassName="signup-input__wrapper"
-                     inputClassName="signup-input"
-                     iconClassName="signup-input__icon"
+                     block="signup-form"
                      icon={Lock}
                      name="confirmPassword"
                      type="password"

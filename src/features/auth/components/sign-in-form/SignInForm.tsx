@@ -5,7 +5,6 @@ import { toast } from "react-toastify";
 
 import { useAppDispatch } from "@/app/store/hooks";
 
-
 import { Button } from "@/shared/components/button/Button";
 import { InputField } from "@/shared/components/input-field/InputField";
 import { Loader } from "@/shared/components/loader/Loader";
@@ -28,7 +27,6 @@ const initialValues = {
 export const SignInForm = () => {
    const dispatch = useAppDispatch();
    const navigate = useNavigate();
-
 
    const signInHandler = async (values: SigninPayload) => {
       try {
@@ -74,9 +72,7 @@ export const SignInForm = () => {
                   disabled={isSubmitting}
                >
                   <InputField
-                     wrapperClassName="signin-input__wrapper"
-                     inputClassName="signin-input"
-                     iconClassName="signin-input__icon"
+                     block="signin-form"
                      icon={Mail}
                      name="email"
                      type="email"
@@ -84,9 +80,7 @@ export const SignInForm = () => {
                      aria-label="Enter your email address"
                   />
                   <InputField
-                     wrapperClassName="signin-input__wrapper"
-                     inputClassName="signin-input"
-                     iconClassName="signin-input__icon"
+                     block="signin-form"
                      icon={Lock}
                      name="password"
                      type="password"

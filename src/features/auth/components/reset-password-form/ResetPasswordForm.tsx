@@ -7,7 +7,6 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 
 import { useAppDispatch } from "@/app/store/hooks";
 
-
 import { Button } from "@/shared/components/button/Button";
 import { InputField } from "@/shared/components/input-field/InputField";
 import { Loader } from "@/shared/components/loader/Loader";
@@ -36,8 +35,6 @@ export const ResetPasswordForm = () => {
    const navigate = useNavigate();
 
    const token = searchParams.get("token") as string;
-
-
 
    useEffect(() => {
       if (!token) {
@@ -121,9 +118,7 @@ export const ResetPasswordForm = () => {
                   disabled={isSubmitting}
                >
                   <InputField
-                     wrapperClassName="reset-password__input-wrapper"
-                     inputClassName="reset-password__input"
-                     iconClassName="reset-password__input-icon"
+                     block="reset-password"
                      icon={Lock}
                      name="password"
                      type="password"
@@ -131,9 +126,7 @@ export const ResetPasswordForm = () => {
                      aria-label="Enter your new password"
                   />
                   <InputField
-                     wrapperClassName="reset-password__input-wrapper"
-                     inputClassName="reset-password__input"
-                     iconClassName="reset-password__input-icon"
+                     block="reset-password"
                      icon={Lock}
                      name="confirmPassword"
                      type="password"

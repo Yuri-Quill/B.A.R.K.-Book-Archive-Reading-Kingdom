@@ -5,7 +5,6 @@ import { toast } from "react-toastify";
 
 import { useAppDispatch } from "@/app/store/hooks";
 
-
 import { forgotPasswordThunk } from "@/features/auth/model/auth.thunks";
 
 import { Button } from "@/shared/components/button/Button";
@@ -28,8 +27,6 @@ const initialValues = {
 export const ForgotPasswordForm = () => {
    const dispatch = useAppDispatch();
    const navigate = useNavigate();
-
-
 
    const forgotPasswordHandler = async (values: ForgotPasswordPayload) => {
       try {
@@ -78,9 +75,7 @@ export const ForgotPasswordForm = () => {
                   disabled={isSubmitting}
                >
                   <InputField
-                     wrapperClassName="forgot-password__input-wrapper"
-                     inputClassName="forgot-password__input"
-                     iconClassName="forgot-password__input-icon"
+                     block="forgot-password"
                      icon={Mail}
                      name="email"
                      type="email"

@@ -1,8 +1,10 @@
-import clsx from "clsx";
+import { useState } from "react";
+
 import { Field, ErrorMessage, type FieldAttributes } from "formik";
 
 import { Eye, EyeClosed, type LucideProps } from "lucide-react";
-import { useState } from "react";
+
+import { makeBem } from "@/shared/utils/makeBem/makeBem";
 
 import "./input-field.scss";
 
@@ -11,18 +13,12 @@ interface InputFieldProps
       React.InputHTMLAttributes<HTMLInputElement> {
    icon?: React.ComponentType<LucideProps>;
    modifier?: string;
-   wrapperClassName?: string;
-   iconClassName?: string;
-   inputClassName?: string;
-   errorClassName?: string;
+   block: string;
 }
 
 export const InputField = ({
    modifier,
-   wrapperClassName,
-   iconClassName,
-   inputClassName,
-   errorClassName,
+   block,
    icon: Icon,
    type,
 
@@ -32,32 +28,15 @@ export const InputField = ({
    const isPassword = type === "password";
    const actualType = isPassword && showPassword ? "text" : type;
 
+   const bem = makeBem(block, modifier);
+
    return (
-      <div
-         className={clsx(
-            "input-wrapper",
-            wrapperClassName,
-            modifier && `input-wrapper--${modifier}`
-         )}
-      >
-         {Icon && (
-            <Icon
-               className={clsx(
-                  "input__icon",
-                  iconClassName,
-                  modifier && `input__icon--${modifier}`
-               )}
-               size={20}
-            />
-         )}
+      <div className={bem("input-wrapper")}>
+         {Icon && <Icon className={bem("input-icon")} size={20} />}
 
          <Field
             type={actualType}
-            className={clsx(
-               "input",
-               inputClassName,
-               modifier && `input--${modifier}`
-            )}
+            className={bem("input")}
             autoComplete="new-password"
             {...fieldProps}
          />
@@ -65,14 +44,14 @@ export const InputField = ({
          {isPassword && (
             <button
                type="button"
-               className="input__toggle"
+               className={bem("input-toggle")}
                onClick={() => setShowPassword((p) => !p)}
                aria-label={showPassword ? "Hide password" : "Show password"}
             >
                {showPassword ? (
-                  <Eye className="input__toggle-icon" size={20} />
+                  <Eye className={bem("toggle-icon")} size={20} />
                ) : (
-                  <EyeClosed className="input__toggle-icon" size={20} />
+                  <EyeClosed className={bem("toggle-icon")} size={20} />
                )}
             </button>
          )}
@@ -80,7 +59,7 @@ export const InputField = ({
          <ErrorMessage
             name={fieldProps.name as string}
             component="div"
-            className={clsx("input__error", errorClassName)}
+            className={bem("input-error")}
          />
       </div>
    );
