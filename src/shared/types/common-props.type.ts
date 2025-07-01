@@ -16,10 +16,9 @@ export interface ImageProps {
    image: string;
 }
 
-export interface IconProps {
-   icon?: React.ComponentType<LucideProps>;
-}
 
+
+export type IconType = React.ComponentType<LucideProps>
 export interface OnClickProps {
    onClick: React.MouseEventHandler<HTMLButtonElement>;
 }

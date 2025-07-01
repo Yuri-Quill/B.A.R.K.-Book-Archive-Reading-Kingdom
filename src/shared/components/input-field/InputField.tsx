@@ -1,17 +1,20 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
-import { Field, ErrorMessage, type FieldAttributes } from "formik";
+import { Field, ErrorMessage } from "formik";
 
-import { Eye, EyeClosed, type LucideProps } from "lucide-react";
+import { Eye, EyeClosed } from "lucide-react";
 
 import { makeBem } from "@/shared/utils/makeBem/makeBem";
+
+import type { FieldAttributes } from "formik";
+import type { IconType } from "@/shared/types/common-props.type";
 
 import "./input-field.scss";
 
 interface InputFieldProps
    extends FieldAttributes<HTMLInputElement>,
       React.InputHTMLAttributes<HTMLInputElement> {
-   icon?: React.ComponentType<LucideProps>;
+   icon?: IconType;
    modifier?: string;
    block: string;
 }
@@ -28,7 +31,7 @@ export const InputField = ({
    const isPassword = type === "password";
    const actualType = isPassword && showPassword ? "text" : type;
 
-   const bem = makeBem(block, modifier);
+   const bem = useMemo(() => makeBem(block, modifier), [block, modifier]);
 
    return (
       <div className={bem("input-wrapper")}>
