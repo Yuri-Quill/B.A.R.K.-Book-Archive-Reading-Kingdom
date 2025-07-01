@@ -1,5 +1,6 @@
-import { inputTypes } from "@/shared/constants/input-types";
 import { Mail, Lock, User } from "lucide-react";
+
+import { inputTypes } from "@/shared/constants/input-types";
 
 export const signInFields = [
    {

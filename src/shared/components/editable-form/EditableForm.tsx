@@ -7,9 +7,9 @@ import { Loader } from "@/shared/components/loader/Loader";
 
 import { makeBem } from "@/shared/utils/makeBem/makeBem";
 
-import type { FieldConfig } from "@/shared/types/forms.types";
-import type { AnyObjectSchema } from "yup";
 import type { FormikValues } from "formik";
+import type { AnyObjectSchema } from "yup";
+import type { FieldConfig } from "@/shared/types/forms.types";
 
 import "./editable-form.scss";
 
