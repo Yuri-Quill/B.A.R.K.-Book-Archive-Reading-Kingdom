@@ -13,19 +13,10 @@
       &__description {
          line-height: 1.2;
       }
-
-      &__subtitle {
-         display: block;
-      }
    }
 
    &__form {
       @include form-style;
-
-      &-subtitle {
-         display: block;
-         line-height: 1.4;
-      }
 
       &-fieldset {
          @include fieldset-style;

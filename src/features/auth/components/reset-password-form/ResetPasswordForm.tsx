@@ -1,5 +1,4 @@
-import { Form, Formik } from "formik";
-import { Lock } from "lucide-react";
+import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
 import { useEffect, useState } from "react";
@@ -7,8 +6,7 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 
 import { useAppDispatch } from "@/app/store/hooks";
 
-import { Button } from "@/shared/components/button/Button";
-import { InputField } from "@/shared/components/input-field/InputField";
+import { EditableForm } from "@/shared/components/editable-form/EditableForm";
 import { Loader } from "@/shared/components/loader/Loader";
 
 import {
@@ -18,6 +16,8 @@ import {
 import { resetPasswordSchema } from "@/features/auth/schemas/reset-password-schema";
 
 import { Routes } from "@/shared/constants/routes";
+
+import { resetPasswordFields } from "@/features/auth/data/auth.data";
 
 import type { ResetPasswordPayload } from "@/features/auth/types/auth.types";
 
@@ -87,64 +87,42 @@ export const ResetPasswordForm = () => {
    };
 
    return (
-      <Formik
-         initialValues={initialValues}
-         validationSchema={resetPasswordSchema}
-         onSubmit={resetPasswordHandler}
-      >
-         {({ isSubmitting }) => (
-            <Form
-               className="reset-password__form"
-               autoComplete="off"
-               aria-label="Reset password form"
+      <article className="reset-password__article">
+         <header className="reset-password__header">
+            <h4
+               className="reset-password__header-title"
+               aria-label="Reset your password?"
             >
-               <h4
-                  className="reset-password__form-title"
-                  aria-label="Reset your password?"
-               >
-                  Reset your password?
-               </h4>
+               Reset your password?
+            </h4>
 
-               <p
-                  className="reset-password__form-text"
-                  aria-label="Enter your new password to reset it."
-                  role="text"
-               >
-                  Enter your new password to reset it.
-               </p>
+            <p
+               className="reset-password__header-description"
+               aria-label="Enter your new password to reset it."
+               role="text"
+            >
+               Enter your new password to reset it.
+            </p>
+         </header>
 
-               <fieldset
-                  className="reset-password__form-fieldset"
-                  disabled={isSubmitting}
-               >
-                  <InputField
-                     block="reset-password"
-                     icon={Lock}
-                     name="password"
-                     type="password"
-                     placeholder="New Password"
-                     aria-label="Enter your new password"
-                  />
-                  <InputField
-                     block="reset-password"
-                     icon={Lock}
-                     name="confirmPassword"
-                     type="password"
-                     placeholder="Confirm new Password"
-                     aria-label="Confirm your new password"
-                  />
-                  <Button
-                     className="reset-password__submit"
-                     type="submit"
-                     disabled={isSubmitting}
-                     aria-label="Reset Password"
-                     isActive={true}
-                  >
-                     {isSubmitting ? <Loader /> : "Reset Password"}
-                  </Button>
-               </fieldset>
-            </Form>
-         )}
-      </Formik>
+         <EditableForm
+            className="reset-password"
+            fields={resetPasswordFields}
+            initialValues={initialValues}
+            validationSchema={resetPasswordSchema}
+            onSubmit={resetPasswordHandler}
+            btnText="Reset Password"
+         />
+
+         <footer className="reset-password__footer">
+            <Link
+               className="reset-password__footer-link"
+               to={Routes.authSignIn}
+               aria-label="Redirect to sign up page!"
+            >
+               Return to Sign in page.
+            </Link>
+         </footer>
+      </article>
    );
 };

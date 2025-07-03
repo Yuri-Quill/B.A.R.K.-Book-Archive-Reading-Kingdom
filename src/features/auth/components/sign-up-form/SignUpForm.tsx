@@ -41,14 +41,20 @@ export const SignUpForm = () => {
    return (
       <article className="signup-article">
          <header className="signup-header">
-            <h4 className="signup-header__title">
+            <h4
+               className="signup-header__title"
+               aria-label="Sign up and explore your new realm of books."
+            >
                Join the Kingdom
                <span className="signup-header__subtitle">
                   and start your journey
                </span>
             </h4>
 
-            <p className="signup-header__description">
+            <p
+               className="signup-header__description"
+               aria-label="Sign up and start exploring your new digital library."
+            >
                Sign up and explore your new realm of books.
             </p>
          </header>
@@ -66,7 +72,7 @@ export const SignUpForm = () => {
             <Link
                className="signup-footer__link"
                to={Routes.authSignIn}
-               aria-label=" You already have an account? Redirect to sign up page!"
+               aria-label="You already have an account? Redirect to sign in page!"
             >
                You already have an account?
             </Link>
@@ -74,3 +80,24 @@ export const SignUpForm = () => {
       </article>
    );
 };
+
+/*
+
+          <h4
+                  className="forgot-password__form-title"
+                  aria-label="Forgot your password?"
+               >
+                  Forgot your password?
+               </h4>
+
+               <p
+                  className="forgot-password__form-text"
+                  aria-label="Enter your email address and we'll send you a link to reset your password."
+                  role="text"
+               >
+                  Enter your email address and we'll send you a link to reset
+                  your password.
+               </p>
+
+
+*/
