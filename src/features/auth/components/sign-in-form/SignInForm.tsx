@@ -1,19 +1,18 @@
-import { Form, Formik } from "formik";
-import { Lock, Mail } from "lucide-react";
+
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 import { useAppDispatch } from "@/app/store/hooks";
 
-import { Button } from "@/shared/components/button/Button";
-import { InputField } from "@/shared/components/input-field/InputField";
-import { Loader } from "@/shared/components/loader/Loader";
+import { EditableForm } from "@/shared/components/editable-form/EditableForm";
 
 import { signinAuthThunk } from "@/features/auth/model/auth.thunks";
 
 import { signInSchema } from "@/features/auth/schemas/sign-in-schema";
 
 import { Routes } from "@/shared/constants/routes";
+
+import { signInFields } from "@/features/auth/data/auth.data";
 
 import type { SigninPayload } from "@/features/auth/types/auth.types";
 
@@ -40,82 +39,49 @@ export const SignInForm = () => {
    };
 
    return (
-      <Formik
-         initialValues={initialValues}
-         validationSchema={signInSchema}
-         onSubmit={signInHandler}
-      >
-         {({ isSubmitting }) => (
-            <Form
-               className="signin-form"
-               autoComplete="off"
-               aria-label="Sign in to your account"
-               role="form"
+      <article className="signin-article">
+         <header className="signin-header">
+            <h4
+               className="signin-header__title"
+               aria-label="Welcome back to the Kingdom"
             >
-               <h4
-                  className="signin-form__title"
-                  aria-label="Welcome back to the Kingdom"
-               >
-                  Welcome back to the Kingdom!
-               </h4>
+               Welcome back to the Kingdom!
+            </h4>
 
-               <p
-                  className="signin-form__text"
-                  aria-label="Log in and reclaim your reading throne"
-                  role="text"
-               >
-                  Log in and reclaim your reading throne.
-               </p>
+            <p
+               className="signin-header__description"
+               aria-label="Log in and reclaim your reading throne"
+               role="text"
+            >
+               Log in and reclaim your reading throne.
+            </p>
+         </header>
 
-               <fieldset
-                  className="signin-form__fieldset"
-                  disabled={isSubmitting}
-               >
-                  <InputField
-                     block="signin-form"
-                     icon={Mail}
-                     name="email"
-                     type="email"
-                     placeholder="Email Address"
-                     aria-label="Enter your email address"
-                  />
-                  <InputField
-                     block="signin-form"
-                     icon={Lock}
-                     name="password"
-                     type="password"
-                     placeholder="Password"
-                     aria-label="Enter your password"
-                  />
-                  <Button
-                     className="signin-form__submit"
-                     type="submit"
-                     disabled={isSubmitting}
-                     aria-label="Sign In"
-                     isActive={true}
-                  >
-                     {isSubmitting ? <Loader /> : "Sign In"}
-                  </Button>
+         <EditableForm
+            className="signin"
+            fields={signInFields}
+            initialValues={initialValues}
+            validationSchema={signInSchema}
+            onSubmit={signInHandler}
+            btnText="Sign In"
+         />
 
-                  <div className="signin-form__links">
-                     <Link
-                        className="signin-form__link"
-                        to={Routes.authSignUp}
-                        aria-label="Don't have an account yet? Redirect to sign up page!"
-                     >
-                        Don't have an account yet?
-                     </Link>
-                     <Link
-                        className="signin-form__link"
-                        to={Routes.authForgotPassword}
-                        aria-label="Forgot your password? Redirect to reset password page"
-                     >
-                        Forgot your password?
-                     </Link>
-                  </div>
-               </fieldset>
-            </Form>
-         )}
-      </Formik>
+         <footer className="signin-footer">
+            <Link
+               className="signin-footer__link"
+               to={Routes.authSignUp}
+               aria-label="Don't have an account yet? Redirect to sign up page!"
+            >
+               Don't have an account yet?
+            </Link>
+            <Link
+               className="signin-footer__link"
+               to={Routes.authForgotPassword}
+               aria-label="Forgot your password? Redirect to reset password page"
+            >
+               Forgot your password?
+            </Link>
+         </footer>
+      </article>
    );
 };

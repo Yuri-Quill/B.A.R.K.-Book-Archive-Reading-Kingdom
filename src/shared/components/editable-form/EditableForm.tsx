@@ -70,6 +70,7 @@ export const EditableForm = <V extends FormikValues>({
                   disabled={isSubmitting}
                   type="submit"
                   isActive={true}
+                  aria-label="Submit button"
                >
                   {isSubmitting ? <Loader /> : btnText}
                </Button>

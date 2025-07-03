@@ -1,18 +1,44 @@
-.signin-form {
-   @include form-style;
+.signin {
+   &-article {
+      @include article-form-style;
+   }
 
-   &__links {
+   &-header {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      gap: 15px;
+
+      &__title,
+      &__description {
+         line-height: 1.2;
+      }
+
+      &__subtitle {
+         display: block;
+      }
+   }
+
+   &__form {
+      @include form-style;
+
+      &-subtitle {
+         display: block;
+         line-height: 1.4;
+      }
+
+      &-fieldset {
+         @include fieldset-style;
+         @include staggered-fade-in;
+      }
+   }
+
+   &-footer {
       display: flex;
       flex-direction: column;
       gap: 0.625rem;
-   }
-   &__link {
-      @include link-hint;
-   }
-
-   &__fieldset {
-      @include fieldset-style;
-
-      @include staggered-fade-in;
+      &__link {
+         @include link-hint;
+      }
    }
 }

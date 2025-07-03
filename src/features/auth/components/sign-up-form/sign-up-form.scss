@@ -27,13 +27,13 @@
          line-height: 1.4;
       }
 
-      &-link {
-         @include link-hint;
-      }
-
       &-fieldset {
          @include fieldset-style;
          @include staggered-fade-in;
       }
+   }
+
+   &-footer__link {
+      @include link-hint;
    }
 }

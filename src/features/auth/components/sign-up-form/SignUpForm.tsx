@@ -41,12 +41,13 @@ export const SignUpForm = () => {
    return (
       <article className="signup-article">
          <header className="signup-header">
-            <h3 className="signup-header__title">
+            <h4 className="signup-header__title">
                Join the Kingdom
                <span className="signup-header__subtitle">
                   and start your journey
                </span>
-            </h3>
+            </h4>
+
             <p className="signup-header__description">
                Sign up and explore your new realm of books.
             </p>
@@ -60,9 +61,10 @@ export const SignUpForm = () => {
             onSubmit={signUpHandler}
             btnText="Sign Up"
          />
-         <footer className="signup__form-footer">
+
+         <footer className="signup-footer">
             <Link
-               className="signup__form-link"
+               className="signup-footer__link"
                to={Routes.authSignIn}
                aria-label=" You already have an account? Redirect to sign up page!"
             >
