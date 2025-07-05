@@ -21,6 +21,7 @@ interface EditableFormProps<V extends FormikValues> {
    modifier?: string;
    onSubmit: (values: V) => void | Promise<unknown>;
    btnText: string;
+   readOnly?: boolean;
 }
 
 export const EditableForm = <V extends FormikValues>({
@@ -31,6 +32,7 @@ export const EditableForm = <V extends FormikValues>({
    modifier,
    onSubmit,
    btnText,
+   readOnly = false,
 }: EditableFormProps<V>) => {
    const bem = useMemo(
       () => makeBem(className, modifier),
@@ -61,19 +63,22 @@ export const EditableForm = <V extends FormikValues>({
                            placeholder={placeholder}
                            aria-label={ariaLabel}
                            modifier={modifier}
+                           readOnly={readOnly}
                         />
                      )
                   )}
                </fieldset>
-               <Button
-                  className={bem("form-submit")}
-                  disabled={isSubmitting}
-                  type="submit"
-                  isActive={true}
-                  aria-label={`${btnText} button`}
-               >
-                  {isSubmitting ? <Loader /> : btnText}
-               </Button>
+               {!readOnly && (
+                  <Button
+                     className={bem("form-submit")}
+                     disabled={isSubmitting}
+                     type="submit"
+                     isActive={true}
+                     aria-label={`${btnText} button`}
+                  >
+                     {isSubmitting ? <Loader /> : btnText}
+                  </Button>
+               )}
             </Form>
          )}
       </Formik>
