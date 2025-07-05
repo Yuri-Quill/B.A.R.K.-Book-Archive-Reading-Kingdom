@@ -58,16 +58,16 @@ export const ForgotPasswordForm = () => {
             </p>
          </header>
          <EditableForm
-            className="reset-password"
+            className="forgot-password"
             fields={forgotPasswordFields}
             initialValues={initialValues}
             validationSchema={forgotPasswordSchema}
             onSubmit={forgotPasswordHandler}
             btnText="Submit"
          />
-         <footer className="reset-password__footer">
+         <footer className="forgot-password__footer">
             <Link
-               className="reset-password__footer-link"
+               className="forgot-password__footer-link"
                to={Routes.authSignIn}
                aria-label="Redirect to sign in page!"
             >
